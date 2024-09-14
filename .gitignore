@@ -1,10 +1,10 @@
 build
 .idea
-.ads
 .vs
 .vscode
-.settings
 *~
 .DS_Store
 Tricore Debug (TASKING)
 Tricore Release (TASKING)
+illd_tc377tx_ads_lwip-http-server TriCore Debug (TASKING).launch
+illd_tc377tx_ads_lwip-http-server TriCore Release (TASKING).launch
