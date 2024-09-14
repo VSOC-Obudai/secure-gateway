@@ -283,9 +283,9 @@ static void ssi_init(void)
 
 /*-------------------------------------------------HTTP Server functions end-----------------------------------------*/
 
-static void ethernetif_link_status([[maybe_unused]] void *args)
+static void ethernetif_link_status(void *args)
 {
-
+  (void)args;
   if (MARVELL_88EA1517_GetLinkStatus(&MARVELL_88EA1517_1) == ETH_PHY_LINK_STATUS_DOWN)
   {
     if (netif_is_link_up(&netif_0))
@@ -427,7 +427,7 @@ void core1_main(void)
     
 
     /* Init serial Interface */
-     SERIALIO_Init(9600);
+     SERIALIO_Init(115200);
      printf("\n\n\n\n\n");
      printf("\n*******************************\n");
      printf("* Secure Gateway Example Project  *\n");

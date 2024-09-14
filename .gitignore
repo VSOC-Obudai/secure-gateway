@@ -1,1 +1,9 @@
-build/
+build
+.idea
+.ads
+.vs
+.vscode
+*~
+.DS_Store
+Tricore Debug (TASKING)
+Tricore Release (TASKING)

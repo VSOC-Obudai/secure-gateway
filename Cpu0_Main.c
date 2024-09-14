@@ -141,7 +141,7 @@ void core0_main(void)
     IfxDts_Dts_initModule(&dtsConfig);
 
     /* Init serial Interface */
-     SERIALIO_Init(9600);
+     SERIALIO_Init(115200);
      printf("\n\n\n\n\n");
      printf("\n*******************************\n");
      printf("* Secure Gateway Example Project  *\n");
