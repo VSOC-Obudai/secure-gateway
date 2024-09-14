@@ -3,6 +3,7 @@ build
 .ads
 .vs
 .vscode
+.settings
 *~
 .DS_Store
 Tricore Debug (TASKING)
