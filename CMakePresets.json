@@ -1,0 +1,122 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "installDir": "${sourceDir}/install/${presetName}",
+      "hidden": true
+    },
+    {
+      "name": "debug",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "release",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "profile",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Profile"
+      }
+    },
+    {
+      "name": "tricore",
+      "hidden": true,
+      "toolchainFile": "${sourceDir}/cmake/tricore-gcc.toolchain"
+    },
+    {
+      "name": "tricore-debug",
+      "inherits": [
+        "base",
+        "tricore",
+        "debug"
+      ]
+    },
+    {
+      "name": "tricore-release",
+      "inherits": [
+        "base",
+        "tricore",
+        "release"
+      ]
+    },
+    {
+      "name": "tricore-profile",
+      "inherits": [
+        "base",
+        "tricore",
+        "profile"
+      ]
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "tricore-debug",
+      "configurePreset": "tricore-debug"
+    },
+    {
+      "name": "tricore-release",
+      "configurePreset": "tricore-release"
+    },
+    {
+      "name": "tricore-profile",
+      "configurePreset": "tricore-profile"
+    }
+  ],
+  "workflowPresets": [
+    {
+      "name": "tricore-debug",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "tricore-debug"
+        },
+        {
+          "type": "build",
+          "name": "tricore-debug"
+        }
+      ]
+    },
+    {
+      "name": "tricore-profile",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "tricore-profile"
+        },
+        {
+          "type": "build",
+          "name": "tricore-profile"
+        }
+      ]
+    },
+    {
+      "name": "tricore-release",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "tricore-release"
+        },
+        {
+          "type": "build",
+          "name": "tricore-release"
+        }
+      ]
+    }
+  ]
+}
