@@ -4,8 +4,8 @@
 	"commands" : [
 		{
 			"type": "CONTENT", 
-			"from": "/Libraries", 
-			"to": "/Libraries",
+			"from": "/vendor/infineon/Libraries", 
+			"to": "/vendor/infineon/Libraries",
 			"recipe": ".ads/rollback.json"
 		},
 		{

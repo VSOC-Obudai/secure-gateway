@@ -1,4 +1,2 @@
-\boards\
-\components\
-\middleware\
-\lwipopts.h
+\vendor\board\
+\vendor\lwip\

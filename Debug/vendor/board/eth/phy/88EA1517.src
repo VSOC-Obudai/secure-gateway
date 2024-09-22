@@ -1,0 +1,2888 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc4460a --dep-file=.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -D__CPU__=tc37x -DCONFIG_BOARD_SERIALIO_ENABLE -DCONFIG_BOARD_LED_ENABLE -DCONFIG_BOARD_ETH_ENABLE -DCONFIG_ETH_MAC_DWMAC_QOS -IC:\\\\workspace\\\\secure-gateway\\\\vendor -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\can -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\eth -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\eth\\\\mac -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\eth\\\\phy -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\led -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\lin -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply\\\\TLF3xx8x -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply\\\\analog_measure -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply\\\\power_good_s -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\serialio -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Configurations -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37AED -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37AED\\\\_Reg -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Ssw\\\\TC37AED -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Ssw\\\\TC37AED\\\\Tricore -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric\\\\If -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Asclin -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Asclin\\\\Lin -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Can -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Can\\\\Can -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Can\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dma -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dma\\\\Dma -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dma\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dts -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dts\\\\Dts -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dts\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Evadc -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Evadc\\\\Adc -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Evadc\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Geth -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Geth\\\\Eth -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Geth\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Gtm -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Mtu -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Pms -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Pms\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Port -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Port\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Qspi -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Qspi\\\\SpiMaster -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Qspi\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Scu -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Scu\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Src -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Src\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Stm -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Stm\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Stm\\\\Timer -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\_Impl -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\_PinMap -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\port -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\port\\\\include -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\port\\\\include\\\\arch -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\apps -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\apps\\\\http -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix\\\\arpa -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix\\\\net -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix\\\\sys -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\stdc -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip\\\\apps -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip\\\\priv -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip\\\\prot -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\netif -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\netif\\\\ppp -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\netif\\\\ppp\\\\polarssl -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o vendor/board/eth/phy/88EA1517.src ../vendor/board/eth/phy/88EA1517.c"
+	.compiler_name		"ctc"
+	;source	'../vendor/board/eth/phy/88EA1517.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.88EA1517.MARVELL_88EA1517_Reset',code,cluster('MARVELL_88EA1517_Reset')
+	.sect	'.text.88EA1517.MARVELL_88EA1517_Reset'
+	.align	2
+	
+	.global	MARVELL_88EA1517_Reset
+; Function MARVELL_88EA1517_Reset
+.L64:
+MARVELL_88EA1517_Reset:	.type	func
+	sub.a	a10,#8
+.L190:
+	mov.aa	a15,a4
+.L192:
+	mov	d15,#0
+.L300:
+	st.h	[a10],d15
+.L301:
+	ld.a	a2,[a15]20
+.L302:
+	ld.bu	d4,[a15]
+.L303:
+	mov	d5,#0
+.L304:
+	lea	a4,[a10]0
+.L191:
+	calli	a2
+.L305:
+	jeq	d2,#0,.L2
+.L306:
+	mov	d2,#-2
+.L307:
+	j	.L3
+.L2:
+	ld.hu	d15,[a10]0
+.L308:
+	insert	d15,d15,#1,#15,#1
+	st.h	[a10],d15
+.L309:
+	ld.a	a2,[a15]16
+.L310:
+	ld.bu	d4,[a15]
+.L311:
+	mov	d5,#0
+.L312:
+	ld.hu	d6,[a10]0
+	calli	a2
+.L313:
+	jeq	d2,#0,.L4
+.L314:
+	mov	d2,#-2
+.L315:
+	j	.L5
+.L4:
+	mov	d2,#0
+.L316:
+	j	.L6
+.L6:
+.L5:
+.L3:
+	ret
+.L140:
+	
+__MARVELL_88EA1517_Reset_function_end:
+	.size	MARVELL_88EA1517_Reset,__MARVELL_88EA1517_Reset_function_end-MARVELL_88EA1517_Reset
+.L91:
+	; End of function
+	
+	.sdecl	'.text.88EA1517.MARVELL_88EA1517_IsResetDone',code,cluster('MARVELL_88EA1517_IsResetDone')
+	.sect	'.text.88EA1517.MARVELL_88EA1517_IsResetDone'
+	.align	2
+	
+	.global	MARVELL_88EA1517_IsResetDone
+; Function MARVELL_88EA1517_IsResetDone
+.L66:
+MARVELL_88EA1517_IsResetDone:	.type	func
+	sub.a	a10,#8
+.L193:
+	mov	d15,#0
+.L321:
+	st.h	[a10],d15
+.L322:
+	ld.a	a15,[a4]20
+.L323:
+	ld.bu	d4,[a4]
+.L324:
+	mov	d5,#0
+.L325:
+	lea	a4,[a10]0
+.L194:
+	calli	a15
+.L326:
+	jeq	d2,#0,.L7
+.L327:
+	mov	d2,#-2
+.L328:
+	j	.L8
+.L7:
+	ld.hu	d15,[a10]0
+.L329:
+	jnz.t	d15:15,.L9
+.L330:
+	mov	d2,#1
+.L331:
+	j	.L10
+.L9:
+	mov	d2,#0
+.L10:
+	j	.L11
+.L11:
+.L8:
+	ret
+.L145:
+	
+__MARVELL_88EA1517_IsResetDone_function_end:
+	.size	MARVELL_88EA1517_IsResetDone,__MARVELL_88EA1517_IsResetDone_function_end-MARVELL_88EA1517_IsResetDone
+.L96:
+	; End of function
+	
+	.sdecl	'.text.88EA1517.MARVELL_88EA1517_IsPhyIdValid',code,cluster('MARVELL_88EA1517_IsPhyIdValid')
+	.sect	'.text.88EA1517.MARVELL_88EA1517_IsPhyIdValid'
+	.align	2
+	
+	.global	MARVELL_88EA1517_IsPhyIdValid
+; Function MARVELL_88EA1517_IsPhyIdValid
+.L68:
+MARVELL_88EA1517_IsPhyIdValid:	.type	func
+	mov.aa	a15,a4
+.L196:
+	ld.a	a2,[a15]20
+.L336:
+	ld.bu	d4,[a15]
+.L337:
+	mov	d5,#2
+.L338:
+	mov.aa	a4,a15
+	add.a	a4,#2
+.L197:
+	calli	a2
+.L195:
+	jeq	d2,#0,.L12
+.L339:
+	mov	d2,#-2
+.L340:
+	j	.L13
+.L12:
+	ld.a	a2,[a15]20
+.L341:
+	ld.bu	d4,[a15]
+.L198:
+	mov	d5,#3
+.L199:
+	mov.aa	a4,a15
+.L200:
+	add.a	a4,#4
+	calli	a2
+.L201:
+	jeq	d2,#0,.L14
+.L342:
+	mov	d2,#-2
+.L343:
+	j	.L15
+.L14:
+	ld.hu	d15,[a15]2
+.L202:
+	sha	d15,d15,#16
+.L203:
+	ld.hu	d0,[a15]4
+.L204:
+	or	d15,d0
+.L344:
+	insert	d15,d15,#0,#0,#4
+.L345:
+	mov	d0,#3536
+	addih	d0,d0,#321
+.L346:
+	jeq	d15,d0,.L16
+.L347:
+	mov	d2,#0
+.L348:
+	j	.L17
+.L16:
+	mov	d2,#1
+.L349:
+	j	.L18
+.L18:
+.L17:
+.L15:
+.L13:
+	ret
+.L149:
+	
+__MARVELL_88EA1517_IsPhyIdValid_function_end:
+	.size	MARVELL_88EA1517_IsPhyIdValid,__MARVELL_88EA1517_IsPhyIdValid_function_end-MARVELL_88EA1517_IsPhyIdValid
+.L101:
+	; End of function
+	
+	.sdecl	'.text.88EA1517.MARVELL_88EA1517_Init',code,cluster('MARVELL_88EA1517_Init')
+	.sect	'.text.88EA1517.MARVELL_88EA1517_Init'
+	.align	2
+	
+	.global	MARVELL_88EA1517_Init
+; Function MARVELL_88EA1517_Init
+.L70:
+MARVELL_88EA1517_Init:	.type	func
+	sub.a	a10,#8
+.L205:
+	mov.aa	a15,a4
+.L206:
+	mov	d8,d4
+.L208:
+	mov	d15,#0
+.L354:
+	st.h	[a10],d15
+.L355:
+	jnz.a	a15,.L19
+.L356:
+	mov	d2,#-2
+.L357:
+	j	.L20
+.L19:
+	mov	d15,#-1
+.L210:
+	j	.L21
+.L22:
+.L21:
+	mov.aa	a4,a15
+.L212:
+	call	MARVELL_88EA1517_IsPhyIdValid
+.L213:
+	jeq	d2,#1,.L23
+.L358:
+	add	d15,#-1
+.L359:
+	jne	d15,#0,.L22
+.L23:
+	jne	d15,#0,.L24
+.L360:
+	mov	d2,#-3
+.L361:
+	j	.L25
+.L24:
+	mov	d15,#28672
+.L211:
+	and	d8,d15
+.L209:
+	ld.a	a2,[a15]16
+.L362:
+	ld.bu	d4,[a15]
+.L363:
+	mov	d5,#0
+.L364:
+	mov	d6,#4608
+	calli	a2
+.L365:
+	mov.aa	a4,a15
+.L214:
+	call	MARVELL_88EA1517_Reset
+.L215:
+	j	.L26
+.L27:
+.L26:
+	mov.aa	a4,a15
+.L216:
+	call	MARVELL_88EA1517_IsResetDone
+.L217:
+	jne	d2,#1,.L27
+.L366:
+	ld.a	a2,[a15]16
+.L367:
+	ld.bu	d4,[a15]
+.L368:
+	mov	d5,#22
+.L369:
+	mov	d6,#18
+	calli	a2
+.L370:
+	ld.a	a2,[a15]20
+.L371:
+	ld.bu	d4,[a15]
+.L372:
+	mov	d5,#20
+.L373:
+	mov.aa	a4,a15
+.L218:
+	add.a	a4,#6
+.L207:
+	calli	a2
+.L219:
+	ld.a	a2,[a15]16
+.L374:
+	ld.bu	d4,[a15]
+.L220:
+	mov	d5,#22
+.L375:
+	mov	d6,#0
+	calli	a2
+.L221:
+	ld.a	a2,[a15]16
+.L376:
+	ld.bu	d4,[a15]
+.L222:
+	mov	d5,#22
+.L377:
+	mov	d6,#2
+	calli	a2
+.L223:
+	ld.a	a2,[a15]20
+.L378:
+	ld.bu	d4,[a15]
+.L224:
+	mov	d5,#21
+.L225:
+	lea	a4,[a15]10
+.L226:
+	calli	a2
+.L227:
+	ld.a	a2,[a15]16
+.L379:
+	ld.bu	d4,[a15]
+.L228:
+	mov	d5,#22
+.L380:
+	mov	d6,#0
+	calli	a2
+.L229:
+	ld.a	a2,[a15]16
+.L381:
+	ld.bu	d4,[a15]
+.L230:
+	mov	d5,#22
+.L382:
+	mov	d6,#2
+	calli	a2
+.L231:
+	ld.a	a2,[a15]20
+.L383:
+	ld.bu	d4,[a15]
+.L232:
+	mov	d5,#21
+.L384:
+	lea	a4,[a10]0
+	calli	a2
+.L385:
+	mov	d15,#16384
+.L386:
+	jeq	d15,d8,.L28
+.L387:
+	mov	d15,#24576
+.L388:
+	jne	d15,d8,.L29
+.L28:
+	ld.hu	d15,[a10]0
+.L389:
+	or	d15,#16
+	st.h	[a10],d15
+.L390:
+	j	.L30
+.L29:
+	ld.hu	d0,[a10]0
+.L391:
+	insert	d0,d0,#0,#4,#1
+	st.h	[a10],d0
+.L30:
+	mov	d15,#16384
+.L392:
+	jeq	d15,d8,.L31
+.L393:
+	mov	d15,#20480
+.L394:
+	jne	d15,d8,.L32
+.L31:
+	ld.hu	d15,[a10]0
+.L395:
+	or	d15,#32
+	st.h	[a10],d15
+.L396:
+	j	.L33
+.L32:
+	ld.hu	d15,[a10]0
+.L397:
+	insert	d15,d15,#0,#5,#1
+	st.h	[a10],d15
+.L33:
+	ld.a	a2,[a15]16
+.L398:
+	ld.bu	d4,[a15]
+.L233:
+	mov	d5,#21
+.L399:
+	ld.hu	d6,[a10]0
+	calli	a2
+.L234:
+	ld.a	a2,[a15]16
+.L400:
+	ld.bu	d4,[a15]
+.L235:
+	mov	d5,#22
+.L401:
+	mov	d6,#0
+	calli	a2
+.L236:
+	mov.aa	a4,a15
+.L237:
+	call	MARVELL_88EA1517_ConfigureLeds
+.L238:
+	mov	d2,#0
+.L402:
+	j	.L34
+.L34:
+.L25:
+.L20:
+	ret
+.L152:
+	
+__MARVELL_88EA1517_Init_function_end:
+	.size	MARVELL_88EA1517_Init,__MARVELL_88EA1517_Init_function_end-MARVELL_88EA1517_Init
+.L106:
+	; End of function
+	
+	.sdecl	'.text.88EA1517.MARVELL_88EA1517_GetLinkStatus',code,cluster('MARVELL_88EA1517_GetLinkStatus')
+	.sect	'.text.88EA1517.MARVELL_88EA1517_GetLinkStatus'
+	.align	2
+	
+	.global	MARVELL_88EA1517_GetLinkStatus
+; Function MARVELL_88EA1517_GetLinkStatus
+.L72:
+MARVELL_88EA1517_GetLinkStatus:	.type	func
+	sub.a	a10,#8
+.L239:
+	mov.aa	a15,a4
+.L241:
+	mov	d15,#0
+.L407:
+	st.h	[a10],d15
+.L408:
+	ld.bu	d4,[a15]
+.L243:
+	ld.a	a2,[a15]20
+.L409:
+	mov	d5,#17
+.L410:
+	lea	a4,[a10]0
+.L240:
+	calli	a2
+.L244:
+	movh.a	a2,#@his(Testregval)
+	lea	a2,[a2]@los(Testregval)
+.L411:
+	ld.hu	d15,[a10]0
+.L412:
+	st.h	[a2],d15
+.L413:
+	ld.a	a2,[a15]16
+.L414:
+	ld.bu	d4,[a15]
+.L415:
+	mov	d5,#22
+.L416:
+	mov	d6,#18
+	calli	a2
+.L417:
+	ld.a	a2,[a15]20
+.L418:
+	ld.bu	d4,[a15]
+.L419:
+	mov	d5,#20
+.L420:
+	mov.aa	a4,a15
+.L245:
+	add.a	a4,#6
+.L242:
+	calli	a2
+.L246:
+	ld.a	a2,[a15]16
+.L421:
+	ld.bu	d4,[a15]
+.L247:
+	mov	d5,#22
+.L422:
+	mov	d6,#0
+	calli	a2
+.L423:
+	ld.hu	d15,[a10]0
+.L424:
+	jz.t	d15:10,.L35
+.L425:
+	mov	d2,#1
+.L426:
+	j	.L36
+.L35:
+	mov	d2,#0
+.L36:
+	j	.L37
+.L37:
+	ret
+.L161:
+	
+__MARVELL_88EA1517_GetLinkStatus_function_end:
+	.size	MARVELL_88EA1517_GetLinkStatus,__MARVELL_88EA1517_GetLinkStatus_function_end-MARVELL_88EA1517_GetLinkStatus
+.L111:
+	; End of function
+	
+	.sdecl	'.text.88EA1517.MARVELL_88EA1517_GetLinkSpeed',code,cluster('MARVELL_88EA1517_GetLinkSpeed')
+	.sect	'.text.88EA1517.MARVELL_88EA1517_GetLinkSpeed'
+	.align	2
+	
+	.global	MARVELL_88EA1517_GetLinkSpeed
+; Function MARVELL_88EA1517_GetLinkSpeed
+.L74:
+MARVELL_88EA1517_GetLinkSpeed:	.type	func
+	sub.a	a10,#8
+.L248:
+	mov.aa	a15,a4
+.L251:
+	mov	d15,#0
+.L431:
+	st.h	[a10],d15
+.L432:
+	ld.bu	d15,[a15]
+.L253:
+	ld.a	a2,[a15]16
+.L433:
+	mov	d5,#22
+.L434:
+	mov	d6,#0
+	mov	d4,d15
+.L255:
+	calli	a2
+.L249:
+	ld.a	a2,[a15]20
+.L435:
+	mov	d5,#17
+.L436:
+	lea	a4,[a10]0
+	mov	d4,d15
+.L256:
+	calli	a2
+.L257:
+	ld.a	a15,[a15]16
+.L252:
+	mov	d5,#22
+.L437:
+	mov	d6,#0
+	mov	d4,d15
+.L258:
+	calli	a15
+.L259:
+	ld.hu	d15,[a10]0
+.L254:
+	mov.u	d0,#49152
+.L438:
+	and	d15,d0
+.L439:
+	st.h	[a10],d15
+.L440:
+	ld.hu	d15,[a10]0
+.L441:
+	mov	d0,#16384
+	jeq	d15,d0,.L38
+.L442:
+	mov.u	d0,#32768
+	jeq	d15,d0,.L39
+	j	.L40
+.L39:
+	mov	d2,#2
+.L443:
+	j	.L41
+.L250:
+	j	.L42
+.L38:
+	mov	d2,#1
+.L444:
+	j	.L43
+.L260:
+	j	.L44
+.L40:
+	mov	d2,#0
+.L445:
+	j	.L45
+.L44:
+.L42:
+.L45:
+.L43:
+.L41:
+	ret
+.L167:
+	
+__MARVELL_88EA1517_GetLinkSpeed_function_end:
+	.size	MARVELL_88EA1517_GetLinkSpeed,__MARVELL_88EA1517_GetLinkSpeed_function_end-MARVELL_88EA1517_GetLinkSpeed
+.L116:
+	; End of function
+	
+	.sdecl	'.text.88EA1517.MARVELL_88EA1517_GetLinkMode',code,cluster('MARVELL_88EA1517_GetLinkMode')
+	.sect	'.text.88EA1517.MARVELL_88EA1517_GetLinkMode'
+	.align	2
+	
+	.global	MARVELL_88EA1517_GetLinkMode
+; Function MARVELL_88EA1517_GetLinkMode
+.L76:
+MARVELL_88EA1517_GetLinkMode:	.type	func
+	sub.a	a10,#8
+.L261:
+	mov.aa	a15,a4
+.L263:
+	mov	d15,#0
+.L450:
+	st.h	[a10],d15
+.L451:
+	ld.bu	d15,[a15]
+.L265:
+	ld.a	a2,[a15]16
+.L452:
+	mov	d5,#22
+.L453:
+	mov	d6,#0
+	mov	d4,d15
+.L267:
+	calli	a2
+.L262:
+	ld.a	a2,[a15]20
+.L454:
+	mov	d5,#17
+.L455:
+	lea	a4,[a10]0
+	mov	d4,d15
+.L268:
+	calli	a2
+.L269:
+	ld.a	a15,[a15]16
+.L264:
+	mov	d5,#22
+.L456:
+	mov	d6,#0
+	mov	d4,d15
+.L270:
+	calli	a15
+.L271:
+	ld.hu	d15,[a10]0
+.L266:
+	jz.t	d15:13,.L46
+.L457:
+	mov	d2,#1
+.L458:
+	j	.L47
+.L46:
+	mov	d2,#0
+.L47:
+	j	.L48
+.L48:
+	ret
+.L172:
+	
+__MARVELL_88EA1517_GetLinkMode_function_end:
+	.size	MARVELL_88EA1517_GetLinkMode,__MARVELL_88EA1517_GetLinkMode_function_end-MARVELL_88EA1517_GetLinkMode
+.L121:
+	; End of function
+	
+	.sdecl	'.text.88EA1517.MARVELL_88EA1517_ConfigureLeds',code,cluster('MARVELL_88EA1517_ConfigureLeds')
+	.sect	'.text.88EA1517.MARVELL_88EA1517_ConfigureLeds'
+	.align	2
+	
+	.global	MARVELL_88EA1517_ConfigureLeds
+; Function MARVELL_88EA1517_ConfigureLeds
+.L78:
+MARVELL_88EA1517_ConfigureLeds:	.type	func
+	mov.aa	a15,a4
+.L273:
+	ld.bu	d15,[a15]12
+.L463:
+	jne	d15,#2,.L49
+.L464:
+	ld.a	a2,[a15]16
+.L465:
+	ld.bu	d4,[a15]
+.L466:
+	mov	d5,#22
+.L467:
+	mov	d6,#3
+	calli	a2
+.L272:
+	ld.a	a2,[a15]16
+.L468:
+	ld.bu	d4,[a15]
+.L469:
+	mov	d5,#16
+.L470:
+	mov	d6,#17
+	calli	a2
+.L471:
+	ld.a	a2,[a15]16
+.L472:
+	ld.bu	d4,[a15]
+.L473:
+	mov	d5,#17
+.L474:
+	mov	d6,#17412
+	calli	a2
+.L475:
+	ld.a	a2,[a15]16
+.L476:
+	ld.bu	d4,[a15]
+.L477:
+	mov	d5,#22
+.L478:
+	mov	d6,#0
+	calli	a2
+.L49:
+	ld.bu	d15,[a15]12
+.L479:
+	jne	d15,#1,.L50
+.L480:
+	ld.a	a2,[a15]16
+.L481:
+	ld.bu	d4,[a15]
+.L482:
+	mov	d5,#22
+.L483:
+	mov	d6,#3
+	calli	a2
+.L484:
+	ld.a	a2,[a15]16
+.L485:
+	ld.bu	d4,[a15]
+.L486:
+	mov	d5,#16
+.L487:
+	mov	d6,#24
+	calli	a2
+.L488:
+	ld.a	a2,[a15]16
+.L489:
+	ld.bu	d4,[a15]
+.L490:
+	mov	d5,#17
+.L491:
+	mov	d6,#17412
+	calli	a2
+.L492:
+	ld.a	a2,[a15]16
+.L493:
+	ld.bu	d4,[a15]
+.L494:
+	mov	d5,#22
+.L495:
+	mov	d6,#0
+	calli	a2
+.L50:
+	ld.bu	d15,[a15]12
+.L496:
+	jne	d15,#0,.L51
+.L497:
+	ld.a	a2,[a15]16
+.L498:
+	ld.bu	d4,[a15]
+.L499:
+	mov	d5,#22
+.L500:
+	mov	d6,#3
+	calli	a2
+.L501:
+	ld.a	a2,[a15]16
+.L502:
+	ld.bu	d4,[a15]
+.L503:
+	mov	d5,#16
+.L504:
+	mov	d6,#129
+	calli	a2
+.L505:
+	ld.a	a2,[a15]16
+.L506:
+	ld.bu	d4,[a15]
+.L507:
+	mov	d5,#17
+.L508:
+	mov	d6,#17412
+	calli	a2
+.L509:
+	ld.a	a2,[a15]16
+.L510:
+	ld.bu	d4,[a15]
+.L511:
+	mov	d5,#22
+.L512:
+	mov	d6,#0
+	calli	a2
+.L51:
+	mov	d2,#0
+.L513:
+	j	.L52
+.L52:
+	ret
+.L177:
+	
+__MARVELL_88EA1517_ConfigureLeds_function_end:
+	.size	MARVELL_88EA1517_ConfigureLeds,__MARVELL_88EA1517_ConfigureLeds_function_end-MARVELL_88EA1517_ConfigureLeds
+.L126:
+	; End of function
+	
+	.sdecl	'.text.88EA1517.MARVELL_88EA1517_IsAutonegotiationEnabled',code,cluster('MARVELL_88EA1517_IsAutonegotiationEnabled')
+	.sect	'.text.88EA1517.MARVELL_88EA1517_IsAutonegotiationEnabled'
+	.align	2
+	
+	.global	MARVELL_88EA1517_IsAutonegotiationEnabled
+; Function MARVELL_88EA1517_IsAutonegotiationEnabled
+.L80:
+MARVELL_88EA1517_IsAutonegotiationEnabled:	.type	func
+	sub.a	a10,#8
+.L274:
+	mov.aa	a15,a4
+.L276:
+	mov	d15,#0
+.L518:
+	st.h	[a10],d15
+.L519:
+	ld.bu	d15,[a15]
+.L278:
+	ld.a	a2,[a15]16
+.L520:
+	mov	d5,#22
+.L521:
+	mov	d6,#0
+	mov	d4,d15
+.L280:
+	calli	a2
+.L275:
+	ld.a	a15,[a15]20
+.L277:
+	mov	d5,#0
+.L522:
+	lea	a4,[a10]0
+	mov	d4,d15
+.L281:
+	calli	a15
+.L282:
+	jeq	d2,#0,.L53
+.L523:
+	mov	d2,#-2
+.L524:
+	j	.L54
+.L53:
+	ld.hu	d15,[a10]0
+.L279:
+	jz.t	d15:12,.L55
+.L525:
+	mov	d2,#1
+.L526:
+	j	.L56
+.L55:
+	mov	d2,#0
+.L56:
+	j	.L57
+.L57:
+.L54:
+	ret
+.L180:
+	
+__MARVELL_88EA1517_IsAutonegotiationEnabled_function_end:
+	.size	MARVELL_88EA1517_IsAutonegotiationEnabled,__MARVELL_88EA1517_IsAutonegotiationEnabled_function_end-MARVELL_88EA1517_IsAutonegotiationEnabled
+.L131:
+	; End of function
+	
+	.sdecl	'.text.88EA1517.MARVELL_88EA1517_IsAutonegotiationDone',code,cluster('MARVELL_88EA1517_IsAutonegotiationDone')
+	.sect	'.text.88EA1517.MARVELL_88EA1517_IsAutonegotiationDone'
+	.align	2
+	
+	.global	MARVELL_88EA1517_IsAutonegotiationDone
+; Function MARVELL_88EA1517_IsAutonegotiationDone
+.L82:
+MARVELL_88EA1517_IsAutonegotiationDone:	.type	func
+	sub.a	a10,#8
+.L283:
+	mov.aa	a15,a4
+.L285:
+	mov	d15,#0
+.L531:
+	st.h	[a10],d15
+.L532:
+	ld.bu	d15,[a15]
+.L287:
+	ld.a	a2,[a15]16
+.L533:
+	mov	d5,#22
+.L534:
+	mov	d6,#0
+	mov	d4,d15
+.L289:
+	calli	a2
+.L284:
+	ld.a	a15,[a15]20
+.L286:
+	mov	d5,#1
+.L535:
+	lea	a4,[a10]0
+	mov	d4,d15
+.L290:
+	calli	a15
+.L291:
+	jeq	d2,#0,.L58
+.L536:
+	mov	d2,#-2
+.L537:
+	j	.L59
+.L58:
+	ld.hu	d15,[a10]0
+.L288:
+	jz.t	d15:5,.L60
+.L538:
+	mov	d2,#1
+.L539:
+	j	.L61
+.L60:
+	mov	d2,#0
+.L61:
+	j	.L62
+.L62:
+.L59:
+	ret
+.L185:
+	
+__MARVELL_88EA1517_IsAutonegotiationDone_function_end:
+	.size	MARVELL_88EA1517_IsAutonegotiationDone,__MARVELL_88EA1517_IsAutonegotiationDone_function_end-MARVELL_88EA1517_IsAutonegotiationDone
+.L136:
+	; End of function
+	
+	.sdecl	'.bss.88EA1517.Testregval',data,cluster('Testregval')
+	.sect	'.bss.88EA1517.Testregval'
+	.global	Testregval
+	.align	2
+Testregval:	.type	object
+	.size	Testregval,2
+	.space	2
+	.calls	'MARVELL_88EA1517_Reset','__INDIRECT__'
+	.calls	'MARVELL_88EA1517_IsResetDone','__INDIRECT__'
+	.calls	'MARVELL_88EA1517_IsPhyIdValid','__INDIRECT__'
+	.calls	'MARVELL_88EA1517_Init','MARVELL_88EA1517_IsPhyIdValid'
+	.calls	'MARVELL_88EA1517_Init','__INDIRECT__'
+	.calls	'MARVELL_88EA1517_Init','MARVELL_88EA1517_Reset'
+	.calls	'MARVELL_88EA1517_Init','MARVELL_88EA1517_IsResetDone'
+	.calls	'MARVELL_88EA1517_Init','MARVELL_88EA1517_ConfigureLeds'
+	.calls	'MARVELL_88EA1517_GetLinkStatus','__INDIRECT__'
+	.calls	'MARVELL_88EA1517_GetLinkSpeed','__INDIRECT__'
+	.calls	'MARVELL_88EA1517_GetLinkMode','__INDIRECT__'
+	.calls	'MARVELL_88EA1517_ConfigureLeds','__INDIRECT__'
+	.calls	'MARVELL_88EA1517_IsAutonegotiationEnabled','__INDIRECT__'
+	.calls	'MARVELL_88EA1517_IsAutonegotiationDone','__INDIRECT__'
+	.calls	'MARVELL_88EA1517_Reset','',8
+	.calls	'MARVELL_88EA1517_IsResetDone','',8
+	.calls	'MARVELL_88EA1517_IsPhyIdValid','',0
+	.calls	'MARVELL_88EA1517_Init','',8
+	.calls	'MARVELL_88EA1517_GetLinkStatus','',8
+	.calls	'MARVELL_88EA1517_GetLinkSpeed','',8
+	.calls	'MARVELL_88EA1517_GetLinkMode','',8
+	.calls	'MARVELL_88EA1517_ConfigureLeds','',0
+	.calls	'MARVELL_88EA1517_IsAutonegotiationEnabled','',8
+	.extern	__INDIRECT__
+	.calls	'MARVELL_88EA1517_IsAutonegotiationDone','',8
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L84:
+	.word	2275
+	.half	3
+	.word	.L85
+	.byte	4
+.L83:
+	.byte	1
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L86
+.L139:
+	.byte	2
+	.byte	'long int',0,4,5
+.L165:
+	.byte	2
+	.byte	'unsigned char',0,1,8
+.L143:
+	.byte	2
+	.byte	'unsigned short int',0,2,7,3
+	.byte	'ETH_PHY_LINK_SPEED',0,2,102,14,1,4
+	.byte	'ETH_PHY_LINK_SPEED_10M',0,0,4
+	.byte	'ETH_PHY_LINK_SPEED_100M',0,1,4
+	.byte	'ETH_PHY_LINK_SPEED_1000M',0,2,4
+	.byte	'ETH_PHY_LINK_SPEED_2500M',0,3,4
+	.byte	'ETH_PHY_LINK_SPEED_5000M',0,4,4
+	.byte	'ETH_PHY_LINK_SPEED_UNKOWN',0,5,0,3
+	.byte	'ETH_PHY_LINK_DUPLEX',0,2,115,14,1,4
+	.byte	'ETH_PHY_LINK_DUPLEX_HALF',0,0,4
+	.byte	'ETH_PHY_LINK_DUPLEX_FULL',0,1,4
+	.byte	'ETH_PHY_LINK_DUPLEX_UNKOWN',0,2,0
+.L157:
+	.byte	2
+	.byte	'unsigned long int',0,4,7,5
+	.word	165
+	.byte	1,1,6
+	.word	177
+	.byte	6
+	.word	510
+	.byte	6
+	.word	194
+	.byte	0,7
+	.word	531
+	.byte	7
+	.word	194
+	.byte	8
+	.word	559
+	.byte	5
+	.word	165
+	.byte	1,1,6
+	.word	177
+	.byte	6
+	.word	510
+	.byte	6
+	.word	564
+	.byte	0,7
+	.word	569
+	.byte	9
+	.byte	'MARVELL_88EA1517',0,1,48,16,24,10
+	.byte	'phy_addr',0
+	.word	177
+	.byte	1,2,35,0,10
+	.byte	'phy_id1',0
+	.word	194
+	.byte	2,2,35,2,10
+	.byte	'phy_id2',0
+	.word	194
+	.byte	2,2,35,4,10
+	.byte	'phy_mode',0
+	.word	194
+	.byte	2,2,35,6,10
+	.byte	'readval',0
+	.word	194
+	.byte	2,2,35,8,10
+	.byte	'MAC_specific_Config',0
+	.word	194
+	.byte	2,2,35,10,10
+	.byte	'phy_speed',0
+	.word	216
+	.byte	1,2,35,12,10
+	.byte	'phy_duplex',0
+	.word	401
+	.byte	1,2,35,13,10
+	.byte	'mdio_write',0
+	.word	554
+	.byte	4,2,35,16,10
+	.byte	'mdio_read',0
+	.word	592
+	.byte	4,2,35,20,0,7
+	.word	597
+.L141:
+	.byte	8
+	.word	814
+.L146:
+	.byte	8
+	.word	814
+.L150:
+	.byte	8
+	.word	814
+.L153:
+	.byte	8
+	.word	814
+.L155:
+	.byte	3
+	.byte	'ETH_PHY_CONFIG',0,2,135,1,14,4,4
+	.byte	'ETH_PHY_CONFIG_INTERFACE_MII',0,0,4
+	.byte	'ETH_PHY_CONFIG_LINK_MODE_10BASET_HALF',0,1,4
+	.byte	'ETH_PHY_CONFIG_LINK_MODE_10BASET_FULL',0,2,4
+	.byte	'ETH_PHY_CONFIG_LINK_MODE_100BASET_HALF',0,4,4
+	.byte	'ETH_PHY_CONFIG_LINK_MODE_100BASET_FULL',0,8,4
+	.byte	'ETH_PHY_CONFIG_LINK_MODE_1000BASET_HALF',0,16,4
+	.byte	'ETH_PHY_CONFIG_LINK_MODE_1000BASET_FULL',0,32,4
+	.byte	'ETH_PHY_CONFIG_ADVERTISING_SUPPORTED_10BASET_HALF',0,129,1,4
+	.byte	'ETH_PHY_CONFIG_ADVERTISING_SUPPORTED_10BASET_FULL',0,130,1,4
+	.byte	'ETH_PHY_CONFIG_ADVERTISING_SUPPORTED_100BASET_HALF',0,132,1,4
+	.byte	'ETH_PHY_CONFIG_ADVERTISING_SUPPORTED_100BASET_FULL',0,136,1,4
+	.byte	'ETH_PHY_CONFIG_ADVERTISING_SUPPORTED_1000BASET_HALF',0,144,1,4
+	.byte	'ETH_PHY_CONFIG_ADVERTISING_SUPPORTED_1000BASET_FULL',0,160,1,4
+	.byte	'ETH_PHY_CONFIG_AUTONEG',0,128,2,4
+	.byte	'ETH_PHY_CONFIG_LOOPBACK',0,128,4,4
+	.byte	'ETH_PHY_CONFIG_MASTER',0,128,8,4
+	.byte	'ETH_PHY_CONFIG_AUTO_OP',0,128,16,4
+	.byte	'ETH_PHY_CONFIG_INTERFACE_RMII',0,128,32,4
+	.byte	'ETH_PHY_CONFIG_INTERFACE_GMII',0,128,192,0,4
+	.byte	'ETH_PHY_CONFIG_INTERFACE_RGMII',0,128,224,0,4
+	.byte	'ETH_PHY_CONFIG_INTERFACE_RGMII_ID',0,128,128,1,4
+	.byte	'ETH_PHY_CONFIG_INTERFACE_RGMII_RXID',0,128,160,1,4
+	.byte	'ETH_PHY_CONFIG_INTERFACE_RGMII_TXID',0,128,192,1,4
+	.byte	'ETH_PHY_CONFIG_ENABLE_CLKOUT',0,128,128,4,0
+.L162:
+	.byte	8
+	.word	814
+.L168:
+	.byte	8
+	.word	814
+.L173:
+	.byte	8
+	.word	814
+.L178:
+	.byte	8
+	.word	814
+.L181:
+	.byte	8
+	.word	814
+.L186:
+	.byte	8
+	.word	814
+	.byte	11
+	.byte	'__INDIRECT__',0,3,1,1,1,1,1,2
+	.byte	'short int',0,2,5,12
+	.byte	'__wchar_t',0,3,1,1
+	.word	1869
+	.byte	2
+	.byte	'unsigned int',0,4,7,12
+	.byte	'__size_t',0,3,1,1
+	.word	1900
+	.byte	2
+	.byte	'int',0,4,5,12
+	.byte	'__ptrdiff_t',0,3,1,1
+	.word	1933
+	.byte	13,1,7
+	.word	1960
+	.byte	12
+	.byte	'__codeptr',0,3,1,1
+	.word	1962
+	.byte	12
+	.byte	'uint8',0,4,108,29
+	.word	177
+	.byte	12
+	.byte	'uint16',0,4,112,29
+	.word	194
+	.byte	12
+	.byte	'uint32',0,4,116,29
+	.word	510
+	.byte	12
+	.byte	'sint16',0,4,129,1,29
+	.word	1869
+	.byte	12
+	.byte	'sint32',0,4,134,1,29
+	.word	165
+	.byte	2
+	.byte	'long long int',0,8,5,12
+	.byte	'sint64',0,4,141,1,29
+	.word	2061
+	.byte	2
+	.byte	'float',0,4,4,12
+	.byte	'float32',0,4,170,1,29
+	.word	2094
+	.byte	14
+	.byte	'void',0,7
+	.word	2120
+	.byte	12
+	.byte	'pvoid',0,5,54,28
+	.word	2126
+	.byte	12
+	.byte	'Ifx_TickTime',0,5,76,28
+	.word	2061
+	.byte	12
+	.byte	'ETH_PHY_LINK_SPEED_t',0,2,110,3
+	.word	216
+	.byte	12
+	.byte	'ETH_PHY_LINK_DUPLEX_t',0,2,120,3
+	.word	401
+	.byte	12
+	.byte	'ETH_PHY_CONFIG_t',0,2,165,1,3
+	.word	839
+	.byte	12
+	.byte	'MARVELL_88EA1517_t',0,1,60,3
+	.word	597
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L85:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,4,1,3,8,58,15,59,15,57,15,11
+	.byte	15,0,0,4,40,0,3,8,28,13,0,0,5,21,1,73,19,54,15,39,12,0,0,6,5,0,73,19,0,0,7,15,0,73,19,0,0,8,38,0,73,19
+	.byte	0,0,9,19,1,3,8,58,15,59,15,57,15,11,15,0,0,10,13,0,3,8,73,19,11,15,56,9,0,0,11,46,0,3,8,58,15,59,15,57
+	.byte	15,54,15,63,12,60,12,0,0,12,22,0,3,8,58,15,59,15,57,15,73,19,0,0,13,21,0,54,15,0,0,14,59,0,3,8,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L86:
+	.word	.L293-.L292
+.L292:
+	.half	3
+	.word	.L295-.L294
+.L294:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\vendor\\board\\eth\\phy\\88EA1517.h',0,0,0,0
+	.byte	'..\\vendor\\board\\eth\\phy\\eth_phy.h',0,0,0,0
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0,0,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\Cpu\\Std\\Platform_Types.h',0
+	.byte	0,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\Cpu\\Std\\Ifx_Types.h',0
+	.byte	0,0,0,0
+.L295:
+.L293:
+	.sdecl	'.debug_info',debug,cluster('MARVELL_88EA1517_Reset')
+	.sect	'.debug_info'
+.L87:
+	.word	266
+	.half	3
+	.word	.L88
+	.byte	4,1
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L90,.L89
+	.byte	2
+	.word	.L83
+	.byte	3
+	.byte	'MARVELL_88EA1517_Reset',0,1,59,8
+	.word	.L139
+	.byte	1,1,1
+	.word	.L64,.L140,.L63
+	.byte	4
+	.byte	'handle',0,1,59,57
+	.word	.L141,.L142
+	.byte	5
+	.word	.L64,.L140
+	.byte	6
+	.byte	'regval',0,1,61,10
+	.word	.L143,.L144
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MARVELL_88EA1517_Reset')
+	.sect	'.debug_abbrev'
+.L88:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MARVELL_88EA1517_Reset')
+	.sect	'.debug_line'
+.L89:
+	.word	.L297-.L296
+.L296:
+	.half	3
+	.word	.L299-.L298
+.L298:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0,0,0,0,0
+.L299:
+	.byte	5,8,7,0,5,2
+	.word	.L64
+	.byte	3,58,1,5,19,9
+	.half	.L192-.L64
+	.byte	3,2,1,5,17,9
+	.half	.L300-.L192
+	.byte	1,5,13,9
+	.half	.L301-.L300
+	.byte	3,3,1,5,31,9
+	.half	.L302-.L301
+	.byte	1,5,43,9
+	.half	.L303-.L302
+	.byte	1,5,54,9
+	.half	.L304-.L303
+	.byte	1,5,3,9
+	.half	.L305-.L304
+	.byte	1,5,12,7,9
+	.half	.L306-.L305
+	.byte	3,2,1,5,5,9
+	.half	.L307-.L306
+	.byte	1,5,3,9
+	.half	.L2-.L307
+	.byte	3,3,1,5,10,9
+	.half	.L308-.L2
+	.byte	1,5,13,9
+	.half	.L309-.L308
+	.byte	3,1,1,5,32,9
+	.half	.L310-.L309
+	.byte	1,5,44,9
+	.half	.L311-.L310
+	.byte	1,5,54,9
+	.half	.L312-.L311
+	.byte	1,5,3,9
+	.half	.L313-.L312
+	.byte	1,5,12,7,9
+	.half	.L314-.L313
+	.byte	3,2,1,5,5,9
+	.half	.L315-.L314
+	.byte	1,5,10,9
+	.half	.L4-.L315
+	.byte	3,3,1,5,3,9
+	.half	.L316-.L4
+	.byte	1,5,1,9
+	.half	.L3-.L316
+	.byte	3,1,1,7,9
+	.half	.L91-.L3
+	.byte	0,1,1
+.L297:
+	.sdecl	'.debug_ranges',debug,cluster('MARVELL_88EA1517_Reset')
+	.sect	'.debug_ranges'
+.L90:
+	.word	-1,.L64,0,.L91-.L64,0,0
+	.sdecl	'.debug_info',debug,cluster('MARVELL_88EA1517_IsResetDone')
+	.sect	'.debug_info'
+.L92:
+	.word	272
+	.half	3
+	.word	.L93
+	.byte	4,1
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L95,.L94
+	.byte	2
+	.word	.L83
+	.byte	3
+	.byte	'MARVELL_88EA1517_IsResetDone',0,1,78,8
+	.word	.L139
+	.byte	1,1,1
+	.word	.L66,.L145,.L65
+	.byte	4
+	.byte	'handle',0,1,78,63
+	.word	.L146,.L147
+	.byte	5
+	.word	.L66,.L145
+	.byte	6
+	.byte	'regval',0,1,80,10
+	.word	.L143,.L148
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MARVELL_88EA1517_IsResetDone')
+	.sect	'.debug_abbrev'
+.L93:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MARVELL_88EA1517_IsResetDone')
+	.sect	'.debug_line'
+.L94:
+	.word	.L318-.L317
+.L317:
+	.half	3
+	.word	.L320-.L319
+.L319:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0,0,0,0,0
+.L320:
+	.byte	5,8,7,0,5,2
+	.word	.L66
+	.byte	3,205,0,1,5,19,9
+	.half	.L193-.L66
+	.byte	3,2,1,5,17,9
+	.half	.L321-.L193
+	.byte	1,5,13,9
+	.half	.L322-.L321
+	.byte	3,2,1,5,31,9
+	.half	.L323-.L322
+	.byte	1,5,43,9
+	.half	.L324-.L323
+	.byte	1,5,54,9
+	.half	.L325-.L324
+	.byte	1,5,3,9
+	.half	.L326-.L325
+	.byte	1,5,12,7,9
+	.half	.L327-.L326
+	.byte	3,2,1,5,5,9
+	.half	.L328-.L327
+	.byte	1,5,13,9
+	.half	.L7-.L328
+	.byte	3,3,1,5,11,9
+	.half	.L329-.L7
+	.byte	1,5,40,7,9
+	.half	.L330-.L329
+	.byte	1,5,47,9
+	.half	.L331-.L330
+	.byte	1,5,40,9
+	.half	.L9-.L331
+	.byte	1,5,3,9
+	.half	.L10-.L9
+	.byte	1,5,1,9
+	.half	.L8-.L10
+	.byte	3,1,1,7,9
+	.half	.L96-.L8
+	.byte	0,1,1
+.L318:
+	.sdecl	'.debug_ranges',debug,cluster('MARVELL_88EA1517_IsResetDone')
+	.sect	'.debug_ranges'
+.L95:
+	.word	-1,.L66,0,.L96-.L66,0,0
+	.sdecl	'.debug_info',debug,cluster('MARVELL_88EA1517_IsPhyIdValid')
+	.sect	'.debug_info'
+.L97:
+	.word	253
+	.half	3
+	.word	.L98
+	.byte	4,1
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L100,.L99
+	.byte	2
+	.word	.L83
+	.byte	3
+	.byte	'MARVELL_88EA1517_IsPhyIdValid',0,1,91,8
+	.word	.L139
+	.byte	1,1,1
+	.word	.L68,.L149,.L67
+	.byte	4
+	.byte	'handle',0,1,91,64
+	.word	.L150,.L151
+	.byte	5
+	.word	.L68,.L149
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MARVELL_88EA1517_IsPhyIdValid')
+	.sect	'.debug_abbrev'
+.L98:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MARVELL_88EA1517_IsPhyIdValid')
+	.sect	'.debug_line'
+.L99:
+	.word	.L333-.L332
+.L332:
+	.half	3
+	.word	.L335-.L334
+.L334:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0,0,0,0,0
+.L335:
+	.byte	5,8,7,0,5,2
+	.word	.L68
+	.byte	3,218,0,1,5,13,9
+	.half	.L196-.L68
+	.byte	3,4,1,5,31,9
+	.half	.L336-.L196
+	.byte	1,5,43,9
+	.half	.L337-.L336
+	.byte	1,5,63,9
+	.half	.L338-.L337
+	.byte	1,5,3,9
+	.half	.L195-.L338
+	.byte	1,5,12,7,9
+	.half	.L339-.L195
+	.byte	3,2,1,5,5,9
+	.half	.L340-.L339
+	.byte	1,5,13,9
+	.half	.L12-.L340
+	.byte	3,3,1,5,31,9
+	.half	.L341-.L12
+	.byte	1,5,43,9
+	.half	.L198-.L341
+	.byte	1,5,63,9
+	.half	.L199-.L198
+	.byte	1,5,3,9
+	.half	.L201-.L199
+	.byte	1,5,12,7,9
+	.half	.L342-.L201
+	.byte	3,2,1,5,5,9
+	.half	.L343-.L342
+	.byte	1,5,16,9
+	.half	.L14-.L343
+	.byte	3,3,1,5,26,9
+	.half	.L202-.L14
+	.byte	1,5,41,9
+	.half	.L203-.L202
+	.byte	1,5,33,9
+	.half	.L204-.L203
+	.byte	1,5,52,9
+	.half	.L344-.L204
+	.byte	1,5,86,9
+	.half	.L345-.L344
+	.byte	1,5,3,9
+	.half	.L346-.L345
+	.byte	1,5,14,7,9
+	.half	.L347-.L346
+	.byte	3,2,1,5,7,9
+	.half	.L348-.L347
+	.byte	1,5,10,9
+	.half	.L16-.L348
+	.byte	3,3,1,5,3,9
+	.half	.L349-.L16
+	.byte	1,5,1,9
+	.half	.L13-.L349
+	.byte	3,1,1,7,9
+	.half	.L101-.L13
+	.byte	0,1,1
+.L333:
+	.sdecl	'.debug_ranges',debug,cluster('MARVELL_88EA1517_IsPhyIdValid')
+	.sect	'.debug_ranges'
+.L100:
+	.word	-1,.L68,0,.L101-.L68,0,0
+	.sdecl	'.debug_info',debug,cluster('MARVELL_88EA1517_Init')
+	.sect	'.debug_info'
+.L102:
+	.word	337
+	.half	3
+	.word	.L103
+	.byte	4,1
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L105,.L104
+	.byte	2
+	.word	.L83
+	.byte	3
+	.byte	'MARVELL_88EA1517_Init',0,1,113,8
+	.word	.L139
+	.byte	1,1,1
+	.word	.L70,.L152,.L69
+	.byte	4
+	.byte	'handle',0,1,113,56
+	.word	.L153,.L154
+	.byte	4
+	.byte	'config',0,1,113,81
+	.word	.L155,.L156
+	.byte	5
+	.word	.L70,.L152
+	.byte	6
+	.byte	'retries',0,1,115,10
+	.word	.L157,.L158
+	.byte	6
+	.byte	'regval',0,1,116,10
+	.word	.L143,.L159
+	.byte	5
+	.word	.L24,.L152
+	.byte	6
+	.byte	'interface',0,1,132,1,10
+	.word	.L139,.L160
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MARVELL_88EA1517_Init')
+	.sect	'.debug_abbrev'
+.L103:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MARVELL_88EA1517_Init')
+	.sect	'.debug_line'
+.L104:
+	.word	.L351-.L350
+.L350:
+	.half	3
+	.word	.L353-.L352
+.L352:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0,0,0,0,0
+.L353:
+	.byte	5,8,7,0,5,2
+	.word	.L70
+	.byte	3,240,0,1,5,19,9
+	.half	.L208-.L70
+	.byte	3,3,1,5,17,9
+	.half	.L354-.L208
+	.byte	1,5,3,9
+	.half	.L355-.L354
+	.byte	3,3,1,5,12,7,9
+	.half	.L356-.L355
+	.byte	3,2,1,5,5,9
+	.half	.L357-.L356
+	.byte	1,5,11,9
+	.half	.L19-.L357
+	.byte	3,3,1,5,70,9
+	.half	.L210-.L19
+	.byte	3,1,1,5,41,9
+	.half	.L21-.L210
+	.byte	1,5,10,9
+	.half	.L213-.L21
+	.byte	1,5,61,7,9
+	.half	.L358-.L213
+	.byte	1,5,63,9
+	.half	.L359-.L358
+	.byte	1,5,3,7,9
+	.half	.L23-.L359
+	.byte	3,1,1,5,12,7,9
+	.half	.L360-.L23
+	.byte	3,2,1,5,5,9
+	.half	.L361-.L360
+	.byte	1,5,61,9
+	.half	.L24-.L361
+	.byte	3,4,1,5,29,9
+	.half	.L211-.L24
+	.byte	1,5,9,9
+	.half	.L209-.L211
+	.byte	3,3,1,5,28,9
+	.half	.L362-.L209
+	.byte	1,5,40,9
+	.half	.L363-.L362
+	.byte	1,5,65,9
+	.half	.L364-.L363
+	.byte	1,5,26,9
+	.half	.L365-.L364
+	.byte	3,3,1,5,54,9
+	.half	.L215-.L365
+	.byte	3,1,1,5,39,9
+	.half	.L26-.L215
+	.byte	1,5,54,9
+	.half	.L217-.L26
+	.byte	1,5,9,7,9
+	.half	.L366-.L217
+	.byte	3,4,1,5,28,9
+	.half	.L367-.L366
+	.byte	1,5,39,9
+	.half	.L368-.L367
+	.byte	1,5,66,9
+	.half	.L369-.L368
+	.byte	1,5,9,9
+	.half	.L370-.L369
+	.byte	3,1,1,5,27,9
+	.half	.L371-.L370
+	.byte	1,5,39,9
+	.half	.L372-.L371
+	.byte	1,5,50,9
+	.half	.L373-.L372
+	.byte	1,5,9,9
+	.half	.L219-.L373
+	.byte	3,1,1,5,28,9
+	.half	.L374-.L219
+	.byte	1,5,39,9
+	.half	.L220-.L374
+	.byte	1,5,66,9
+	.half	.L375-.L220
+	.byte	1,5,9,9
+	.half	.L221-.L375
+	.byte	3,3,1,5,28,9
+	.half	.L376-.L221
+	.byte	1,5,39,9
+	.half	.L222-.L376
+	.byte	1,5,66,9
+	.half	.L377-.L222
+	.byte	1,5,9,9
+	.half	.L223-.L377
+	.byte	3,1,1,5,27,9
+	.half	.L378-.L223
+	.byte	1,5,39,9
+	.half	.L224-.L378
+	.byte	1,5,50,9
+	.half	.L225-.L224
+	.byte	1,5,9,9
+	.half	.L227-.L225
+	.byte	3,1,1,5,28,9
+	.half	.L379-.L227
+	.byte	1,5,39,9
+	.half	.L228-.L379
+	.byte	1,5,66,9
+	.half	.L380-.L228
+	.byte	1,5,9,9
+	.half	.L229-.L380
+	.byte	3,4,1,5,28,9
+	.half	.L381-.L229
+	.byte	1,5,39,9
+	.half	.L230-.L381
+	.byte	1,5,66,9
+	.half	.L382-.L230
+	.byte	1,5,9,9
+	.half	.L231-.L382
+	.byte	3,1,1,5,27,9
+	.half	.L383-.L231
+	.byte	1,5,39,9
+	.half	.L232-.L383
+	.byte	1,5,44,9
+	.half	.L384-.L232
+	.byte	1,5,21,9
+	.half	.L385-.L384
+	.byte	3,2,1,5,7,9
+	.half	.L386-.L385
+	.byte	1,5,21,7,9
+	.half	.L387-.L386
+	.byte	3,1,1,5,18,9
+	.half	.L388-.L387
+	.byte	1,5,5,7,9
+	.half	.L28-.L388
+	.byte	3,2,1,5,12,9
+	.half	.L389-.L28
+	.byte	1,5,53,9
+	.half	.L390-.L389
+	.byte	1,5,5,9
+	.half	.L29-.L390
+	.byte	3,4,1,5,12,9
+	.half	.L391-.L29
+	.byte	1,5,21,9
+	.half	.L30-.L391
+	.byte	3,3,1,5,7,9
+	.half	.L392-.L30
+	.byte	1,5,21,7,9
+	.half	.L393-.L392
+	.byte	3,1,1,5,18,9
+	.half	.L394-.L393
+	.byte	1,5,5,7,9
+	.half	.L31-.L394
+	.byte	3,2,1,5,12,9
+	.half	.L395-.L31
+	.byte	1,5,53,9
+	.half	.L396-.L395
+	.byte	1,5,5,9
+	.half	.L32-.L396
+	.byte	3,4,1,5,12,9
+	.half	.L397-.L32
+	.byte	1,5,9,9
+	.half	.L33-.L397
+	.byte	3,4,1,5,28,9
+	.half	.L398-.L33
+	.byte	1,5,39,9
+	.half	.L233-.L398
+	.byte	1,5,43,9
+	.half	.L399-.L233
+	.byte	1,5,9,9
+	.half	.L234-.L399
+	.byte	3,1,1,5,28,9
+	.half	.L400-.L234
+	.byte	1,5,39,9
+	.half	.L235-.L400
+	.byte	1,5,66,9
+	.half	.L401-.L235
+	.byte	1,5,34,9
+	.half	.L236-.L401
+	.byte	3,3,1,5,10,9
+	.half	.L238-.L236
+	.byte	3,3,1,5,3,9
+	.half	.L402-.L238
+	.byte	1,5,1,9
+	.half	.L20-.L402
+	.byte	3,1,1,7,9
+	.half	.L106-.L20
+	.byte	0,1,1
+.L351:
+	.sdecl	'.debug_ranges',debug,cluster('MARVELL_88EA1517_Init')
+	.sect	'.debug_ranges'
+.L105:
+	.word	-1,.L70,0,.L106-.L70,0,0
+	.sdecl	'.debug_info',debug,cluster('MARVELL_88EA1517_GetLinkStatus')
+	.sect	'.debug_info'
+.L107:
+	.word	299
+	.half	3
+	.word	.L108
+	.byte	4,1
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L110,.L109
+	.byte	2
+	.word	.L83
+	.byte	3
+	.byte	'MARVELL_88EA1517_GetLinkStatus',0,1,188,1,8
+	.word	.L139
+	.byte	1,1,1
+	.word	.L72,.L161,.L71
+	.byte	4
+	.byte	'handle',0,1,188,1,65
+	.word	.L162,.L163
+	.byte	5
+	.word	.L72,.L161
+	.byte	6
+	.byte	'regval',0,1,190,1,10
+	.word	.L143,.L164
+	.byte	6
+	.byte	'phy_addr',0,1,191,1,9
+	.word	.L165,.L166
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MARVELL_88EA1517_GetLinkStatus')
+	.sect	'.debug_abbrev'
+.L108:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MARVELL_88EA1517_GetLinkStatus')
+	.sect	'.debug_line'
+.L109:
+	.word	.L404-.L403
+.L403:
+	.half	3
+	.word	.L406-.L405
+.L405:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0,0,0,0,0
+.L406:
+	.byte	5,8,7,0,5,2
+	.word	.L72
+	.byte	3,187,1,1,5,19,9
+	.half	.L241-.L72
+	.byte	3,2,1,5,17,9
+	.half	.L407-.L241
+	.byte	1,5,26,9
+	.half	.L408-.L407
+	.byte	3,1,1,5,9,9
+	.half	.L243-.L408
+	.byte	3,2,1,5,31,9
+	.half	.L409-.L243
+	.byte	1,5,68,9
+	.half	.L410-.L409
+	.byte	1,5,3,9
+	.half	.L244-.L410
+	.byte	3,1,1,5,16,9
+	.half	.L411-.L244
+	.byte	1,5,14,9
+	.half	.L412-.L411
+	.byte	1,5,9,9
+	.half	.L413-.L412
+	.byte	3,2,1,5,28,9
+	.half	.L414-.L413
+	.byte	1,5,39,9
+	.half	.L415-.L414
+	.byte	1,5,66,9
+	.half	.L416-.L415
+	.byte	1,5,9,9
+	.half	.L417-.L416
+	.byte	3,1,1,5,27,9
+	.half	.L418-.L417
+	.byte	1,5,39,9
+	.half	.L419-.L418
+	.byte	1,5,50,9
+	.half	.L420-.L419
+	.byte	1,5,9,9
+	.half	.L246-.L420
+	.byte	3,1,1,5,28,9
+	.half	.L421-.L246
+	.byte	1,5,39,9
+	.half	.L247-.L421
+	.byte	1,5,66,9
+	.half	.L422-.L247
+	.byte	1,5,12,9
+	.half	.L423-.L422
+	.byte	3,3,1,5,11,9
+	.half	.L424-.L423
+	.byte	1,5,62,7,9
+	.half	.L425-.L424
+	.byte	1,5,87,9
+	.half	.L426-.L425
+	.byte	1,5,62,9
+	.half	.L35-.L426
+	.byte	1,5,3,9
+	.half	.L36-.L35
+	.byte	1,5,1,9
+	.half	.L37-.L36
+	.byte	3,1,1,7,9
+	.half	.L111-.L37
+	.byte	0,1,1
+.L404:
+	.sdecl	'.debug_ranges',debug,cluster('MARVELL_88EA1517_GetLinkStatus')
+	.sect	'.debug_ranges'
+.L110:
+	.word	-1,.L72,0,.L111-.L72,0,0
+	.sdecl	'.debug_info',debug,cluster('MARVELL_88EA1517_GetLinkSpeed')
+	.sect	'.debug_info'
+.L112:
+	.word	298
+	.half	3
+	.word	.L113
+	.byte	4,1
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L115,.L114
+	.byte	2
+	.word	.L83
+	.byte	3
+	.byte	'MARVELL_88EA1517_GetLinkSpeed',0,1,204,1,8
+	.word	.L139
+	.byte	1,1,1
+	.word	.L74,.L167,.L73
+	.byte	4
+	.byte	'handle',0,1,204,1,64
+	.word	.L168,.L169
+	.byte	5
+	.word	.L74,.L167
+	.byte	6
+	.byte	'regval',0,1,206,1,10
+	.word	.L143,.L170
+	.byte	6
+	.byte	'phy_addr',0,1,207,1,9
+	.word	.L165,.L171
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MARVELL_88EA1517_GetLinkSpeed')
+	.sect	'.debug_abbrev'
+.L113:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MARVELL_88EA1517_GetLinkSpeed')
+	.sect	'.debug_line'
+.L114:
+	.word	.L428-.L427
+.L427:
+	.half	3
+	.word	.L430-.L429
+.L429:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0,0,0,0,0
+.L430:
+	.byte	5,8,7,0,5,2
+	.word	.L74
+	.byte	3,203,1,1,5,19,9
+	.half	.L251-.L74
+	.byte	3,2,1,5,17,9
+	.half	.L431-.L251
+	.byte	1,5,26,9
+	.half	.L432-.L431
+	.byte	3,1,1,5,9,9
+	.half	.L253-.L432
+	.byte	3,2,1,5,32,9
+	.half	.L433-.L253
+	.byte	1,5,59,9
+	.half	.L434-.L433
+	.byte	1,5,9,9
+	.half	.L249-.L434
+	.byte	3,1,1,5,31,9
+	.half	.L435-.L249
+	.byte	1,5,68,9
+	.half	.L436-.L435
+	.byte	1,5,9,9
+	.half	.L257-.L436
+	.byte	3,2,1,5,32,9
+	.half	.L252-.L257
+	.byte	1,5,59,9
+	.half	.L437-.L252
+	.byte	1,5,13,9
+	.half	.L259-.L437
+	.byte	3,2,1,5,22,9
+	.half	.L254-.L259
+	.byte	1,5,20,9
+	.half	.L438-.L254
+	.byte	1,5,10,9
+	.half	.L439-.L438
+	.byte	1,5,11,9
+	.half	.L440-.L439
+	.byte	3,2,1,5,10,9
+	.half	.L441-.L440
+	.byte	3,5,1,9
+	.half	.L442-.L441
+	.byte	3,125,1,5,14,9
+	.half	.L39-.L442
+	.byte	3,1,1,5,7,9
+	.half	.L443-.L39
+	.byte	1,9
+	.half	.L250-.L443
+	.byte	3,1,1,5,14,9
+	.half	.L38-.L250
+	.byte	3,2,1,5,7,9
+	.half	.L444-.L38
+	.byte	1,9
+	.half	.L260-.L444
+	.byte	3,1,1,5,14,9
+	.half	.L40-.L260
+	.byte	3,2,1,5,7,9
+	.half	.L445-.L40
+	.byte	1,5,1,9
+	.half	.L41-.L445
+	.byte	3,2,1,7,9
+	.half	.L116-.L41
+	.byte	0,1,1
+.L428:
+	.sdecl	'.debug_ranges',debug,cluster('MARVELL_88EA1517_GetLinkSpeed')
+	.sect	'.debug_ranges'
+.L115:
+	.word	-1,.L74,0,.L116-.L74,0,0
+	.sdecl	'.debug_info',debug,cluster('MARVELL_88EA1517_GetLinkMode')
+	.sect	'.debug_info'
+.L117:
+	.word	297
+	.half	3
+	.word	.L118
+	.byte	4,1
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L120,.L119
+	.byte	2
+	.word	.L83
+	.byte	3
+	.byte	'MARVELL_88EA1517_GetLinkMode',0,1,230,1,8
+	.word	.L139
+	.byte	1,1,1
+	.word	.L76,.L172,.L75
+	.byte	4
+	.byte	'handle',0,1,230,1,63
+	.word	.L173,.L174
+	.byte	5
+	.word	.L76,.L172
+	.byte	6
+	.byte	'regval',0,1,232,1,10
+	.word	.L143,.L175
+	.byte	6
+	.byte	'phy_addr',0,1,233,1,9
+	.word	.L165,.L176
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MARVELL_88EA1517_GetLinkMode')
+	.sect	'.debug_abbrev'
+.L118:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MARVELL_88EA1517_GetLinkMode')
+	.sect	'.debug_line'
+.L119:
+	.word	.L447-.L446
+.L446:
+	.half	3
+	.word	.L449-.L448
+.L448:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0,0,0,0,0
+.L449:
+	.byte	5,8,7,0,5,2
+	.word	.L76
+	.byte	3,229,1,1,5,19,9
+	.half	.L263-.L76
+	.byte	3,2,1,5,17,9
+	.half	.L450-.L263
+	.byte	1,5,26,9
+	.half	.L451-.L450
+	.byte	3,1,1,5,9,9
+	.half	.L265-.L451
+	.byte	3,2,1,5,32,9
+	.half	.L452-.L265
+	.byte	1,5,59,9
+	.half	.L453-.L452
+	.byte	1,5,9,9
+	.half	.L262-.L453
+	.byte	3,1,1,5,31,9
+	.half	.L454-.L262
+	.byte	1,5,68,9
+	.half	.L455-.L454
+	.byte	1,5,9,9
+	.half	.L269-.L455
+	.byte	3,2,1,5,32,9
+	.half	.L264-.L269
+	.byte	1,5,59,9
+	.half	.L456-.L264
+	.byte	1,5,12,9
+	.half	.L271-.L456
+	.byte	3,2,1,5,11,9
+	.half	.L266-.L271
+	.byte	1,5,57,7,9
+	.half	.L457-.L266
+	.byte	1,5,84,9
+	.half	.L458-.L457
+	.byte	1,5,57,9
+	.half	.L46-.L458
+	.byte	1,5,3,9
+	.half	.L47-.L46
+	.byte	1,5,1,9
+	.half	.L48-.L47
+	.byte	3,1,1,7,9
+	.half	.L121-.L48
+	.byte	0,1,1
+.L447:
+	.sdecl	'.debug_ranges',debug,cluster('MARVELL_88EA1517_GetLinkMode')
+	.sect	'.debug_ranges'
+.L120:
+	.word	-1,.L76,0,.L121-.L76,0,0
+	.sdecl	'.debug_info',debug,cluster('MARVELL_88EA1517_ConfigureLeds')
+	.sect	'.debug_info'
+.L122:
+	.word	256
+	.half	3
+	.word	.L123
+	.byte	4,1
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L125,.L124
+	.byte	2
+	.word	.L83
+	.byte	3
+	.byte	'MARVELL_88EA1517_ConfigureLeds',0,1,244,1,8
+	.word	.L139
+	.byte	1,1,1
+	.word	.L78,.L177,.L77
+	.byte	4
+	.byte	'handle',0,1,244,1,65
+	.word	.L178,.L179
+	.byte	5
+	.word	.L78,.L177
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MARVELL_88EA1517_ConfigureLeds')
+	.sect	'.debug_abbrev'
+.L123:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MARVELL_88EA1517_ConfigureLeds')
+	.sect	'.debug_line'
+.L124:
+	.word	.L460-.L459
+.L459:
+	.half	3
+	.word	.L462-.L461
+.L461:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0,0,0,0,0
+.L462:
+	.byte	5,8,7,0,5,2
+	.word	.L78
+	.byte	3,243,1,1,5,13,9
+	.half	.L273-.L78
+	.byte	3,5,1,5,3,9
+	.half	.L463-.L273
+	.byte	1,5,9,7,9
+	.half	.L464-.L463
+	.byte	3,1,1,5,28,9
+	.half	.L465-.L464
+	.byte	1,5,39,9
+	.half	.L466-.L465
+	.byte	1,5,66,9
+	.half	.L467-.L466
+	.byte	1,5,9,9
+	.half	.L272-.L467
+	.byte	3,1,1,5,28,9
+	.half	.L468-.L272
+	.byte	1,5,40,9
+	.half	.L469-.L468
+	.byte	1,5,45,9
+	.half	.L470-.L469
+	.byte	1,5,9,9
+	.half	.L471-.L470
+	.byte	3,1,1,5,28,9
+	.half	.L472-.L471
+	.byte	1,5,40,9
+	.half	.L473-.L472
+	.byte	1,5,45,9
+	.half	.L474-.L473
+	.byte	1,5,9,9
+	.half	.L475-.L474
+	.byte	3,1,1,5,28,9
+	.half	.L476-.L475
+	.byte	1,5,39,9
+	.half	.L477-.L476
+	.byte	1,5,66,9
+	.half	.L478-.L477
+	.byte	1,5,13,9
+	.half	.L49-.L478
+	.byte	3,3,1,5,3,9
+	.half	.L479-.L49
+	.byte	1,5,9,7,9
+	.half	.L480-.L479
+	.byte	3,1,1,5,28,9
+	.half	.L481-.L480
+	.byte	1,5,39,9
+	.half	.L482-.L481
+	.byte	1,5,66,9
+	.half	.L483-.L482
+	.byte	1,5,9,9
+	.half	.L484-.L483
+	.byte	3,1,1,5,28,9
+	.half	.L485-.L484
+	.byte	1,5,40,9
+	.half	.L486-.L485
+	.byte	1,5,45,9
+	.half	.L487-.L486
+	.byte	1,5,9,9
+	.half	.L488-.L487
+	.byte	3,1,1,5,28,9
+	.half	.L489-.L488
+	.byte	1,5,40,9
+	.half	.L490-.L489
+	.byte	1,5,45,9
+	.half	.L491-.L490
+	.byte	1,5,9,9
+	.half	.L492-.L491
+	.byte	3,1,1,5,28,9
+	.half	.L493-.L492
+	.byte	1,5,39,9
+	.half	.L494-.L493
+	.byte	1,5,66,9
+	.half	.L495-.L494
+	.byte	1,5,13,9
+	.half	.L50-.L495
+	.byte	3,3,1,5,3,9
+	.half	.L496-.L50
+	.byte	1,5,9,7,9
+	.half	.L497-.L496
+	.byte	3,1,1,5,28,9
+	.half	.L498-.L497
+	.byte	1,5,39,9
+	.half	.L499-.L498
+	.byte	1,5,66,9
+	.half	.L500-.L499
+	.byte	1,5,9,9
+	.half	.L501-.L500
+	.byte	3,1,1,5,28,9
+	.half	.L502-.L501
+	.byte	1,5,40,9
+	.half	.L503-.L502
+	.byte	1,5,45,9
+	.half	.L504-.L503
+	.byte	1,5,9,9
+	.half	.L505-.L504
+	.byte	3,1,1,5,28,9
+	.half	.L506-.L505
+	.byte	1,5,40,9
+	.half	.L507-.L506
+	.byte	1,5,45,9
+	.half	.L508-.L507
+	.byte	1,5,9,9
+	.half	.L509-.L508
+	.byte	3,1,1,5,28,9
+	.half	.L510-.L509
+	.byte	1,5,39,9
+	.half	.L511-.L510
+	.byte	1,5,66,9
+	.half	.L512-.L511
+	.byte	1,5,10,9
+	.half	.L51-.L512
+	.byte	3,3,1,5,3,9
+	.half	.L513-.L51
+	.byte	1,5,1,9
+	.half	.L52-.L513
+	.byte	3,1,1,7,9
+	.half	.L126-.L52
+	.byte	0,1,1
+.L460:
+	.sdecl	'.debug_ranges',debug,cluster('MARVELL_88EA1517_ConfigureLeds')
+	.sect	'.debug_ranges'
+.L125:
+	.word	-1,.L78,0,.L126-.L78,0,0
+	.sdecl	'.debug_info',debug,cluster('MARVELL_88EA1517_IsAutonegotiationEnabled')
+	.sect	'.debug_info'
+.L127:
+	.word	310
+	.half	3
+	.word	.L128
+	.byte	4,1
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L130,.L129
+	.byte	2
+	.word	.L83
+	.byte	3
+	.byte	'MARVELL_88EA1517_IsAutonegotiationEnabled',0,1,147,2,8
+	.word	.L139
+	.byte	1,1,1
+	.word	.L80,.L180,.L79
+	.byte	4
+	.byte	'handle',0,1,147,2,76
+	.word	.L181,.L182
+	.byte	5
+	.word	.L80,.L180
+	.byte	6
+	.byte	'regval',0,1,149,2,10
+	.word	.L143,.L183
+	.byte	6
+	.byte	'phy_addr',0,1,150,2,9
+	.word	.L165,.L184
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MARVELL_88EA1517_IsAutonegotiationEnabled')
+	.sect	'.debug_abbrev'
+.L128:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MARVELL_88EA1517_IsAutonegotiationEnabled')
+	.sect	'.debug_line'
+.L129:
+	.word	.L515-.L514
+.L514:
+	.half	3
+	.word	.L517-.L516
+.L516:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0,0,0,0,0
+.L517:
+	.byte	5,8,7,0,5,2
+	.word	.L80
+	.byte	3,146,2,1,5,19,9
+	.half	.L276-.L80
+	.byte	3,2,1,5,17,9
+	.half	.L518-.L276
+	.byte	1,5,26,9
+	.half	.L519-.L518
+	.byte	3,1,1,5,9,9
+	.half	.L278-.L519
+	.byte	3,3,1,5,32,9
+	.half	.L520-.L278
+	.byte	1,5,59,9
+	.half	.L521-.L520
+	.byte	1,5,13,9
+	.half	.L275-.L521
+	.byte	3,3,1,5,35,9
+	.half	.L277-.L275
+	.byte	1,5,77,9
+	.half	.L522-.L277
+	.byte	1,5,3,9
+	.half	.L282-.L522
+	.byte	1,5,12,7,9
+	.half	.L523-.L282
+	.byte	3,2,1,5,5,9
+	.half	.L524-.L523
+	.byte	1,5,13,9
+	.half	.L53-.L524
+	.byte	3,3,1,5,11,9
+	.half	.L279-.L53
+	.byte	1,5,43,7,9
+	.half	.L525-.L279
+	.byte	1,5,50,9
+	.half	.L526-.L525
+	.byte	1,5,43,9
+	.half	.L55-.L526
+	.byte	1,5,3,9
+	.half	.L56-.L55
+	.byte	1,5,1,9
+	.half	.L54-.L56
+	.byte	3,1,1,7,9
+	.half	.L131-.L54
+	.byte	0,1,1
+.L515:
+	.sdecl	'.debug_ranges',debug,cluster('MARVELL_88EA1517_IsAutonegotiationEnabled')
+	.sect	'.debug_ranges'
+.L130:
+	.word	-1,.L80,0,.L131-.L80,0,0
+	.sdecl	'.debug_info',debug,cluster('MARVELL_88EA1517_IsAutonegotiationDone')
+	.sect	'.debug_info'
+.L132:
+	.word	307
+	.half	3
+	.word	.L133
+	.byte	4,1
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L135,.L134
+	.byte	2
+	.word	.L83
+	.byte	3
+	.byte	'MARVELL_88EA1517_IsAutonegotiationDone',0,1,164,2,8
+	.word	.L139
+	.byte	1,1,1
+	.word	.L82,.L185,.L81
+	.byte	4
+	.byte	'handle',0,1,164,2,73
+	.word	.L186,.L187
+	.byte	5
+	.word	.L82,.L185
+	.byte	6
+	.byte	'regval',0,1,166,2,10
+	.word	.L143,.L188
+	.byte	6
+	.byte	'phy_addr',0,1,167,2,9
+	.word	.L165,.L189
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MARVELL_88EA1517_IsAutonegotiationDone')
+	.sect	'.debug_abbrev'
+.L133:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MARVELL_88EA1517_IsAutonegotiationDone')
+	.sect	'.debug_line'
+.L134:
+	.word	.L528-.L527
+.L527:
+	.half	3
+	.word	.L530-.L529
+.L529:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0,0,0,0,0
+.L530:
+	.byte	5,8,7,0,5,2
+	.word	.L82
+	.byte	3,163,2,1,5,19,9
+	.half	.L285-.L82
+	.byte	3,2,1,5,17,9
+	.half	.L531-.L285
+	.byte	1,5,26,9
+	.half	.L532-.L531
+	.byte	3,1,1,5,9,9
+	.half	.L287-.L532
+	.byte	3,3,1,5,32,9
+	.half	.L533-.L287
+	.byte	1,5,59,9
+	.half	.L534-.L533
+	.byte	1,5,13,9
+	.half	.L284-.L534
+	.byte	3,3,1,5,35,9
+	.half	.L286-.L284
+	.byte	1,5,76,9
+	.half	.L535-.L286
+	.byte	1,5,3,9
+	.half	.L291-.L535
+	.byte	1,5,12,7,9
+	.half	.L536-.L291
+	.byte	3,2,1,5,5,9
+	.half	.L537-.L536
+	.byte	1,5,13,9
+	.half	.L58-.L537
+	.byte	3,3,1,5,11,9
+	.half	.L288-.L58
+	.byte	1,5,47,7,9
+	.half	.L538-.L288
+	.byte	1,5,54,9
+	.half	.L539-.L538
+	.byte	1,5,47,9
+	.half	.L60-.L539
+	.byte	1,5,3,9
+	.half	.L61-.L60
+	.byte	1,5,1,9
+	.half	.L59-.L61
+	.byte	3,1,1,7,9
+	.half	.L136-.L59
+	.byte	0,1,1
+.L528:
+	.sdecl	'.debug_ranges',debug,cluster('MARVELL_88EA1517_IsAutonegotiationDone')
+	.sect	'.debug_ranges'
+.L135:
+	.word	-1,.L82,0,.L136-.L82,0,0
+	.sdecl	'.debug_info',debug,cluster('Testregval')
+	.sect	'.debug_info'
+.L137:
+	.word	189
+	.half	3
+	.word	.L138
+	.byte	4,1
+	.byte	'../vendor/board/eth/phy/88EA1517.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1,2
+	.word	.L83
+	.byte	3
+	.byte	'Testregval',0,3,53,9
+	.word	.L143
+	.byte	1,5,3
+	.word	Testregval
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('Testregval')
+	.sect	'.debug_abbrev'
+.L138:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_loc',debug,cluster('MARVELL_88EA1517_ConfigureLeds')
+	.sect	'.debug_loc'
+.L77:
+	.word	-1,.L78,0,.L177-.L78
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L179:
+	.word	-1,.L78,0,.L272-.L78
+	.half	1
+	.byte	100
+	.word	.L273-.L78,.L177-.L78
+	.half	1
+	.byte	111
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MARVELL_88EA1517_GetLinkMode')
+	.sect	'.debug_loc'
+.L75:
+	.word	-1,.L76,0,.L261-.L76
+	.half	2
+	.byte	138,0
+	.word	.L261-.L76,.L172-.L76
+	.half	2
+	.byte	138,8
+	.word	.L172-.L76,.L172-.L76
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L174:
+	.word	-1,.L76,0,.L262-.L76
+	.half	1
+	.byte	100
+	.word	.L263-.L76,.L264-.L76
+	.half	1
+	.byte	111
+	.word	0,0
+.L176:
+	.word	-1,.L76,.L265-.L76,.L266-.L76
+	.half	1
+	.byte	95
+	.word	.L267-.L76,.L262-.L76
+	.half	1
+	.byte	84
+	.word	.L268-.L76,.L269-.L76
+	.half	1
+	.byte	84
+	.word	.L270-.L76,.L271-.L76
+	.half	1
+	.byte	84
+	.word	0,0
+.L175:
+	.word	-1,.L76,0,.L172-.L76
+	.half	2
+	.byte	145,120
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MARVELL_88EA1517_GetLinkSpeed')
+	.sect	'.debug_loc'
+.L73:
+	.word	-1,.L74,0,.L248-.L74
+	.half	2
+	.byte	138,0
+	.word	.L248-.L74,.L167-.L74
+	.half	2
+	.byte	138,8
+	.word	.L167-.L74,.L167-.L74
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L169:
+	.word	-1,.L74,0,.L249-.L74
+	.half	1
+	.byte	100
+	.word	.L251-.L74,.L252-.L74
+	.half	1
+	.byte	111
+	.word	0,0
+.L171:
+	.word	-1,.L74,.L253-.L74,.L254-.L74
+	.half	1
+	.byte	95
+	.word	.L255-.L74,.L249-.L74
+	.half	1
+	.byte	84
+	.word	.L256-.L74,.L257-.L74
+	.half	1
+	.byte	84
+	.word	.L258-.L74,.L259-.L74
+	.half	1
+	.byte	84
+	.word	0,0
+.L170:
+	.word	-1,.L74,0,.L250-.L74
+	.half	2
+	.byte	145,120
+	.word	.L38-.L74,.L260-.L74
+	.half	2
+	.byte	145,120
+	.word	.L40-.L74,.L167-.L74
+	.half	2
+	.byte	145,120
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MARVELL_88EA1517_GetLinkStatus')
+	.sect	'.debug_loc'
+.L71:
+	.word	-1,.L72,0,.L239-.L72
+	.half	2
+	.byte	138,0
+	.word	.L239-.L72,.L161-.L72
+	.half	2
+	.byte	138,8
+	.word	.L161-.L72,.L161-.L72
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L163:
+	.word	-1,.L72,0,.L240-.L72
+	.half	1
+	.byte	100
+	.word	.L241-.L72,.L242-.L72
+	.half	1
+	.byte	111
+	.word	.L245-.L72,.L246-.L72
+	.half	1
+	.byte	100
+	.word	.L246-.L72,.L247-.L72
+	.half	1
+	.byte	111
+	.word	0,0
+.L166:
+	.word	-1,.L72,.L243-.L72,.L244-.L72
+	.half	1
+	.byte	84
+	.word	0,0
+.L164:
+	.word	-1,.L72,0,.L161-.L72
+	.half	2
+	.byte	145,120
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MARVELL_88EA1517_Init')
+	.sect	'.debug_loc'
+.L69:
+	.word	-1,.L70,0,.L205-.L70
+	.half	2
+	.byte	138,0
+	.word	.L205-.L70,.L152-.L70
+	.half	2
+	.byte	138,8
+	.word	.L152-.L70,.L152-.L70
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L156:
+	.word	-1,.L70,0,.L21-.L70
+	.half	1
+	.byte	84
+	.word	.L208-.L70,.L209-.L70
+	.half	1
+	.byte	88
+	.word	0,0
+.L154:
+	.word	-1,.L70,0,.L21-.L70
+	.half	1
+	.byte	100
+	.word	.L206-.L70,.L207-.L70
+	.half	1
+	.byte	111
+	.word	.L212-.L70,.L213-.L70
+	.half	1
+	.byte	100
+	.word	.L214-.L70,.L215-.L70
+	.half	1
+	.byte	100
+	.word	.L216-.L70,.L217-.L70
+	.half	1
+	.byte	100
+	.word	.L218-.L70,.L219-.L70
+	.half	1
+	.byte	100
+	.word	.L219-.L70,.L220-.L70
+	.half	1
+	.byte	111
+	.word	.L221-.L70,.L222-.L70
+	.half	1
+	.byte	111
+	.word	.L223-.L70,.L224-.L70
+	.half	1
+	.byte	111
+	.word	.L225-.L70,.L226-.L70
+	.half	1
+	.byte	111
+	.word	.L227-.L70,.L228-.L70
+	.half	1
+	.byte	111
+	.word	.L229-.L70,.L230-.L70
+	.half	1
+	.byte	111
+	.word	.L231-.L70,.L232-.L70
+	.half	1
+	.byte	111
+	.word	.L33-.L70,.L233-.L70
+	.half	1
+	.byte	111
+	.word	.L234-.L70,.L235-.L70
+	.half	1
+	.byte	111
+	.word	.L236-.L70,.L237-.L70
+	.half	1
+	.byte	111
+	.word	.L237-.L70,.L238-.L70
+	.half	1
+	.byte	100
+	.word	0,0
+.L160:
+	.word	-1,.L70,.L211-.L70,.L20-.L70
+	.half	1
+	.byte	88
+	.word	0,0
+.L159:
+	.word	-1,.L70,0,.L152-.L70
+	.half	2
+	.byte	145,120
+	.word	0,0
+.L158:
+	.word	-1,.L70,.L210-.L70,.L211-.L70
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MARVELL_88EA1517_IsAutonegotiationDone')
+	.sect	'.debug_loc'
+.L81:
+	.word	-1,.L82,0,.L283-.L82
+	.half	2
+	.byte	138,0
+	.word	.L283-.L82,.L185-.L82
+	.half	2
+	.byte	138,8
+	.word	.L185-.L82,.L185-.L82
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L187:
+	.word	-1,.L82,0,.L284-.L82
+	.half	1
+	.byte	100
+	.word	.L285-.L82,.L286-.L82
+	.half	1
+	.byte	111
+	.word	0,0
+.L189:
+	.word	-1,.L82,.L287-.L82,.L288-.L82
+	.half	1
+	.byte	95
+	.word	.L289-.L82,.L284-.L82
+	.half	1
+	.byte	84
+	.word	.L290-.L82,.L291-.L82
+	.half	1
+	.byte	84
+	.word	0,0
+.L188:
+	.word	-1,.L82,0,.L185-.L82
+	.half	2
+	.byte	145,120
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MARVELL_88EA1517_IsAutonegotiationEnabled')
+	.sect	'.debug_loc'
+.L79:
+	.word	-1,.L80,0,.L274-.L80
+	.half	2
+	.byte	138,0
+	.word	.L274-.L80,.L180-.L80
+	.half	2
+	.byte	138,8
+	.word	.L180-.L80,.L180-.L80
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L182:
+	.word	-1,.L80,0,.L275-.L80
+	.half	1
+	.byte	100
+	.word	.L276-.L80,.L277-.L80
+	.half	1
+	.byte	111
+	.word	0,0
+.L184:
+	.word	-1,.L80,.L278-.L80,.L279-.L80
+	.half	1
+	.byte	95
+	.word	.L280-.L80,.L275-.L80
+	.half	1
+	.byte	84
+	.word	.L281-.L80,.L282-.L80
+	.half	1
+	.byte	84
+	.word	0,0
+.L183:
+	.word	-1,.L80,0,.L180-.L80
+	.half	2
+	.byte	145,120
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MARVELL_88EA1517_IsPhyIdValid')
+	.sect	'.debug_loc'
+.L67:
+	.word	-1,.L68,0,.L149-.L68
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L151:
+	.word	-1,.L68,0,.L195-.L68
+	.half	1
+	.byte	100
+	.word	.L196-.L68,.L197-.L68
+	.half	1
+	.byte	111
+	.word	.L12-.L68,.L198-.L68
+	.half	1
+	.byte	111
+	.word	.L199-.L68,.L200-.L68
+	.half	1
+	.byte	111
+	.word	.L200-.L68,.L201-.L68
+	.half	1
+	.byte	100
+	.word	.L14-.L68,.L202-.L68
+	.half	1
+	.byte	111
+	.word	.L203-.L68,.L204-.L68
+	.half	1
+	.byte	111
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MARVELL_88EA1517_IsResetDone')
+	.sect	'.debug_loc'
+.L65:
+	.word	-1,.L66,0,.L193-.L66
+	.half	2
+	.byte	138,0
+	.word	.L193-.L66,.L145-.L66
+	.half	2
+	.byte	138,8
+	.word	.L145-.L66,.L145-.L66
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L147:
+	.word	-1,.L66,0,.L194-.L66
+	.half	1
+	.byte	100
+	.word	0,0
+.L148:
+	.word	-1,.L66,0,.L145-.L66
+	.half	2
+	.byte	145,120
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MARVELL_88EA1517_Reset')
+	.sect	'.debug_loc'
+.L63:
+	.word	-1,.L64,0,.L190-.L64
+	.half	2
+	.byte	138,0
+	.word	.L190-.L64,.L140-.L64
+	.half	2
+	.byte	138,8
+	.word	.L140-.L64,.L140-.L64
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L142:
+	.word	-1,.L64,0,.L191-.L64
+	.half	1
+	.byte	100
+	.word	.L192-.L64,.L140-.L64
+	.half	1
+	.byte	111
+	.word	0,0
+.L144:
+	.word	-1,.L64,0,.L140-.L64
+	.half	2
+	.byte	145,120
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L540:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('MARVELL_88EA1517_Reset')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L540,.L64,.L140-.L64
+	.byte	4
+	.word	(.L190-.L64)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L140-.L190)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('MARVELL_88EA1517_IsResetDone')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L540,.L66,.L145-.L66
+	.byte	4
+	.word	(.L193-.L66)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L145-.L193)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('MARVELL_88EA1517_IsPhyIdValid')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L540,.L68,.L149-.L68
+	.sdecl	'.debug_frame',debug,cluster('MARVELL_88EA1517_Init')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L540,.L70,.L152-.L70
+	.byte	4
+	.word	(.L205-.L70)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L152-.L205)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('MARVELL_88EA1517_GetLinkStatus')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L540,.L72,.L161-.L72
+	.byte	4
+	.word	(.L239-.L72)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L161-.L239)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('MARVELL_88EA1517_GetLinkSpeed')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L540,.L74,.L167-.L74
+	.byte	4
+	.word	(.L248-.L74)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L167-.L248)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('MARVELL_88EA1517_GetLinkMode')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L540,.L76,.L172-.L76
+	.byte	4
+	.word	(.L261-.L76)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L172-.L261)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('MARVELL_88EA1517_ConfigureLeds')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L540,.L78,.L177-.L78
+	.sdecl	'.debug_frame',debug,cluster('MARVELL_88EA1517_IsAutonegotiationEnabled')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L540,.L80,.L180-.L80
+	.byte	4
+	.word	(.L274-.L80)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L180-.L274)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('MARVELL_88EA1517_IsAutonegotiationDone')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L540,.L82,.L185-.L82
+	.byte	4
+	.word	(.L283-.L82)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L185-.L283)/2
+	.byte	19,0,8,26,0,0
+	; Module end

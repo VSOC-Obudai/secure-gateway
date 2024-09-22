@@ -1,0 +1,2249 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc17432a --dep-file=.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -D__CPU__=tc37x -DCONFIG_BOARD_SERIALIO_ENABLE -DCONFIG_BOARD_LED_ENABLE -DCONFIG_BOARD_ETH_ENABLE -DCONFIG_ETH_MAC_DWMAC_QOS -IC:\\\\workspace\\\\secure-gateway\\\\vendor -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\can -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\eth -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\eth\\\\mac -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\eth\\\\phy -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\led -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\lin -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply\\\\TLF3xx8x -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply\\\\analog_measure -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply\\\\power_good_s -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\serialio -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Configurations -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37AED -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37AED\\\\_Reg -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Ssw\\\\TC37AED -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Ssw\\\\TC37AED\\\\Tricore -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric\\\\If -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Asclin -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Asclin\\\\Lin -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Can -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Can\\\\Can -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Can\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dma -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dma\\\\Dma -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dma\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dts -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dts\\\\Dts -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dts\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Evadc -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Evadc\\\\Adc -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Evadc\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Geth -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Geth\\\\Eth -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Geth\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Gtm -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Mtu -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Pms -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Pms\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Port -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Port\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Qspi -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Qspi\\\\SpiMaster -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Qspi\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Scu -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Scu\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Src -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Src\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Stm -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Stm\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Stm\\\\Timer -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\_Impl -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\_PinMap -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\port -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\port\\\\include -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\port\\\\include\\\\arch -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\apps -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\apps\\\\http -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix\\\\arpa -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix\\\\net -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix\\\\sys -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\stdc -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip\\\\apps -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip\\\\priv -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip\\\\prot -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\netif -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\netif\\\\ppp -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\netif\\\\ppp\\\\polarssl -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o vendor/lwip/src/core/inet_chksum.src ../vendor/lwip/src/core/inet_chksum.c"
+	.compiler_name		"ctc"
+	;source	'../vendor/lwip/src/core/inet_chksum.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.inet_chksum.lwip_standard_chksum',code,cluster('lwip_standard_chksum')
+	.sect	'.text.inet_chksum.lwip_standard_chksum'
+	.align	2
+	
+	.global	lwip_standard_chksum
+; Function lwip_standard_chksum
+.L35:
+lwip_standard_chksum:	.type	func
+	mov	d1,#0
+.L173:
+	mov	d0,#0
+.L175:
+	mov.d	d15,a4
+.L177:
+	and	d15,#1
+.L178:
+	jeq	d15,#0,.L2
+.L315:
+	jlt	d4,#1,.L3
+.L316:
+	ld.bu	d2,[a4]
+.L317:
+	insert	d1,d1,d2,#8,#8
+	extr.u	d1,d1,#0,#16
+.L318:
+	add.a	a4,#1
+.L319:
+	add	d4,#-1
+.L3:
+.L2:
+	j	.L4
+.L5:
+	ld.hu	d2,[a4]0
+.L320:
+	add	d0,d2
+.L321:
+	add.a	a4,#2
+.L322:
+	add	d4,#-2
+.L4:
+	jge	d4,#2,.L5
+.L323:
+	jlt	d4,#1,.L6
+.L324:
+	ld.bu	d2,[a4]
+.L325:
+	insert	d1,d1,d2,#0,#8
+.L6:
+	add	d0,d1
+.L326:
+	sh	d1,d0,#-16
+.L174:
+	insert	d0,d0,#0,#16,#16
+.L176:
+	add	d1,d0
+.L327:
+	sh	d0,d1,#-16
+	insert	d1,d1,#0,#16,#16
+.L180:
+	add	d0,d1
+.L328:
+	jeq	d15,#0,.L7
+.L329:
+	and	d15,d0,#255
+.L179:
+	sh	d1,d15,#8
+	mov.u	d15,#65280
+	and	d0,d15
+.L181:
+	sh	d0,#-8
+.L182:
+	or	d0,d1
+.L7:
+	extr.u	d2,d0,#0,#16
+.L330:
+	j	.L8
+.L8:
+	ret
+.L147:
+	
+__lwip_standard_chksum_function_end:
+	.size	lwip_standard_chksum,__lwip_standard_chksum_function_end-lwip_standard_chksum
+.L90:
+	; End of function
+	
+	.sdecl	'.text.inet_chksum.inet_cksum_pseudo_base',code,cluster('inet_cksum_pseudo_base')
+	.sect	'.text.inet_chksum.inet_cksum_pseudo_base'
+	.align	2
+	
+; Function inet_cksum_pseudo_base
+.L37:
+inet_cksum_pseudo_base:	.type	func
+	mov	e8,d5,d4
+	mov	d15,d6
+.L183:
+	mov	d10,#0
+.L185:
+	mov.aa	a15,a4
+.L186:
+	j	.L9
+.L10:
+	ld.a	a4,[a15]4
+.L335:
+	ld.hu	d4,[a15]10
+	call	lwip_standard_chksum
+.L187:
+	add	d2,d15
+.L184:
+	sh	d0,d2,#-16
+	insert	d1,d2,#0,#16,#16
+	add	d15,d0,d1
+.L188:
+	ld.hu	d0,[a15]10
+.L336:
+	mov	d1,#2
+.L337:
+	div	e0,d0,d1
+.L338:
+	jeq	d1,#0,.L11
+.L339:
+	eq	d10,d10,#0
+.L340:
+	and	d0,d15,#255
+	sh	d1,d0,#8
+	mov.u	d0,#65280
+	and	d15,d0
+.L189:
+	sh	d15,#-8
+.L190:
+	or	d15,d1
+.L11:
+	ld.a	a15,[a15]
+.L9:
+	jnz.a	a15,.L10
+.L341:
+	jeq	d10,#0,.L12
+.L342:
+	and	d0,d15,#255
+	sh	d1,d0,#8
+	mov.u	d0,#65280
+	and	d15,d0
+.L191:
+	sh	d15,#-8
+.L192:
+	or	d15,d1
+.L12:
+	mov	d4,d8
+.L194:
+	call	lwip_htons
+.L195:
+	add	d15,d2
+.L196:
+	mov	d4,d9
+.L197:
+	call	lwip_htons
+.L198:
+	add	d15,d2
+.L343:
+	sh	d0,d15,#-16
+	insert	d15,d15,#0,#16,#16
+.L193:
+	add	d0,d15
+.L344:
+	sh	d15,d0,#-16
+	insert	d0,d0,#0,#16,#16
+.L199:
+	add	d15,d0
+.L345:
+	insert	d15,d15,#0,#16,#16
+.L200:
+	mov	d0,#-1
+	xor	d15,d0
+.L346:
+	extr.u	d2,d15,#0,#16
+.L347:
+	j	.L13
+.L13:
+	ret
+.L157:
+	
+__inet_cksum_pseudo_base_function_end:
+	.size	inet_cksum_pseudo_base,__inet_cksum_pseudo_base_function_end-inet_cksum_pseudo_base
+.L95:
+	; End of function
+	
+	.sdecl	'.text.inet_chksum.inet_chksum_pseudo',code,cluster('inet_chksum_pseudo')
+	.sect	'.text.inet_chksum.inet_chksum_pseudo'
+	.align	2
+	
+	.global	inet_chksum_pseudo
+; Function inet_chksum_pseudo
+.L39:
+inet_chksum_pseudo:	.type	func
+	ld.w	d0,[a5]
+.L202:
+	insert	d15,d0,#0,#16,#16
+.L204:
+	sh	d0,d0,#-16
+.L203:
+	insert	d0,d0,#0,#16,#16
+.L285:
+	add	d15,d0
+.L286:
+	ld.w	d0,[a6]
+.L206:
+	insert	d1,d0,#0,#16,#16
+.L287:
+	add	d15,d1
+.L288:
+	sh	d0,d0,#-16
+.L207:
+	insert	d0,d0,#0,#16,#16
+.L289:
+	add	d15,d0
+.L290:
+	sh	d0,d15,#-16
+	insert	d15,d15,#0,#16,#16
+.L205:
+	add	d0,d15
+.L291:
+	sh	d6,d0,#-16
+	insert	d15,d0,#0,#16,#16
+.L209:
+	add	d6,d15
+.L208:
+	call	inet_cksum_pseudo_base
+.L201:
+	j	.L14
+.L14:
+	ret
+.L114:
+	
+__inet_chksum_pseudo_function_end:
+	.size	inet_chksum_pseudo,__inet_chksum_pseudo_function_end-inet_chksum_pseudo
+.L70:
+	; End of function
+	
+	.sdecl	'.text.inet_chksum.ip_chksum_pseudo',code,cluster('ip_chksum_pseudo')
+	.sect	'.text.inet_chksum.ip_chksum_pseudo'
+	.align	2
+	
+	.global	ip_chksum_pseudo
+; Function ip_chksum_pseudo
+.L41:
+ip_chksum_pseudo:	.type	func
+	call	inet_chksum_pseudo
+.L210:
+	j	.L15
+.L15:
+	ret
+.L133:
+	
+__ip_chksum_pseudo_function_end:
+	.size	ip_chksum_pseudo,__ip_chksum_pseudo_function_end-ip_chksum_pseudo
+.L80:
+	; End of function
+	
+	.sdecl	'.text.inet_chksum.inet_cksum_pseudo_partial_base',code,cluster('inet_cksum_pseudo_partial_base')
+	.sect	'.text.inet_chksum.inet_cksum_pseudo_partial_base'
+	.align	2
+	
+; Function inet_cksum_pseudo_partial_base
+.L43:
+inet_cksum_pseudo_partial_base:	.type	func
+	mov	d11,d4
+.L211:
+	mov	d12,d5
+.L212:
+	mov	d9,d6
+.L213:
+	mov	d15,d7
+.L215:
+	mov	d10,#0
+.L217:
+	mov.aa	a15,a4
+.L218:
+	j	.L16
+.L17:
+	ld.hu	d8,[a15]10
+.L219:
+	jge.u	d9,d8,.L18
+.L352:
+	mov	d8,d9
+.L18:
+	ld.a	a4,[a15]4
+.L353:
+	mov	d4,d8
+.L220:
+	call	lwip_standard_chksum
+.L221:
+	add	d2,d15
+.L216:
+	sub	d9,d8
+.L214:
+	extr.u	d9,d9,#0,#16
+.L19:
+	mov	d0,#32767
+	jlt.u	d9,d0,.L20
+.L21:
+	debug
+.L20:
+	sh	d0,d2,#-16
+	insert	d15,d2,#0,#16,#16
+.L223:
+	add	d15,d0
+.L222:
+	ld.hu	d0,[a15]10
+.L354:
+	mov	d1,#2
+.L355:
+	div	e0,d0,d1
+.L356:
+	jeq	d1,#0,.L22
+.L357:
+	eq	d10,d10,#0
+.L358:
+	and	d0,d15,#255
+	sh	d1,d0,#8
+	mov.u	d0,#65280
+	and	d15,d0
+.L224:
+	sh	d15,#-8
+.L225:
+	or	d15,d1
+.L22:
+	ld.a	a15,[a15]
+.L16:
+	jz.a	a15,.L23
+.L359:
+	jge.u	d9,#1,.L17
+.L23:
+	jeq	d10,#0,.L24
+.L360:
+	and	d0,d15,#255
+	sh	d1,d0,#8
+	mov.u	d0,#65280
+	and	d15,d0
+.L226:
+	sh	d15,#-8
+.L227:
+	or	d15,d1
+.L24:
+	mov	d4,d11
+.L229:
+	call	lwip_htons
+.L230:
+	add	d15,d2
+.L361:
+	mov	d4,d12
+.L231:
+	call	lwip_htons
+.L232:
+	add	d15,d2
+.L362:
+	sh	d0,d15,#-16
+	insert	d15,d15,#0,#16,#16
+.L228:
+	add	d0,d15
+.L363:
+	sh	d15,d0,#-16
+	insert	d0,d0,#0,#16,#16
+.L233:
+	add	d15,d0
+.L364:
+	insert	d15,d15,#0,#16,#16
+.L234:
+	mov	d0,#-1
+	xor	d15,d0
+.L365:
+	extr.u	d2,d15,#0,#16
+.L366:
+	j	.L25
+.L25:
+	ret
+.L164:
+	
+__inet_cksum_pseudo_partial_base_function_end:
+	.size	inet_cksum_pseudo_partial_base,__inet_cksum_pseudo_partial_base_function_end-inet_cksum_pseudo_partial_base
+.L100:
+	; End of function
+	
+	.sdecl	'.text.inet_chksum.inet_chksum_pseudo_partial',code,cluster('inet_chksum_pseudo_partial')
+	.sect	'.text.inet_chksum.inet_chksum_pseudo_partial'
+	.align	2
+	
+	.global	inet_chksum_pseudo_partial
+; Function inet_chksum_pseudo_partial
+.L45:
+inet_chksum_pseudo_partial:	.type	func
+	ld.w	d0,[a5]
+.L236:
+	insert	d15,d0,#0,#16,#16
+.L238:
+	sh	d0,d0,#-16
+.L237:
+	insert	d0,d0,#0,#16,#16
+.L296:
+	add	d15,d0
+.L297:
+	ld.w	d0,[a6]
+.L240:
+	insert	d1,d0,#0,#16,#16
+.L298:
+	add	d15,d1
+.L299:
+	sh	d0,d0,#-16
+.L241:
+	insert	d0,d0,#0,#16,#16
+.L300:
+	add	d15,d0
+.L301:
+	sh	d0,d15,#-16
+	insert	d15,d15,#0,#16,#16
+.L239:
+	add	d0,d15
+.L302:
+	sh	d7,d0,#-16
+	insert	d15,d0,#0,#16,#16
+.L243:
+	add	d7,d15
+.L242:
+	call	inet_cksum_pseudo_partial_base
+.L235:
+	j	.L26
+.L26:
+	ret
+.L124:
+	
+__inet_chksum_pseudo_partial_function_end:
+	.size	inet_chksum_pseudo_partial,__inet_chksum_pseudo_partial_function_end-inet_chksum_pseudo_partial
+.L75:
+	; End of function
+	
+	.sdecl	'.text.inet_chksum.ip_chksum_pseudo_partial',code,cluster('ip_chksum_pseudo_partial')
+	.sect	'.text.inet_chksum.ip_chksum_pseudo_partial'
+	.align	2
+	
+	.global	ip_chksum_pseudo_partial
+; Function ip_chksum_pseudo_partial
+.L47:
+ip_chksum_pseudo_partial:	.type	func
+	call	inet_chksum_pseudo_partial
+.L244:
+	j	.L27
+.L27:
+	ret
+.L140:
+	
+__ip_chksum_pseudo_partial_function_end:
+	.size	ip_chksum_pseudo_partial,__ip_chksum_pseudo_partial_function_end-ip_chksum_pseudo_partial
+.L85:
+	; End of function
+	
+	.sdecl	'.text.inet_chksum.inet_chksum',code,cluster('inet_chksum')
+	.sect	'.text.inet_chksum.inet_chksum'
+	.align	2
+	
+	.global	inet_chksum
+; Function inet_chksum
+.L49:
+inet_chksum:	.type	func
+	call	lwip_standard_chksum
+.L245:
+	mov	d15,#-1
+	xor	d2,d15
+.L265:
+	extr.u	d2,d2,#0,#16
+.L266:
+	j	.L28
+.L28:
+	ret
+.L102:
+	
+__inet_chksum_function_end:
+	.size	inet_chksum,__inet_chksum_function_end-inet_chksum
+.L60:
+	; End of function
+	
+	.sdecl	'.text.inet_chksum.inet_chksum_pbuf',code,cluster('inet_chksum_pbuf')
+	.sect	'.text.inet_chksum.inet_chksum_pbuf'
+	.align	2
+	
+	.global	inet_chksum_pbuf
+; Function inet_chksum_pbuf
+.L51:
+inet_chksum_pbuf:	.type	func
+	mov	d8,#0
+.L246:
+	mov	d15,#0
+.L247:
+	mov.aa	a15,a4
+.L249:
+	j	.L29
+.L30:
+	ld.a	a4,[a15]4
+.L271:
+	ld.hu	d4,[a15]10
+	call	lwip_standard_chksum
+.L250:
+	add	d2,d15
+.L248:
+	sh	d0,d2,#-16
+	insert	d1,d2,#0,#16,#16
+	add	d15,d0,d1
+.L251:
+	ld.hu	d0,[a15]10
+.L272:
+	mov	d1,#2
+.L273:
+	div	e0,d0,d1
+.L274:
+	jeq	d1,#0,.L31
+.L275:
+	eq	d8,d8,#0
+.L276:
+	and	d0,d15,#255
+	sh	d1,d0,#8
+	mov.u	d0,#65280
+	and	d15,d0
+.L252:
+	sh	d15,#-8
+.L253:
+	or	d15,d1
+.L31:
+	ld.a	a15,[a15]
+.L29:
+	jnz.a	a15,.L30
+.L277:
+	jeq	d8,#0,.L32
+.L278:
+	and	d0,d15,#255
+	sh	d1,d0,#8
+	mov.u	d0,#65280
+	and	d15,d0
+.L254:
+	sh	d15,#-8
+.L255:
+	or	d15,d1
+.L32:
+	insert	d15,d15,#0,#16,#16
+.L256:
+	mov	d0,#-1
+	xor	d15,d0
+.L279:
+	extr.u	d2,d15,#0,#16
+.L280:
+	j	.L33
+.L33:
+	ret
+.L106:
+	
+__inet_chksum_pbuf_function_end:
+	.size	inet_chksum_pbuf,__inet_chksum_pbuf_function_end-inet_chksum_pbuf
+.L65:
+	; End of function
+	
+	.calls	'inet_cksum_pseudo_base','lwip_standard_chksum'
+	.calls	'inet_cksum_pseudo_base','lwip_htons'
+	.calls	'inet_chksum_pseudo','inet_cksum_pseudo_base'
+	.calls	'ip_chksum_pseudo','inet_chksum_pseudo'
+	.calls	'inet_cksum_pseudo_partial_base','lwip_standard_chksum'
+	.calls	'inet_cksum_pseudo_partial_base','lwip_htons'
+	.calls	'inet_chksum_pseudo_partial','inet_cksum_pseudo_partial_base'
+	.calls	'ip_chksum_pseudo_partial','inet_chksum_pseudo_partial'
+	.calls	'inet_chksum','lwip_standard_chksum'
+	.calls	'inet_chksum_pbuf','lwip_standard_chksum'
+	.calls	'lwip_standard_chksum','',0
+	.calls	'inet_cksum_pseudo_base','',0
+	.calls	'inet_chksum_pseudo','',0
+	.calls	'ip_chksum_pseudo','',0
+	.calls	'inet_cksum_pseudo_partial_base','',0
+	.calls	'inet_chksum_pseudo_partial','',0
+	.calls	'ip_chksum_pseudo_partial','',0
+	.calls	'inet_chksum','',0
+	.extern	lwip_htons
+	.calls	'inet_chksum_pbuf','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L53:
+	.word	1463
+	.half	3
+	.word	.L54
+	.byte	4
+.L52:
+	.byte	1
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L55
+	.byte	2,1,1,3
+	.word	168
+	.byte	4
+	.byte	'Ifx__jump_and_link',0,3,1,58,17,1,1,5
+	.byte	'fun',0,1,58,43
+	.word	171
+	.byte	6,0,7
+	.byte	'__fract',0,4,128,1,7
+	.byte	'float',0,4,4,8
+	.byte	'Ifx__float_to_fract',0,3,1,149,2,18
+	.word	216
+	.byte	1,1,5
+	.byte	'a',0,1,149,2,44
+	.word	228
+	.byte	6,0,7
+	.byte	'unsigned long long int',0,8,7,9
+	.byte	'void',0,3
+	.word	308
+	.byte	8
+	.byte	'__ld64',0,3,2,135,1,19
+	.word	282
+	.byte	1,1,5
+	.byte	'addr',0,2,135,1,32
+	.word	314
+	.byte	6,0,4
+	.byte	'__st64',0,3,2,143,1,17,1,1,5
+	.byte	'addr',0,2,143,1,30
+	.word	314
+	.byte	5
+	.byte	'value',0,2,143,1,43
+	.word	282
+	.byte	6,0,10
+	.byte	'__debug',0,1,1,1,1,11
+	.word	176
+	.byte	12
+	.word	202
+	.byte	6,0,11
+	.word	237
+	.byte	12
+	.word	269
+	.byte	6,0,11
+	.word	319
+	.byte	12
+	.word	338
+	.byte	6,0,11
+	.word	354
+	.byte	12
+	.word	369
+	.byte	12
+	.word	383
+	.byte	6,0
+.L101:
+	.byte	7
+	.byte	'unsigned short int',0,2,7,13
+	.byte	'lwip_htons',0,3,96,7
+	.word	466
+	.byte	1,1,1,1,5
+	.byte	'x',0,3,96,24
+	.word	466
+	.byte	0,14
+	.word	308
+.L103:
+	.byte	3
+	.word	522
+.L116:
+	.byte	7
+	.byte	'unsigned char',0,1,8,15
+	.byte	'pbuf',0,4,186,1,8,16,16
+	.byte	'next',0
+	.word	.L107-.L53
+	.byte	4,2,35,0,16
+	.byte	'payload',0
+	.word	314
+	.byte	4,2,35,4,16
+	.byte	'tot_len',0
+	.word	466
+	.byte	2,2,35,8,16
+	.byte	'len',0
+	.word	466
+	.byte	2,2,35,10,16
+	.byte	'type_internal',0
+	.word	532
+	.byte	1,2,35,12,16
+	.byte	'flags',0
+	.word	532
+	.byte	1,2,35,13,16
+	.byte	'ref',0
+	.word	532
+	.byte	1,2,35,14,16
+	.byte	'if_idx',0
+	.word	532
+	.byte	1,2,35,15,0
+.L107:
+	.byte	3
+	.word	549
+.L109:
+	.byte	7
+	.byte	'unsigned int',0,4,7
+.L112:
+	.byte	7
+	.byte	'int',0,4,5,15
+	.byte	'ip4_addr',0,5,51,8,4,16
+	.byte	'addr',0
+	.word	694
+	.byte	4,2,35,0,0,14
+	.word	717
+.L119:
+	.byte	3
+	.word	746
+	.byte	14
+	.word	717
+.L137:
+	.byte	3
+	.word	756
+	.byte	14
+	.word	532
+.L150:
+	.byte	3
+	.word	766
+	.byte	14
+	.word	466
+.L152:
+	.byte	3
+	.word	776
+	.byte	7
+	.byte	'short int',0,2,5,17
+	.byte	'__wchar_t',0,6,1,1
+	.word	786
+	.byte	17
+	.byte	'__size_t',0,6,1,1
+	.word	694
+	.byte	17
+	.byte	'__ptrdiff_t',0,6,1,1
+	.word	710
+	.byte	18,1,3
+	.word	854
+	.byte	17
+	.byte	'__codeptr',0,6,1,1
+	.word	856
+	.byte	17
+	.byte	'__intptr_t',0,6,1,1
+	.word	710
+	.byte	17
+	.byte	'__uintptr_t',0,6,1,1
+	.word	694
+	.byte	17
+	.byte	'uint8',0,7,108,29
+	.word	532
+	.byte	17
+	.byte	'uint16',0,7,112,29
+	.word	466
+	.byte	7
+	.byte	'unsigned long int',0,4,7,17
+	.byte	'uint32',0,7,116,29
+	.word	947
+	.byte	17
+	.byte	'uint64',0,7,121,29
+	.word	282
+	.byte	17
+	.byte	'sint16',0,7,129,1,29
+	.word	786
+	.byte	7
+	.byte	'long int',0,4,5,17
+	.byte	'sint32',0,7,134,1,29
+	.word	1014
+	.byte	7
+	.byte	'long long int',0,8,5,17
+	.byte	'sint64',0,7,141,1,29
+	.word	1042
+	.byte	17
+	.byte	'float32',0,7,170,1,29
+	.word	228
+	.byte	17
+	.byte	'pvoid',0,8,54,28
+	.word	314
+	.byte	17
+	.byte	'Ifx_TickTime',0,8,76,28
+	.word	1042
+	.byte	17
+	.byte	'_iob_flag_t',0,9,82,25
+	.word	466
+	.byte	7
+	.byte	'char',0,1,6,17
+	.byte	'int8_t',0,10,241,1,41
+	.word	1147
+	.byte	17
+	.byte	'uint8_t',0,10,242,1,41
+	.word	532
+	.byte	17
+	.byte	'int16_t',0,10,245,1,41
+	.word	786
+	.byte	17
+	.byte	'uint16_t',0,10,246,1,41
+	.word	466
+	.byte	17
+	.byte	'int32_t',0,10,253,1,41
+	.word	710
+	.byte	17
+	.byte	'uint32_t',0,10,254,1,41
+	.word	694
+	.byte	17
+	.byte	'int64_t',0,10,133,2,41
+	.word	1042
+	.byte	17
+	.byte	'uint64_t',0,10,134,2,41
+	.word	282
+	.byte	17
+	.byte	'uintptr_t',0,10,193,2,41
+	.word	694
+	.byte	17
+	.byte	'intmax_t',0,10,198,2,41
+	.word	1042
+	.byte	17
+	.byte	'u8_t',0,11,125,19
+	.word	532
+	.byte	17
+	.byte	's8_t',0,11,126,19
+	.word	1147
+	.byte	17
+	.byte	'u16_t',0,11,127,19
+	.word	466
+	.byte	17
+	.byte	'u32_t',0,11,129,1,19
+	.word	694
+	.byte	19,1,1,20
+	.word	689
+	.byte	0,3
+	.word	1385
+	.byte	17
+	.byte	'pbuf_free_custom_fn',0,4,242,1,16
+	.word	1394
+	.byte	17
+	.byte	'ip4_addr_t',0,5,57,25
+	.word	717
+	.byte	17
+	.byte	'ip_addr_t',0,12,166,2,20
+	.word	717
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L54:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
+	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
+	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,46,0,3,8,54,15,39,12
+	.byte	63,12,60,12,0,0,11,46,1,49,19,0,0,12,5,0,49,19,0,0,13,46,1,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63
+	.byte	12,60,12,0,0,14,38,0,73,19,0,0,15,19,1,3,8,58,15,59,15,57,15,11,15,0,0,16,13,0,3,8,73,19,11,15,56,9,0
+	.byte	0,17,22,0,3,8,58,15,59,15,57,15,73,19,0,0,18,21,0,54,15,0,0,19,21,1,54,15,39,12,0,0,20,5,0,73,19,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L55:
+	.word	.L258-.L257
+.L257:
+	.half	3
+	.word	.L260-.L259
+.L259:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\Infineon\\AURIX-Studio-1.10.2\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\',0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\Cpu\\Std\\IfxCpu_IntrinsicsTasking.h',0
+	.byte	0,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\Cpu\\Std\\IfxCpu_Intrinsics.h',0
+	.byte	0,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\lwip\\def.h',0,0,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\lwip\\pbuf.h',0,0,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\lwip\\ip4_addr.h',0,0,0,0
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0,0,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\Cpu\\Std\\Platform_Types.h',0
+	.byte	0,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\Cpu\\Std\\Ifx_Types.h',0
+	.byte	0,0,0
+	.byte	'stdio.h',0,1,0,0
+	.byte	'stdint.h',0,1,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\lwip\\arch.h',0,0,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\lwip\\ip_addr.h',0,0,0,0,0
+.L260:
+.L258:
+	.sdecl	'.debug_info',debug,cluster('inet_chksum')
+	.sect	'.debug_info'
+.L56:
+	.word	258
+	.half	3
+	.word	.L57
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L59,.L58
+	.byte	2
+	.word	.L52
+	.byte	3
+	.byte	'inet_chksum',0,1,171,4,1
+	.word	.L101
+	.byte	1,1,1
+	.word	.L49,.L102,.L48
+	.byte	4
+	.byte	'dataptr',0,1,171,4,25
+	.word	.L103,.L104
+	.byte	4
+	.byte	'len',0,1,171,4,40
+	.word	.L101,.L105
+	.byte	5
+	.word	.L49,.L102
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('inet_chksum')
+	.sect	'.debug_abbrev'
+.L57:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('inet_chksum')
+	.sect	'.debug_line'
+.L58:
+	.word	.L262-.L261
+.L261:
+	.half	3
+	.word	.L264-.L263
+.L263:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0,0,0,0,0
+.L264:
+	.byte	5,53,7,0,5,2
+	.word	.L49
+	.byte	3,172,4,1,5,17,9
+	.half	.L245-.L49
+	.byte	1,5,10,9
+	.half	.L265-.L245
+	.byte	1,5,3,9
+	.half	.L266-.L265
+	.byte	1,5,1,9
+	.half	.L28-.L266
+	.byte	3,1,1,7,9
+	.half	.L60-.L28
+	.byte	0,1,1
+.L262:
+	.sdecl	'.debug_ranges',debug,cluster('inet_chksum')
+	.sect	'.debug_ranges'
+.L59:
+	.word	-1,.L49,0,.L60-.L49,0,0
+	.sdecl	'.debug_info',debug,cluster('inet_chksum_pbuf')
+	.sect	'.debug_info'
+.L61:
+	.word	294
+	.half	3
+	.word	.L62
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L64,.L63
+	.byte	2
+	.word	.L52
+	.byte	3
+	.byte	'inet_chksum_pbuf',0,1,184,4,1
+	.word	.L101
+	.byte	1,1,1
+	.word	.L51,.L106,.L50
+	.byte	4
+	.byte	'p',0,1,184,4,31
+	.word	.L107,.L108
+	.byte	5
+	.word	.L51,.L106
+	.byte	6
+	.byte	'acc',0,1,186,4,9
+	.word	.L109,.L110
+	.byte	6
+	.byte	'q',0,1,187,4,16
+	.word	.L107,.L111
+	.byte	6
+	.byte	'swapped',0,1,188,4,7
+	.word	.L112,.L113
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('inet_chksum_pbuf')
+	.sect	'.debug_abbrev'
+.L62:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('inet_chksum_pbuf')
+	.sect	'.debug_line'
+.L63:
+	.word	.L268-.L267
+.L267:
+	.half	3
+	.word	.L270-.L269
+.L269:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0,0,0,0,0
+.L270:
+	.byte	5,15,7,0,5,2
+	.word	.L51
+	.byte	3,187,4,1,5,7,9
+	.half	.L246-.L51
+	.byte	3,2,1,5,10,9
+	.half	.L247-.L246
+	.byte	3,1,1,5,24,9
+	.half	.L249-.L247
+	.byte	1,5,25,9
+	.half	.L30-.L249
+	.byte	3,1,1,5,37,9
+	.half	.L271-.L30
+	.byte	1,5,9,9
+	.half	.L250-.L271
+	.byte	1,5,11,9
+	.half	.L248-.L250
+	.byte	3,1,1,5,10,9
+	.half	.L251-.L248
+	.byte	3,1,1,5,18,9
+	.half	.L272-.L251
+	.byte	1,5,16,9
+	.half	.L273-.L272
+	.byte	1,5,5,9
+	.half	.L274-.L273
+	.byte	1,5,17,7,9
+	.half	.L275-.L274
+	.byte	3,1,1,5,13,9
+	.half	.L276-.L275
+	.byte	3,1,1,5,31,9
+	.half	.L31-.L276
+	.byte	3,123,1,5,24,9
+	.half	.L29-.L31
+	.byte	1,5,3,7,9
+	.half	.L277-.L29
+	.byte	3,9,1,5,11,7,9
+	.half	.L278-.L277
+	.byte	3,1,1,5,23,9
+	.half	.L32-.L278
+	.byte	3,2,1,5,17,9
+	.half	.L256-.L32
+	.byte	1,5,10,9
+	.half	.L279-.L256
+	.byte	1,5,3,9
+	.half	.L280-.L279
+	.byte	1,5,1,9
+	.half	.L33-.L280
+	.byte	3,1,1,7,9
+	.half	.L65-.L33
+	.byte	0,1,1
+.L268:
+	.sdecl	'.debug_ranges',debug,cluster('inet_chksum_pbuf')
+	.sect	'.debug_ranges'
+.L64:
+	.word	-1,.L51,0,.L65-.L51,0,0
+	.sdecl	'.debug_info',debug,cluster('inet_chksum_pseudo')
+	.sect	'.debug_info'
+.L66:
+	.word	355
+	.half	3
+	.word	.L67
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L69,.L68
+	.byte	2
+	.word	.L52
+	.byte	3
+	.byte	'inet_chksum_pseudo',0,1,182,2,1
+	.word	.L101
+	.byte	1,1,1
+	.word	.L39,.L114,.L38
+	.byte	4
+	.byte	'p',0,1,182,2,33
+	.word	.L107,.L115
+	.byte	4
+	.byte	'proto',0,1,182,2,41
+	.word	.L116,.L117
+	.byte	4
+	.byte	'proto_len',0,1,182,2,54
+	.word	.L101,.L118
+	.byte	4
+	.byte	'src',0,1,183,2,38
+	.word	.L119,.L120
+	.byte	4
+	.byte	'dest',0,1,183,2,61
+	.word	.L119,.L121
+	.byte	5
+	.word	.L39,.L114
+	.byte	6
+	.byte	'acc',0,1,185,2,9
+	.word	.L109,.L122
+	.byte	6
+	.byte	'addr',0,1,186,2,9
+	.word	.L109,.L123
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('inet_chksum_pseudo')
+	.sect	'.debug_abbrev'
+.L67:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('inet_chksum_pseudo')
+	.sect	'.debug_line'
+.L68:
+	.word	.L282-.L281
+.L281:
+	.half	3
+	.word	.L284-.L283
+.L283:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0,0,0,0,0
+.L284:
+	.byte	5,10,7,0,5,2
+	.word	.L39
+	.byte	3,187,2,1,5,15,9
+	.half	.L202-.L39
+	.byte	3,1,1,5,30,9
+	.half	.L204-.L202
+	.byte	3,1,1,5,37,9
+	.half	.L203-.L204
+	.byte	1,5,21,9
+	.half	.L285-.L203
+	.byte	1,5,10,9
+	.half	.L286-.L285
+	.byte	3,1,1,5,29,9
+	.half	.L206-.L286
+	.byte	3,1,1,5,21,9
+	.half	.L287-.L206
+	.byte	1,5,30,9
+	.half	.L288-.L287
+	.byte	3,1,1,5,37,9
+	.half	.L207-.L288
+	.byte	1,5,21,9
+	.half	.L289-.L207
+	.byte	1,5,9,9
+	.half	.L290-.L289
+	.byte	3,2,1,9
+	.half	.L291-.L290
+	.byte	3,1,1,5,54,9
+	.half	.L208-.L291
+	.byte	3,2,1,5,3,9
+	.half	.L201-.L208
+	.byte	1,5,1,9
+	.half	.L14-.L201
+	.byte	3,1,1,7,9
+	.half	.L70-.L14
+	.byte	0,1,1
+.L282:
+	.sdecl	'.debug_ranges',debug,cluster('inet_chksum_pseudo')
+	.sect	'.debug_ranges'
+.L69:
+	.word	-1,.L39,0,.L70-.L39,0,0
+	.sdecl	'.debug_info',debug,cluster('inet_chksum_pseudo_partial')
+	.sect	'.debug_info'
+.L71:
+	.word	387
+	.half	3
+	.word	.L72
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L74,.L73
+	.byte	2
+	.word	.L52
+	.byte	3
+	.byte	'inet_chksum_pseudo_partial',0,1,200,3,1
+	.word	.L101
+	.byte	1,1,1
+	.word	.L45,.L124,.L44
+	.byte	4
+	.byte	'p',0,1,200,3,41
+	.word	.L107,.L125
+	.byte	4
+	.byte	'proto',0,1,200,3,49
+	.word	.L116,.L126
+	.byte	4
+	.byte	'proto_len',0,1,200,3,62
+	.word	.L101,.L127
+	.byte	4
+	.byte	'chksum_len',0,1,201,3,34
+	.word	.L101,.L128
+	.byte	4
+	.byte	'src',0,1,201,3,64
+	.word	.L119,.L129
+	.byte	4
+	.byte	'dest',0,1,201,3,87
+	.word	.L119,.L130
+	.byte	5
+	.word	.L45,.L124
+	.byte	6
+	.byte	'acc',0,1,203,3,9
+	.word	.L109,.L131
+	.byte	6
+	.byte	'addr',0,1,204,3,9
+	.word	.L109,.L132
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('inet_chksum_pseudo_partial')
+	.sect	'.debug_abbrev'
+.L72:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('inet_chksum_pseudo_partial')
+	.sect	'.debug_line'
+.L73:
+	.word	.L293-.L292
+.L292:
+	.half	3
+	.word	.L295-.L294
+.L294:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0,0,0,0,0
+.L295:
+	.byte	5,10,7,0,5,2
+	.word	.L45
+	.byte	3,205,3,1,5,15,9
+	.half	.L236-.L45
+	.byte	3,1,1,5,30,9
+	.half	.L238-.L236
+	.byte	3,1,1,5,37,9
+	.half	.L237-.L238
+	.byte	1,5,21,9
+	.half	.L296-.L237
+	.byte	1,5,10,9
+	.half	.L297-.L296
+	.byte	3,1,1,5,29,9
+	.half	.L240-.L297
+	.byte	3,1,1,5,21,9
+	.half	.L298-.L240
+	.byte	1,5,30,9
+	.half	.L299-.L298
+	.byte	3,1,1,5,37,9
+	.half	.L241-.L299
+	.byte	1,5,21,9
+	.half	.L300-.L241
+	.byte	1,5,9,9
+	.half	.L301-.L300
+	.byte	3,2,1,9
+	.half	.L302-.L301
+	.byte	3,1,1,5,74,9
+	.half	.L242-.L302
+	.byte	3,2,1,5,3,9
+	.half	.L235-.L242
+	.byte	1,5,1,9
+	.half	.L26-.L235
+	.byte	3,1,1,7,9
+	.half	.L75-.L26
+	.byte	0,1,1
+.L293:
+	.sdecl	'.debug_ranges',debug,cluster('inet_chksum_pseudo_partial')
+	.sect	'.debug_ranges'
+.L74:
+	.word	-1,.L45,0,.L75-.L45,0,0
+	.sdecl	'.debug_info',debug,cluster('ip_chksum_pseudo')
+	.sect	'.debug_info'
+.L76:
+	.word	317
+	.half	3
+	.word	.L77
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L79,.L78
+	.byte	2
+	.word	.L52
+	.byte	3
+	.byte	'ip_chksum_pseudo',0,1,251,2,1
+	.word	.L101
+	.byte	1,1,1
+	.word	.L41,.L133,.L40
+	.byte	4
+	.byte	'p',0,1,251,2,31
+	.word	.L107,.L134
+	.byte	4
+	.byte	'proto',0,1,251,2,39
+	.word	.L116,.L135
+	.byte	4
+	.byte	'proto_len',0,1,251,2,52
+	.word	.L101,.L136
+	.byte	4
+	.byte	'src',0,1,252,2,35
+	.word	.L137,.L138
+	.byte	4
+	.byte	'dest',0,1,252,2,57
+	.word	.L137,.L139
+	.byte	5
+	.word	.L41,.L133
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ip_chksum_pseudo')
+	.sect	'.debug_abbrev'
+.L77:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ip_chksum_pseudo')
+	.sect	'.debug_line'
+.L78:
+	.word	.L304-.L303
+.L303:
+	.half	3
+	.word	.L306-.L305
+.L305:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0,0,0,0,0
+.L306:
+	.byte	5,67,7,0,5,2
+	.word	.L41
+	.byte	3,135,3,1,5,5,9
+	.half	.L210-.L41
+	.byte	1,5,1,9
+	.half	.L15-.L210
+	.byte	3,3,1,7,9
+	.half	.L80-.L15
+	.byte	0,1,1
+.L304:
+	.sdecl	'.debug_ranges',debug,cluster('ip_chksum_pseudo')
+	.sect	'.debug_ranges'
+.L79:
+	.word	-1,.L41,0,.L80-.L41,0,0
+	.sdecl	'.debug_info',debug,cluster('ip_chksum_pseudo_partial')
+	.sect	'.debug_info'
+.L81:
+	.word	349
+	.half	3
+	.word	.L82
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L84,.L83
+	.byte	2
+	.word	.L52
+	.byte	3
+	.byte	'ip_chksum_pseudo_partial',0,1,142,4,1
+	.word	.L101
+	.byte	1,1,1
+	.word	.L47,.L140,.L46
+	.byte	4
+	.byte	'p',0,1,142,4,39
+	.word	.L107,.L141
+	.byte	4
+	.byte	'proto',0,1,142,4,47
+	.word	.L116,.L142
+	.byte	4
+	.byte	'proto_len',0,1,142,4,60
+	.word	.L101,.L143
+	.byte	4
+	.byte	'chksum_len',0,1,143,4,32
+	.word	.L101,.L144
+	.byte	4
+	.byte	'src',0,1,143,4,61
+	.word	.L137,.L145
+	.byte	4
+	.byte	'dest',0,1,143,4,83
+	.word	.L137,.L146
+	.byte	5
+	.word	.L47,.L140
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ip_chksum_pseudo_partial')
+	.sect	'.debug_abbrev'
+.L82:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ip_chksum_pseudo_partial')
+	.sect	'.debug_line'
+.L83:
+	.word	.L308-.L307
+.L307:
+	.half	3
+	.word	.L310-.L309
+.L309:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0,0,0,0,0
+.L310:
+	.byte	5,87,7,0,5,2
+	.word	.L47
+	.byte	3,154,4,1,5,5,9
+	.half	.L244-.L47
+	.byte	1,5,1,9
+	.half	.L27-.L244
+	.byte	3,3,1,7,9
+	.half	.L85-.L27
+	.byte	0,1,1
+.L308:
+	.sdecl	'.debug_ranges',debug,cluster('ip_chksum_pseudo_partial')
+	.sect	'.debug_ranges'
+.L84:
+	.word	-1,.L47,0,.L85-.L47,0,0
+	.sdecl	'.debug_info',debug,cluster('lwip_standard_chksum')
+	.sect	'.debug_info'
+.L86:
+	.word	349
+	.half	3
+	.word	.L87
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L89,.L88
+	.byte	2
+	.word	.L52
+	.byte	3
+	.byte	'lwip_standard_chksum',0,1,133,1,1
+	.word	.L101
+	.byte	1,1,1
+	.word	.L35,.L147,.L34
+	.byte	4
+	.byte	'dataptr',0,1,133,1,34
+	.word	.L103,.L148
+	.byte	4
+	.byte	'len',0,1,133,1,47
+	.word	.L112,.L149
+	.byte	5
+	.word	.L35,.L147
+	.byte	6
+	.byte	'pb',0,1,135,1,15
+	.word	.L150,.L151
+	.byte	6
+	.byte	'ps',0,1,136,1,16
+	.word	.L152,.L153
+	.byte	6
+	.byte	't',0,1,137,1,9
+	.word	.L101,.L154
+	.byte	6
+	.byte	'sum',0,1,138,1,9
+	.word	.L109,.L155
+	.byte	6
+	.byte	'odd',0,1,139,1,7
+	.word	.L112,.L156
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('lwip_standard_chksum')
+	.sect	'.debug_abbrev'
+.L87:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('lwip_standard_chksum')
+	.sect	'.debug_line'
+.L88:
+	.word	.L312-.L311
+.L311:
+	.half	3
+	.word	.L314-.L313
+.L313:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0,0,0,0,0
+.L314:
+	.byte	5,11,7,0,5,2
+	.word	.L35
+	.byte	3,136,1,1,5,13,9
+	.half	.L173-.L35
+	.byte	3,1,1,5,25,9
+	.half	.L175-.L173
+	.byte	3,1,1,5,28,9
+	.half	.L177-.L175
+	.byte	1,5,7,9
+	.half	.L178-.L177
+	.byte	3,3,1,5,18,7,9
+	.half	.L315-.L178
+	.byte	1,5,23,7,9
+	.half	.L316-.L315
+	.byte	3,1,1,5,21,9
+	.half	.L317-.L316
+	.byte	1,5,26,9
+	.half	.L318-.L317
+	.byte	1,5,8,9
+	.half	.L319-.L318
+	.byte	3,1,1,5,17,9
+	.half	.L2-.L319
+	.byte	3,5,1,5,12,9
+	.half	.L5-.L2
+	.byte	3,1,1,5,9,9
+	.half	.L320-.L5
+	.byte	1,5,15,9
+	.half	.L321-.L320
+	.byte	1,5,9,9
+	.half	.L322-.L321
+	.byte	3,1,1,5,17,9
+	.half	.L4-.L322
+	.byte	3,126,1,5,3,7,9
+	.half	.L323-.L4
+	.byte	3,6,1,5,23,7,9
+	.half	.L324-.L323
+	.byte	3,1,1,5,21,9
+	.half	.L325-.L324
+	.byte	1,5,7,9
+	.half	.L6-.L325
+	.byte	3,4,1,5,9,9
+	.half	.L326-.L6
+	.byte	3,4,1,9
+	.half	.L327-.L326
+	.byte	3,1,1,5,3,9
+	.half	.L328-.L327
+	.byte	3,3,1,5,11,7,9
+	.half	.L329-.L328
+	.byte	3,1,1,5,10,9
+	.half	.L7-.L329
+	.byte	3,3,1,5,3,9
+	.half	.L330-.L7
+	.byte	1,5,1,9
+	.half	.L8-.L330
+	.byte	3,1,1,7,9
+	.half	.L90-.L8
+	.byte	0,1,1
+.L312:
+	.sdecl	'.debug_ranges',debug,cluster('lwip_standard_chksum')
+	.sect	'.debug_ranges'
+.L89:
+	.word	-1,.L35,0,.L90-.L35,0,0
+	.sdecl	'.debug_info',debug,cluster('inet_cksum_pseudo_base')
+	.sect	'.debug_info'
+.L91:
+	.word	341
+	.half	3
+	.word	.L92
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L94,.L93
+	.byte	2
+	.word	.L52
+	.byte	3
+	.byte	'inet_cksum_pseudo_base',0,1,132,2,1
+	.word	.L101
+	.byte	1,1
+	.word	.L37,.L157,.L36
+	.byte	4
+	.byte	'p',0,1,132,2,37
+	.word	.L107,.L158
+	.byte	4
+	.byte	'proto',0,1,132,2,45
+	.word	.L116,.L159
+	.byte	4
+	.byte	'proto_len',0,1,132,2,58
+	.word	.L101,.L160
+	.byte	4
+	.byte	'acc',0,1,132,2,75
+	.word	.L109,.L161
+	.byte	5
+	.word	.L37,.L157
+	.byte	6
+	.byte	'q',0,1,134,2,16
+	.word	.L107,.L162
+	.byte	6
+	.byte	'swapped',0,1,135,2,7
+	.word	.L112,.L163
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('inet_cksum_pseudo_base')
+	.sect	'.debug_abbrev'
+.L92:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('inet_cksum_pseudo_base')
+	.sect	'.debug_line'
+.L93:
+	.word	.L332-.L331
+.L331:
+	.half	3
+	.word	.L334-.L333
+.L333:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0,0,0,0,0
+.L334:
+	.byte	5,1,7,0,5,2
+	.word	.L37
+	.byte	3,131,2,1,5,15,9
+	.half	.L183-.L37
+	.byte	3,3,1,5,10,9
+	.half	.L185-.L183
+	.byte	3,3,1,5,24,9
+	.half	.L186-.L185
+	.byte	1,5,25,9
+	.half	.L10-.L186
+	.byte	3,3,1,5,37,9
+	.half	.L335-.L10
+	.byte	1,5,9,9
+	.half	.L187-.L335
+	.byte	1,5,11,9
+	.half	.L184-.L187
+	.byte	3,4,1,5,10,9
+	.half	.L188-.L184
+	.byte	3,1,1,5,18,9
+	.half	.L336-.L188
+	.byte	1,5,16,9
+	.half	.L337-.L336
+	.byte	1,5,5,9
+	.half	.L338-.L337
+	.byte	1,5,17,7,9
+	.half	.L339-.L338
+	.byte	3,1,1,5,13,9
+	.half	.L340-.L339
+	.byte	3,1,1,5,31,9
+	.half	.L11-.L340
+	.byte	3,118,1,5,24,9
+	.half	.L9-.L11
+	.byte	1,5,3,7,9
+	.half	.L341-.L9
+	.byte	3,15,1,5,11,7,9
+	.half	.L342-.L341
+	.byte	3,1,1,5,28,9
+	.half	.L12-.L342
+	.byte	3,3,1,5,7,9
+	.half	.L195-.L12
+	.byte	1,5,28,9
+	.half	.L196-.L195
+	.byte	3,1,1,5,7,9
+	.half	.L198-.L196
+	.byte	1,5,9,9
+	.half	.L343-.L198
+	.byte	3,4,1,9
+	.half	.L344-.L343
+	.byte	3,1,1,5,23,9
+	.half	.L345-.L344
+	.byte	3,2,1,5,17,9
+	.half	.L200-.L345
+	.byte	1,5,10,9
+	.half	.L346-.L200
+	.byte	1,5,3,9
+	.half	.L347-.L346
+	.byte	1,5,1,9
+	.half	.L13-.L347
+	.byte	3,1,1,7,9
+	.half	.L95-.L13
+	.byte	0,1,1
+.L332:
+	.sdecl	'.debug_ranges',debug,cluster('inet_cksum_pseudo_base')
+	.sect	'.debug_ranges'
+.L94:
+	.word	-1,.L37,0,.L95-.L37,0,0
+	.sdecl	'.debug_info',debug,cluster('inet_cksum_pseudo_partial_base')
+	.sect	'.debug_info'
+.L96:
+	.word	393
+	.half	3
+	.word	.L97
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L99,.L98
+	.byte	2
+	.word	.L52
+	.byte	3
+	.byte	'inet_cksum_pseudo_partial_base',0,1,143,3,1
+	.word	.L101
+	.byte	1,1
+	.word	.L43,.L164,.L42
+	.byte	4
+	.byte	'p',0,1,143,3,45
+	.word	.L107,.L165
+	.byte	4
+	.byte	'proto',0,1,143,3,53
+	.word	.L116,.L166
+	.byte	4
+	.byte	'proto_len',0,1,143,3,66
+	.word	.L101,.L167
+	.byte	4
+	.byte	'chksum_len',0,1,144,3,38
+	.word	.L101,.L168
+	.byte	4
+	.byte	'acc',0,1,144,3,56
+	.word	.L109,.L169
+	.byte	5
+	.word	.L43,.L164
+	.byte	6
+	.byte	'q',0,1,146,3,16
+	.word	.L107,.L170
+	.byte	6
+	.byte	'swapped',0,1,147,3,7
+	.word	.L112,.L171
+	.byte	6
+	.byte	'chklen',0,1,148,3,9
+	.word	.L101,.L172
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('inet_cksum_pseudo_partial_base')
+	.sect	'.debug_abbrev'
+.L97:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('inet_cksum_pseudo_partial_base')
+	.sect	'.debug_line'
+.L98:
+	.word	.L349-.L348
+.L348:
+	.half	3
+	.word	.L351-.L350
+.L350:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/inet_chksum.c',0,0,0,0,0
+.L351:
+	.byte	5,1,7,0,5,2
+	.word	.L43
+	.byte	3,142,3,1,5,15,9
+	.half	.L215-.L43
+	.byte	3,4,1,5,10,9
+	.half	.L217-.L215
+	.byte	3,4,1,5,46,9
+	.half	.L218-.L217
+	.byte	1,5,15,9
+	.half	.L17-.L218
+	.byte	3,3,1,5,5,9
+	.half	.L219-.L17
+	.byte	3,1,1,5,14,7,9
+	.half	.L352-.L219
+	.byte	3,1,1,5,25,9
+	.half	.L18-.L352
+	.byte	3,2,1,5,36,9
+	.half	.L353-.L18
+	.byte	1,5,9,9
+	.half	.L221-.L353
+	.byte	1,5,37,9
+	.half	.L216-.L221
+	.byte	3,1,1,5,18,9
+	.half	.L214-.L216
+	.byte	1,5,5,9
+	.half	.L19-.L214
+	.byte	3,1,1,5,11,9
+	.half	.L20-.L19
+	.byte	3,3,1,5,10,9
+	.half	.L222-.L20
+	.byte	3,1,1,5,18,9
+	.half	.L354-.L222
+	.byte	1,5,16,9
+	.half	.L355-.L354
+	.byte	1,5,5,9
+	.half	.L356-.L355
+	.byte	1,5,17,7,9
+	.half	.L357-.L356
+	.byte	3,1,1,5,13,9
+	.half	.L358-.L357
+	.byte	3,1,1,5,53,9
+	.half	.L22-.L358
+	.byte	3,113,1,5,15,9
+	.half	.L16-.L22
+	.byte	1,5,42,7,9
+	.half	.L359-.L16
+	.byte	1,5,3,7,9
+	.half	.L23-.L359
+	.byte	3,20,1,5,11,7,9
+	.half	.L360-.L23
+	.byte	3,1,1,5,28,9
+	.half	.L24-.L360
+	.byte	3,3,1,5,7,9
+	.half	.L230-.L24
+	.byte	1,5,28,9
+	.half	.L361-.L230
+	.byte	3,1,1,5,7,9
+	.half	.L232-.L361
+	.byte	1,5,9,9
+	.half	.L362-.L232
+	.byte	3,4,1,9
+	.half	.L363-.L362
+	.byte	3,1,1,5,23,9
+	.half	.L364-.L363
+	.byte	3,2,1,5,17,9
+	.half	.L234-.L364
+	.byte	1,5,10,9
+	.half	.L365-.L234
+	.byte	1,5,3,9
+	.half	.L366-.L365
+	.byte	1,5,1,9
+	.half	.L25-.L366
+	.byte	3,1,1,7,9
+	.half	.L100-.L25
+	.byte	0,1,1
+.L349:
+	.sdecl	'.debug_ranges',debug,cluster('inet_cksum_pseudo_partial_base')
+	.sect	'.debug_ranges'
+.L99:
+	.word	-1,.L43,0,.L100-.L43,0,0
+	.sdecl	'.debug_loc',debug,cluster('inet_chksum')
+	.sect	'.debug_loc'
+.L104:
+	.word	-1,.L49,0,.L245-.L49
+	.half	1
+	.byte	100
+	.word	0,0
+.L48:
+	.word	-1,.L49,0,.L102-.L49
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L105:
+	.word	-1,.L49,0,.L245-.L49
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('inet_chksum_pbuf')
+	.sect	'.debug_loc'
+.L110:
+	.word	-1,.L51,.L247-.L51,.L248-.L51
+	.half	1
+	.byte	95
+	.word	.L250-.L51,.L251-.L51
+	.half	1
+	.byte	82
+	.word	.L251-.L51,.L252-.L51
+	.half	1
+	.byte	95
+	.word	.L253-.L51,.L254-.L51
+	.half	1
+	.byte	95
+	.word	.L255-.L51,.L256-.L51
+	.half	1
+	.byte	95
+	.word	0,0
+.L50:
+	.word	-1,.L51,0,.L106-.L51
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L108:
+	.word	-1,.L51,0,.L30-.L51
+	.half	1
+	.byte	100
+	.word	0,0
+.L111:
+	.word	-1,.L51,.L249-.L51,.L106-.L51
+	.half	1
+	.byte	111
+	.word	0,0
+.L113:
+	.word	-1,.L51,.L246-.L51,.L106-.L51
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('inet_chksum_pseudo')
+	.sect	'.debug_loc'
+.L122:
+	.word	-1,.L39,.L204-.L39,.L205-.L39
+	.half	1
+	.byte	95
+	.word	.L205-.L39,.L208-.L39
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L209-.L39,.L201-.L39
+	.half	1
+	.byte	86
+	.word	0,0
+.L123:
+	.word	-1,.L39,.L202-.L39,.L203-.L39
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L206-.L39,.L207-.L39
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L121:
+	.word	-1,.L39,0,.L201-.L39
+	.half	1
+	.byte	102
+	.word	0,0
+.L38:
+	.word	-1,.L39,0,.L114-.L39
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L115:
+	.word	-1,.L39,0,.L201-.L39
+	.half	1
+	.byte	100
+	.word	0,0
+.L117:
+	.word	-1,.L39,0,.L201-.L39
+	.half	1
+	.byte	84
+	.word	0,0
+.L118:
+	.word	-1,.L39,0,.L201-.L39
+	.half	1
+	.byte	85
+	.word	0,0
+.L120:
+	.word	-1,.L39,0,.L201-.L39
+	.half	1
+	.byte	101
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('inet_chksum_pseudo_partial')
+	.sect	'.debug_loc'
+.L131:
+	.word	-1,.L45,.L238-.L45,.L239-.L45
+	.half	1
+	.byte	95
+	.word	.L239-.L45,.L242-.L45
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L243-.L45,.L235-.L45
+	.half	1
+	.byte	87
+	.word	0,0
+.L132:
+	.word	-1,.L45,.L236-.L45,.L237-.L45
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L240-.L45,.L241-.L45
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L128:
+	.word	-1,.L45,0,.L235-.L45
+	.half	1
+	.byte	86
+	.word	0,0
+.L130:
+	.word	-1,.L45,0,.L235-.L45
+	.half	1
+	.byte	102
+	.word	0,0
+.L44:
+	.word	-1,.L45,0,.L124-.L45
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L125:
+	.word	-1,.L45,0,.L235-.L45
+	.half	1
+	.byte	100
+	.word	0,0
+.L126:
+	.word	-1,.L45,0,.L235-.L45
+	.half	1
+	.byte	84
+	.word	0,0
+.L127:
+	.word	-1,.L45,0,.L235-.L45
+	.half	1
+	.byte	85
+	.word	0,0
+.L129:
+	.word	-1,.L45,0,.L235-.L45
+	.half	1
+	.byte	101
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('inet_cksum_pseudo_base')
+	.sect	'.debug_loc'
+.L161:
+	.word	-1,.L37,0,.L10-.L37
+	.half	1
+	.byte	86
+	.word	.L183-.L37,.L184-.L37
+	.half	1
+	.byte	95
+	.word	.L187-.L37,.L188-.L37
+	.half	1
+	.byte	82
+	.word	.L188-.L37,.L189-.L37
+	.half	1
+	.byte	95
+	.word	.L190-.L37,.L191-.L37
+	.half	1
+	.byte	95
+	.word	.L192-.L37,.L193-.L37
+	.half	1
+	.byte	95
+	.word	.L193-.L37,.L199-.L37
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L199-.L37,.L200-.L37
+	.half	1
+	.byte	95
+	.word	0,0
+.L36:
+	.word	-1,.L37,0,.L157-.L37
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L158:
+	.word	-1,.L37,0,.L10-.L37
+	.half	1
+	.byte	100
+	.word	0,0
+.L159:
+	.word	-1,.L37,0,.L10-.L37
+	.half	1
+	.byte	84
+	.word	.L12-.L37,.L194-.L37
+	.half	1
+	.byte	88
+	.word	.L194-.L37,.L195-.L37
+	.half	1
+	.byte	84
+	.word	0,0
+.L160:
+	.word	-1,.L37,0,.L10-.L37
+	.half	1
+	.byte	85
+	.word	.L196-.L37,.L197-.L37
+	.half	1
+	.byte	89
+	.word	.L197-.L37,.L198-.L37
+	.half	1
+	.byte	84
+	.word	0,0
+.L162:
+	.word	-1,.L37,.L186-.L37,.L157-.L37
+	.half	1
+	.byte	111
+	.word	0,0
+.L163:
+	.word	-1,.L37,.L185-.L37,.L157-.L37
+	.half	1
+	.byte	90
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('inet_cksum_pseudo_partial_base')
+	.sect	'.debug_loc'
+.L169:
+	.word	-1,.L43,0,.L17-.L43
+	.half	1
+	.byte	87
+	.word	.L215-.L43,.L216-.L43
+	.half	1
+	.byte	95
+	.word	.L221-.L43,.L222-.L43
+	.half	1
+	.byte	82
+	.word	.L223-.L43,.L224-.L43
+	.half	1
+	.byte	95
+	.word	.L225-.L43,.L226-.L43
+	.half	1
+	.byte	95
+	.word	.L227-.L43,.L228-.L43
+	.half	1
+	.byte	95
+	.word	.L228-.L43,.L233-.L43
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L233-.L43,.L234-.L43
+	.half	1
+	.byte	95
+	.word	0,0
+.L172:
+	.word	-1,.L43,.L219-.L43,.L16-.L43
+	.half	1
+	.byte	88
+	.word	.L220-.L43,.L221-.L43
+	.half	1
+	.byte	84
+	.word	0,0
+.L168:
+	.word	-1,.L43,0,.L17-.L43
+	.half	1
+	.byte	86
+	.word	.L213-.L43,.L214-.L43
+	.half	1
+	.byte	89
+	.word	.L19-.L43,.L164-.L43
+	.half	1
+	.byte	89
+	.word	0,0
+.L42:
+	.word	-1,.L43,0,.L164-.L43
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L165:
+	.word	-1,.L43,0,.L17-.L43
+	.half	1
+	.byte	100
+	.word	0,0
+.L166:
+	.word	-1,.L43,0,.L17-.L43
+	.half	1
+	.byte	84
+	.word	.L211-.L43,.L164-.L43
+	.half	1
+	.byte	91
+	.word	.L229-.L43,.L230-.L43
+	.half	1
+	.byte	84
+	.word	0,0
+.L167:
+	.word	-1,.L43,0,.L17-.L43
+	.half	1
+	.byte	85
+	.word	.L212-.L43,.L164-.L43
+	.half	1
+	.byte	92
+	.word	.L231-.L43,.L232-.L43
+	.half	1
+	.byte	84
+	.word	0,0
+.L170:
+	.word	-1,.L43,.L218-.L43,.L164-.L43
+	.half	1
+	.byte	111
+	.word	0,0
+.L171:
+	.word	-1,.L43,.L217-.L43,.L164-.L43
+	.half	1
+	.byte	90
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ip_chksum_pseudo')
+	.sect	'.debug_loc'
+.L139:
+	.word	-1,.L41,0,.L210-.L41
+	.half	1
+	.byte	102
+	.word	0,0
+.L40:
+	.word	-1,.L41,0,.L133-.L41
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L134:
+	.word	-1,.L41,0,.L210-.L41
+	.half	1
+	.byte	100
+	.word	0,0
+.L135:
+	.word	-1,.L41,0,.L210-.L41
+	.half	1
+	.byte	84
+	.word	0,0
+.L136:
+	.word	-1,.L41,0,.L210-.L41
+	.half	1
+	.byte	85
+	.word	0,0
+.L138:
+	.word	-1,.L41,0,.L210-.L41
+	.half	1
+	.byte	101
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ip_chksum_pseudo_partial')
+	.sect	'.debug_loc'
+.L144:
+	.word	-1,.L47,0,.L244-.L47
+	.half	1
+	.byte	86
+	.word	0,0
+.L146:
+	.word	-1,.L47,0,.L244-.L47
+	.half	1
+	.byte	102
+	.word	0,0
+.L46:
+	.word	-1,.L47,0,.L140-.L47
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L141:
+	.word	-1,.L47,0,.L244-.L47
+	.half	1
+	.byte	100
+	.word	0,0
+.L142:
+	.word	-1,.L47,0,.L244-.L47
+	.half	1
+	.byte	84
+	.word	0,0
+.L143:
+	.word	-1,.L47,0,.L244-.L47
+	.half	1
+	.byte	85
+	.word	0,0
+.L145:
+	.word	-1,.L47,0,.L244-.L47
+	.half	1
+	.byte	101
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('lwip_standard_chksum')
+	.sect	'.debug_loc'
+.L148:
+	.word	-1,.L35,0,.L147-.L35
+	.half	1
+	.byte	100
+	.word	.L177-.L35,.L178-.L35
+	.half	1
+	.byte	95
+	.word	0,0
+.L149:
+	.word	-1,.L35,0,.L147-.L35
+	.half	1
+	.byte	84
+	.word	0,0
+.L34:
+	.word	-1,.L35,0,.L147-.L35
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L156:
+	.word	-1,.L35,.L177-.L35,.L179-.L35
+	.half	1
+	.byte	95
+	.word	0,0
+.L151:
+	.word	-1,.L35,0,.L147-.L35
+	.half	1
+	.byte	100
+	.word	0,0
+.L153:
+	.word	-1,.L35,0,.L147-.L35
+	.half	1
+	.byte	100
+	.word	0,0
+.L155:
+	.word	-1,.L35,.L175-.L35,.L176-.L35
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L176-.L35,.L180-.L35
+	.half	1
+	.byte	81
+	.word	.L180-.L35,.L181-.L35
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L182-.L35,.L147-.L35
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L154:
+	.word	-1,.L35,.L173-.L35,.L174-.L35
+	.half	1
+	.byte	81
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L367:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('lwip_standard_chksum')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L367,.L35,.L147-.L35
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('inet_cksum_pseudo_base')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L367,.L37,.L157-.L37
+	.sdecl	'.debug_frame',debug,cluster('inet_chksum_pseudo')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L367,.L39,.L114-.L39
+	.sdecl	'.debug_frame',debug,cluster('ip_chksum_pseudo')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L367,.L41,.L133-.L41
+	.sdecl	'.debug_frame',debug,cluster('inet_cksum_pseudo_partial_base')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L367,.L43,.L164-.L43
+	.sdecl	'.debug_frame',debug,cluster('inet_chksum_pseudo_partial')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L367,.L45,.L124-.L45
+	.sdecl	'.debug_frame',debug,cluster('ip_chksum_pseudo_partial')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L367,.L47,.L140-.L47
+	.sdecl	'.debug_frame',debug,cluster('inet_chksum')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L367,.L49,.L102-.L49
+	.sdecl	'.debug_frame',debug,cluster('inet_chksum_pbuf')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L367,.L51,.L106-.L51
+	; Module end

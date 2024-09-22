@@ -1,0 +1,1759 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc13048a --dep-file=.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -D__CPU__=tc37x -DCONFIG_BOARD_SERIALIO_ENABLE -DCONFIG_BOARD_LED_ENABLE -DCONFIG_BOARD_ETH_ENABLE -DCONFIG_ETH_MAC_DWMAC_QOS -IC:\\\\workspace\\\\secure-gateway\\\\vendor -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\can -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\eth -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\eth\\\\mac -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\eth\\\\phy -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\led -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\lin -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply\\\\TLF3xx8x -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply\\\\analog_measure -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply\\\\power_good_s -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\serialio -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Configurations -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37AED -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37AED\\\\_Reg -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Ssw\\\\TC37AED -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Ssw\\\\TC37AED\\\\Tricore -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric\\\\If -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Asclin -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Asclin\\\\Lin -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Can -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Can\\\\Can -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Can\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dma -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dma\\\\Dma -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dma\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dts -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dts\\\\Dts -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dts\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Evadc -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Evadc\\\\Adc -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Evadc\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Geth -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Geth\\\\Eth -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Geth\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Gtm -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Mtu -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Pms -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Pms\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Port -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Port\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Qspi -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Qspi\\\\SpiMaster -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Qspi\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Scu -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Scu\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Src -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Src\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Stm -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Stm\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Stm\\\\Timer -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\_Impl -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\_PinMap -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\port -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\port\\\\include -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\port\\\\include\\\\arch -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\apps -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\apps\\\\http -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix\\\\arpa -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix\\\\net -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix\\\\sys -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\stdc -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip\\\\apps -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip\\\\priv -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip\\\\prot -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\netif -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\netif\\\\ppp -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\netif\\\\ppp\\\\polarssl -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o vendor/lwip/src/core/def.src ../vendor/lwip/src/core/def.c"
+	.compiler_name		"ctc"
+	;source	'../vendor/lwip/src/core/def.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.def.lwip_htons',code,cluster('lwip_htons')
+	.sect	'.text.def.lwip_htons'
+	.align	2
+	
+	.global	lwip_htons
+; Function lwip_htons
+.L54:
+lwip_htons:	.type	func
+	and	d15,d4,#255
+	sha	d2,d15,#8
+	mov.u	d15,#65280
+	and	d4,d15
+.L153:
+	sha	d4,#-8
+	or	d2,d4
+.L208:
+	j	.L2
+.L2:
+	ret
+.L105:
+	
+__lwip_htons_function_end:
+	.size	lwip_htons,__lwip_htons_function_end-lwip_htons
+.L73:
+	; End of function
+	
+	.sdecl	'.text.def.lwip_htonl',code,cluster('lwip_htonl')
+	.sect	'.text.def.lwip_htonl'
+	.align	2
+	
+	.global	lwip_htonl
+; Function lwip_htonl
+.L56:
+lwip_htonl:	.type	func
+	and	d15,d4,#255
+	sh	d15,d15,#24
+	mov.u	d0,#65280
+	and	d0,d4
+	sh	d0,d0,#8
+	or	d15,d0
+	movh	d0,#255
+	and	d0,d4
+	sh	d0,#-8
+	or	d15,d0
+	insert	d0,d4,#0,#0,#24
+	sh	d2,d0,#-24
+	or	d2,d15
+.L213:
+	j	.L3
+.L3:
+	ret
+.L108:
+	
+__lwip_htonl_function_end:
+	.size	lwip_htonl,__lwip_htonl_function_end-lwip_htonl
+.L78:
+	; End of function
+	
+	.sdecl	'.text.def.lwip_strnstr',code,cluster('lwip_strnstr')
+	.sect	'.text.def.lwip_strnstr'
+	.align	2
+	
+	.global	lwip_strnstr
+; Function lwip_strnstr
+.L58:
+lwip_strnstr:	.type	func
+	mov.aa	a12,a4
+.L156:
+	mov.aa	a13,a5
+.L158:
+	mov	d8,d4
+.L159:
+	mov.aa	a4,a13
+.L154:
+	call	strlen
+.L155:
+	mov	d9,d2
+.L160:
+	jne	d9,#0,.L4
+.L277:
+	mov.d	d15,a12
+.L161:
+	mov.a	a2,d15
+.L157:
+	j	.L5
+.L4:
+	mov.aa	a14,a12
+.L162:
+	j	.L6
+.L7:
+	ld.b	d0,[a14]0
+.L278:
+	ld.b	d15,[a13]0
+.L279:
+	jne	d15,d0,.L8
+.L280:
+	mov.aa	a4,a14
+.L164:
+	mov.aa	a5,a13
+.L166:
+	mov	d4,d9
+.L167:
+	call	strncmp
+.L165:
+	jne	d2,#0,.L9
+.L281:
+	mov.d	d15,a14
+.L168:
+	mov.a	a2,d15
+.L163:
+	j	.L10
+.L9:
+.L8:
+	add.a	a14,#1
+.L6:
+	ld.b	d15,[a14]0
+	jeq	d15,#0,.L11
+.L282:
+	addsc.a	a15,a14,d9,#0
+.L283:
+	addsc.a	a2,a12,d8,#0
+.L284:
+	ge.a	d15,a2,a15
+	jne	d15,#0,.L7
+.L11:
+	mov.a	a2,#0
+.L285:
+	j	.L12
+.L12:
+.L10:
+.L5:
+	ret
+.L141:
+	
+__lwip_strnstr_function_end:
+	.size	lwip_strnstr,__lwip_strnstr_function_end-lwip_strnstr
+.L98:
+	; End of function
+	
+	.sdecl	'.text.def.lwip_strnistr',code,cluster('lwip_strnistr')
+	.sect	'.text.def.lwip_strnistr'
+	.align	2
+	
+	.global	lwip_strnistr
+; Function lwip_strnistr
+.L60:
+lwip_strnistr:	.type	func
+	mov.aa	a12,a4
+.L171:
+	mov.aa	a13,a5
+.L173:
+	mov	d8,d4
+.L174:
+	mov.aa	a4,a13
+.L169:
+	call	strlen
+.L170:
+	mov	d9,d2
+.L175:
+	jne	d9,#0,.L13
+.L290:
+	mov.d	d15,a12
+.L176:
+	mov.a	a2,d15
+.L172:
+	j	.L14
+.L13:
+	mov.aa	a14,a12
+.L177:
+	j	.L15
+.L16:
+	mov.aa	a4,a14
+.L179:
+	mov.aa	a5,a13
+.L181:
+	mov	d4,d9
+.L182:
+	call	lwip_strnicmp
+.L180:
+	jne	d2,#0,.L17
+.L291:
+	mov.d	d15,a14
+.L183:
+	mov.a	a2,d15
+.L178:
+	j	.L18
+.L17:
+	add.a	a14,#1
+.L15:
+	ld.b	d15,[a14]0
+	jeq	d15,#0,.L19
+.L292:
+	addsc.a	a15,a14,d9,#0
+.L293:
+	addsc.a	a2,a12,d8,#0
+.L294:
+	ge.a	d15,a2,a15
+	jne	d15,#0,.L16
+.L19:
+	mov.a	a2,#0
+.L295:
+	j	.L20
+.L20:
+.L18:
+.L14:
+	ret
+.L147:
+	
+__lwip_strnistr_function_end:
+	.size	lwip_strnistr,__lwip_strnistr_function_end-lwip_strnistr
+.L103:
+	; End of function
+	
+	.sdecl	'.text.def.lwip_stricmp',code,cluster('lwip_stricmp')
+	.sect	'.text.def.lwip_stricmp'
+	.align	2
+	
+	.global	lwip_stricmp
+; Function lwip_stricmp
+lwip_stricmp:	.type	func
+.L21:
+	ld.b	d0,[a4]0
+.L184:
+	add.a	a4,#1
+.L263:
+	ld.b	d15,[a5]0
+.L185:
+	add.a	a5,#1
+.L264:
+	jeq	d15,d0,.L22
+.L137:
+	or	d1,d0,#32
+.L187:
+	mov	d2,#97
+.L265:
+	jlt	d1,d2,.L23
+.L266:
+	mov	d2,#122
+.L267:
+	jlt	d2,d1,.L24
+.L139:
+	or	d15,#32
+.L186:
+	jeq	d15,d1,.L25
+.L268:
+	mov	d2,#1
+.L269:
+	j	.L26
+.L25:
+	j	.L27
+.L24:
+.L23:
+	mov	d2,#1
+.L270:
+	j	.L28
+.L27:
+.L22:
+	jne	d0,#0,.L21
+.L271:
+	mov	d2,#0
+.L272:
+	j	.L29
+.L29:
+.L28:
+.L26:
+	ret
+.L132:
+	
+__lwip_stricmp_function_end:
+	.size	lwip_stricmp,__lwip_stricmp_function_end-lwip_stricmp
+.L93:
+	; End of function
+	
+	.sdecl	'.text.def.lwip_strnicmp',code,cluster('lwip_strnicmp')
+	.sect	'.text.def.lwip_strnicmp'
+	.align	2
+	
+	.global	lwip_strnicmp
+; Function lwip_strnicmp
+lwip_strnicmp:	.type	func
+.L30:
+	ld.b	d0,[a4]0
+.L188:
+	add.a	a4,#1
+.L248:
+	ld.b	d15,[a5]0
+.L189:
+	add.a	a5,#1
+.L249:
+	jeq	d15,d0,.L31
+.L128:
+	or	d1,d0,#32
+.L191:
+	mov	d2,#97
+.L250:
+	jlt	d1,d2,.L32
+.L251:
+	mov	d2,#122
+.L252:
+	jlt	d2,d1,.L33
+.L130:
+	or	d15,#32
+.L190:
+	jeq	d15,d1,.L34
+.L253:
+	mov	d2,#1
+.L254:
+	j	.L35
+.L34:
+	j	.L36
+.L33:
+.L32:
+	mov	d2,#1
+.L255:
+	j	.L37
+.L36:
+.L31:
+	add	d4,#-1
+.L256:
+	jeq	d4,#0,.L38
+.L257:
+	jne	d0,#0,.L30
+.L38:
+	mov	d2,#0
+.L258:
+	j	.L39
+.L39:
+.L37:
+.L35:
+	ret
+.L121:
+	
+__lwip_strnicmp_function_end:
+	.size	lwip_strnicmp,__lwip_strnicmp_function_end-lwip_strnicmp
+.L88:
+	; End of function
+	
+	.sdecl	'.text.def.lwip_itoa',code,cluster('lwip_itoa')
+	.sect	'.text.def.lwip_itoa'
+	.align	2
+	
+	.global	lwip_itoa
+; Function lwip_itoa
+.L64:
+lwip_itoa:	.type	func
+	mov.aa	a15,a4
+.L194:
+	addsc.a	a5,a4,d4,#0
+.L195:
+	add.a	a5,#-1
+.L218:
+	jlt	d5,#0,.L40
+.L219:
+	mov	d2,d5
+.L196:
+	j	.L41
+.L40:
+	mov	d2,d5
+.L197:
+	rsub	d2,#0
+.L41:
+	jge.u	d4,#2,.L42
+.L220:
+	jne	d4,#1,.L43
+.L221:
+	mov	d15,#0
+.L222:
+	st.b	[a4],d15
+.L43:
+	j	.L44
+.L42:
+	jge	d5,#0,.L45
+.L223:
+	mov	d15,#45
+.L224:
+	st.b	[a4],d15
+.L225:
+	mov.aa	a15,a4
+	add.a	a15,#1
+.L45:
+	mov	d15,#0
+.L226:
+	st.b	[a5],d15
+.L227:
+	j	.L46
+.L47:
+	mov	d15,#10
+.L228:
+	div	e0,d2,d15
+.L229:
+	add	d15,d1,#48
+.L198:
+	add.a	a5,#-1
+.L230:
+	st.b	[a5],d15
+.L231:
+	mov	d15,#10
+.L199:
+	div	e2,d2,d15
+.L46:
+	jeq	d2,#0,.L48
+.L232:
+	lt.a	d15,a15,a5
+	jne	d15,#0,.L47
+.L48:
+	jeq	d2,#0,.L49
+.L233:
+	mov	d15,#0
+.L234:
+	st.b	[a4],d15
+.L235:
+	j	.L50
+.L49:
+	ld.b	d15,[a5]0
+.L236:
+	jne	d15,#0,.L51
+.L237:
+	mov	d15,#48
+.L238:
+	st.b	[a15],d15
+.L239:
+	add.a	a15,#1
+.L240:
+	mov	d15,#0
+.L241:
+	st.b	[a15],d15
+.L242:
+	j	.L52
+.L51:
+	addsc.a	a2,a4,d4,#0
+.L243:
+	sub.a	a2,a2,a5
+	mov.d	d4,a2
+.L192:
+	mov.aa	a4,a15
+.L193:
+	call	memmove
+.L52:
+.L50:
+.L44:
+	ret
+.L110:
+	
+__lwip_itoa_function_end:
+	.size	lwip_itoa,__lwip_itoa_function_end-lwip_itoa
+.L83:
+	; End of function
+	
+	.calls	'lwip_strnstr','strlen'
+	.calls	'lwip_strnstr','strncmp'
+	.calls	'lwip_strnistr','strlen'
+	.calls	'lwip_strnistr','lwip_strnicmp'
+	.calls	'lwip_itoa','memmove'
+	.calls	'lwip_htons','',0
+	.calls	'lwip_htonl','',0
+	.calls	'lwip_strnstr','',0
+	.calls	'lwip_strnistr','',0
+	.calls	'lwip_stricmp','',0
+	.calls	'lwip_strnicmp','',0
+	.extern	strncmp
+	.extern	strlen
+	.extern	memmove
+	.calls	'lwip_itoa','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L66:
+	.word	1243
+	.half	3
+	.word	.L67
+	.byte	4
+.L65:
+	.byte	1
+	.byte	'../vendor/lwip/src/core/def.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L68
+	.byte	2,1,1,3
+	.word	160
+	.byte	4
+	.byte	'Ifx__jump_and_link',0,3,1,58,17,1,1,5
+	.byte	'fun',0,1,58,43
+	.word	163
+	.byte	6,0,7
+	.byte	'__fract',0,4,128,1,7
+	.byte	'float',0,4,4,8
+	.byte	'Ifx__float_to_fract',0,3,1,149,2,18
+	.word	208
+	.byte	1,1,5
+	.byte	'a',0,1,149,2,44
+	.word	220
+	.byte	6,0,7
+	.byte	'unsigned long long int',0,8,7,9
+	.byte	'void',0,3
+	.word	300
+	.byte	8
+	.byte	'__ld64',0,3,2,135,1,19
+	.word	274
+	.byte	1,1,5
+	.byte	'addr',0,2,135,1,32
+	.word	306
+	.byte	6,0,4
+	.byte	'__st64',0,3,2,143,1,17,1,1,5
+	.byte	'addr',0,2,143,1,30
+	.word	306
+	.byte	5
+	.byte	'value',0,2,143,1,43
+	.word	274
+	.byte	6,0,10
+	.word	168
+	.byte	11
+	.word	194
+	.byte	6,0,10
+	.word	229
+	.byte	11
+	.word	261
+	.byte	6,0,10
+	.word	311
+	.byte	11
+	.word	330
+	.byte	6,0,10
+	.word	346
+	.byte	11
+	.word	361
+	.byte	11
+	.word	375
+	.byte	6,0
+.L114:
+	.byte	7
+	.byte	'int',0,4,5
+.L119:
+	.byte	7
+	.byte	'char',0,1,6,12
+	.word	452
+.L122:
+	.byte	3
+	.word	460
+.L107:
+	.byte	7
+	.byte	'unsigned int',0,4,7,13
+	.byte	'strncmp',0,3,51,17
+	.word	445
+	.byte	1,1,1,1,14,3,51,39
+	.word	465
+	.byte	14,3,51,53
+	.word	465
+	.byte	14,3,51,56
+	.word	470
+	.byte	0,13
+	.byte	'strlen',0,3,52,17
+	.word	470
+	.byte	1,1,1,1,14,3,52,39
+	.word	465
+	.byte	0,12
+	.word	300
+	.byte	3
+	.word	559
+	.byte	13
+	.byte	'memmove',0,3,54,17
+	.word	306
+	.byte	1,1,1,1,14,3,54,33
+	.word	306
+	.byte	14,3,54,47
+	.word	564
+	.byte	14,3,54,50
+	.word	470
+	.byte	0
+.L104:
+	.byte	7
+	.byte	'unsigned short int',0,2,7
+.L111:
+	.byte	3
+	.word	452
+	.byte	7
+	.byte	'short int',0,2,5,15
+	.byte	'__wchar_t',0,4,1,1
+	.word	641
+	.byte	15
+	.byte	'__size_t',0,4,1,1
+	.word	470
+	.byte	15
+	.byte	'__ptrdiff_t',0,4,1,1
+	.word	445
+	.byte	16,1,3
+	.word	709
+	.byte	15
+	.byte	'__codeptr',0,4,1,1
+	.word	711
+	.byte	15
+	.byte	'__intptr_t',0,4,1,1
+	.word	445
+	.byte	15
+	.byte	'__uintptr_t',0,4,1,1
+	.word	470
+	.byte	15
+	.byte	'size_t',0,5,24,25
+	.word	470
+	.byte	7
+	.byte	'unsigned char',0,1,8,15
+	.byte	'uint8',0,6,108,29
+	.word	788
+	.byte	15
+	.byte	'uint16',0,6,112,29
+	.word	614
+	.byte	7
+	.byte	'unsigned long int',0,4,7,15
+	.byte	'uint32',0,6,116,29
+	.word	834
+	.byte	15
+	.byte	'uint64',0,6,121,29
+	.word	274
+	.byte	15
+	.byte	'sint16',0,6,129,1,29
+	.word	641
+	.byte	7
+	.byte	'long int',0,4,5,15
+	.byte	'sint32',0,6,134,1,29
+	.word	901
+	.byte	7
+	.byte	'long long int',0,8,5,15
+	.byte	'sint64',0,6,141,1,29
+	.word	929
+	.byte	15
+	.byte	'float32',0,6,170,1,29
+	.word	220
+	.byte	15
+	.byte	'pvoid',0,7,54,28
+	.word	306
+	.byte	15
+	.byte	'Ifx_TickTime',0,7,76,28
+	.word	929
+	.byte	15
+	.byte	'_iob_flag_t',0,8,82,25
+	.word	614
+	.byte	7
+	.byte	'char',0,1,6,15
+	.byte	'int8_t',0,9,241,1,41
+	.word	1034
+	.byte	15
+	.byte	'uint8_t',0,9,242,1,41
+	.word	788
+	.byte	15
+	.byte	'int16_t',0,9,245,1,41
+	.word	641
+	.byte	15
+	.byte	'uint16_t',0,9,246,1,41
+	.word	614
+	.byte	15
+	.byte	'int32_t',0,9,253,1,41
+	.word	445
+	.byte	15
+	.byte	'uint32_t',0,9,254,1,41
+	.word	470
+	.byte	15
+	.byte	'int64_t',0,9,133,2,41
+	.word	929
+	.byte	15
+	.byte	'uint64_t',0,9,134,2,41
+	.word	274
+	.byte	15
+	.byte	'uintptr_t',0,9,193,2,41
+	.word	470
+	.byte	15
+	.byte	'intmax_t',0,9,198,2,41
+	.word	929
+	.byte	15
+	.byte	'u16_t',0,10,127,19
+	.word	614
+	.byte	15
+	.byte	'u32_t',0,10,129,1,19
+	.word	470
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L67:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
+	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
+	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,46,1,49,19,0,0,11,5
+	.byte	0,49,19,0,0,12,38,0,73,19,0,0,13,46,1,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63,12,60,12,0,0,14,5,0,58
+	.byte	15,59,15,57,15,73,19,0,0,15,22,0,3,8,58,15,59,15,57,15,73,19,0,0,16,21,0,54,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L68:
+	.word	.L201-.L200
+.L200:
+	.half	3
+	.word	.L203-.L202
+.L202:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\Infineon\\AURIX-Studio-1.10.2\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\',0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\Cpu\\Std\\IfxCpu_IntrinsicsTasking.h',0
+	.byte	0,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\Cpu\\Std\\IfxCpu_Intrinsics.h',0
+	.byte	0,0,0
+	.byte	'string.h',0,1,0,0
+	.byte	'../vendor/lwip/src/core/def.c',0,0,0,0
+	.byte	'stddef.h',0,1,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\Cpu\\Std\\Platform_Types.h',0
+	.byte	0,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\Cpu\\Std\\Ifx_Types.h',0
+	.byte	0,0,0
+	.byte	'stdio.h',0,1,0,0
+	.byte	'stdint.h',0,1,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\lwip\\arch.h',0,0,0,0,0
+.L203:
+.L201:
+	.sdecl	'.debug_info',debug,cluster('lwip_htons')
+	.sect	'.debug_info'
+.L69:
+	.word	224
+	.half	3
+	.word	.L70
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/def.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L72,.L71
+	.byte	2
+	.word	.L65
+	.byte	3
+	.byte	'lwip_htons',0,1,76,1
+	.word	.L104
+	.byte	1,1,1
+	.word	.L54,.L105,.L53
+	.byte	4
+	.byte	'n',0,1,76,18
+	.word	.L104,.L106
+	.byte	5
+	.word	.L54,.L105
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('lwip_htons')
+	.sect	'.debug_abbrev'
+.L70:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('lwip_htons')
+	.sect	'.debug_line'
+.L71:
+	.word	.L205-.L204
+.L204:
+	.half	3
+	.word	.L207-.L206
+.L206:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/def.c',0,0,0,0,0
+.L207:
+	.byte	5,10,7,0,5,2
+	.word	.L54
+	.byte	3,205,0,1,5,3,9
+	.half	.L208-.L54
+	.byte	1,5,1,9
+	.half	.L2-.L208
+	.byte	3,1,1,7,9
+	.half	.L73-.L2
+	.byte	0,1,1
+.L205:
+	.sdecl	'.debug_ranges',debug,cluster('lwip_htons')
+	.sect	'.debug_ranges'
+.L72:
+	.word	-1,.L54,0,.L73-.L54,0,0
+	.sdecl	'.debug_info',debug,cluster('lwip_htonl')
+	.sect	'.debug_info'
+.L74:
+	.word	224
+	.half	3
+	.word	.L75
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/def.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L77,.L76
+	.byte	2
+	.word	.L65
+	.byte	3
+	.byte	'lwip_htonl',0,1,90,1
+	.word	.L107
+	.byte	1,1,1
+	.word	.L56,.L108,.L55
+	.byte	4
+	.byte	'n',0,1,90,18
+	.word	.L107,.L109
+	.byte	5
+	.word	.L56,.L108
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('lwip_htonl')
+	.sect	'.debug_abbrev'
+.L75:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('lwip_htonl')
+	.sect	'.debug_line'
+.L76:
+	.word	.L210-.L209
+.L209:
+	.half	3
+	.word	.L212-.L211
+.L211:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/def.c',0,0,0,0,0
+.L212:
+	.byte	5,10,7,0,5,2
+	.word	.L56
+	.byte	3,219,0,1,5,3,9
+	.half	.L213-.L56
+	.byte	1,5,1,9
+	.half	.L3-.L213
+	.byte	3,1,1,7,9
+	.half	.L78-.L3
+	.byte	0,1,1
+.L210:
+	.sdecl	'.debug_ranges',debug,cluster('lwip_htonl')
+	.sect	'.debug_ranges'
+.L77:
+	.word	-1,.L56,0,.L78-.L56,0,0
+	.sdecl	'.debug_info',debug,cluster('lwip_itoa')
+	.sect	'.debug_info'
+.L79:
+	.word	344
+	.half	3
+	.word	.L80
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/def.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L82,.L81
+	.byte	2
+	.word	.L65
+	.byte	3
+	.byte	'lwip_itoa',0,1,222,1,1,1,1,1
+	.word	.L64,.L110,.L63
+	.byte	4
+	.byte	'result',0,1,222,1,17
+	.word	.L111,.L112
+	.byte	4
+	.byte	'bufsize',0,1,222,1,32
+	.word	.L107,.L113
+	.byte	4
+	.byte	'number',0,1,222,1,45
+	.word	.L114,.L115
+	.byte	5
+	.word	.L64,.L110
+	.byte	6
+	.byte	'res',0,1,224,1,9
+	.word	.L111,.L116
+	.byte	6
+	.byte	'tmp',0,1,225,1,9
+	.word	.L111,.L117
+	.byte	6
+	.byte	'n',0,1,226,1,7
+	.word	.L114,.L118
+	.byte	5
+	.word	.L47,.L46
+	.byte	6
+	.byte	'val',0,1,244,1,10
+	.word	.L119,.L120
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('lwip_itoa')
+	.sect	'.debug_abbrev'
+.L80:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('lwip_itoa')
+	.sect	'.debug_line'
+.L81:
+	.word	.L215-.L214
+.L214:
+	.half	3
+	.word	.L217-.L216
+.L216:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/def.c',0,0,0,0,0
+.L217:
+	.byte	5,13,7,0,5,2
+	.word	.L64
+	.byte	3,223,1,1,5,22,9
+	.half	.L194-.L64
+	.byte	3,1,1,5,32,9
+	.half	.L195-.L194
+	.byte	1,5,11,9
+	.half	.L218-.L195
+	.byte	3,1,1,5,25,7,9
+	.half	.L219-.L218
+	.byte	1,5,34,9
+	.half	.L196-.L219
+	.byte	1,5,37,9
+	.half	.L40-.L196
+	.byte	1,5,36,9
+	.half	.L197-.L40
+	.byte	1,5,3,9
+	.half	.L41-.L197
+	.byte	3,3,1,5,5,7,9
+	.half	.L220-.L41
+	.byte	3,1,1,5,17,7,9
+	.half	.L221-.L220
+	.byte	3,1,1,5,15,9
+	.half	.L222-.L221
+	.byte	1,5,5,9
+	.half	.L43-.L222
+	.byte	3,2,1,5,3,9
+	.half	.L42-.L43
+	.byte	3,4,1,5,14,7,9
+	.half	.L223-.L42
+	.byte	3,1,1,5,12,9
+	.half	.L224-.L223
+	.byte	1,5,9,9
+	.half	.L225-.L224
+	.byte	1,5,10,9
+	.half	.L45-.L225
+	.byte	3,4,1,5,8,9
+	.half	.L226-.L45
+	.byte	1,5,33,9
+	.half	.L227-.L226
+	.byte	3,1,1,5,34,9
+	.half	.L47-.L227
+	.byte	3,1,1,5,32,9
+	.half	.L228-.L47
+	.byte	1,5,27,9
+	.half	.L229-.L228
+	.byte	1,5,8,9
+	.half	.L198-.L229
+	.byte	3,1,1,5,10,9
+	.half	.L230-.L198
+	.byte	3,1,1,5,13,9
+	.half	.L231-.L230
+	.byte	3,1,1,5,11,9
+	.half	.L199-.L231
+	.byte	1,5,10,9
+	.half	.L46-.L199
+	.byte	3,124,1,5,27,7,9
+	.half	.L232-.L46
+	.byte	1,5,3,9
+	.half	.L48-.L232
+	.byte	3,6,1,5,15,7,9
+	.half	.L233-.L48
+	.byte	3,2,1,5,13,9
+	.half	.L234-.L233
+	.byte	1,5,5,9
+	.half	.L235-.L234
+	.byte	3,1,1,5,7,9
+	.half	.L49-.L235
+	.byte	3,2,1,5,3,9
+	.half	.L236-.L49
+	.byte	1,5,14,7,9
+	.half	.L237-.L236
+	.byte	3,2,1,5,12,9
+	.half	.L238-.L237
+	.byte	1,5,9,9
+	.half	.L239-.L238
+	.byte	1,5,14,9
+	.half	.L240-.L239
+	.byte	3,1,1,5,12,9
+	.half	.L241-.L240
+	.byte	1,5,5,9
+	.half	.L242-.L241
+	.byte	3,1,1,5,38,9
+	.half	.L51-.L242
+	.byte	3,3,1,5,49,9
+	.half	.L243-.L51
+	.byte	1,5,21,9
+	.half	.L192-.L243
+	.byte	1,5,1,9
+	.half	.L44-.L192
+	.byte	3,1,1,7,9
+	.half	.L83-.L44
+	.byte	0,1,1
+.L215:
+	.sdecl	'.debug_ranges',debug,cluster('lwip_itoa')
+	.sect	'.debug_ranges'
+.L82:
+	.word	-1,.L64,0,.L83-.L64,0,0
+	.sdecl	'.debug_info',debug,cluster('lwip_strnicmp')
+	.sect	'.debug_info'
+.L84:
+	.word	360
+	.half	3
+	.word	.L85
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/def.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L87,.L86
+	.byte	2
+	.word	.L65
+	.byte	3
+	.byte	'lwip_strnicmp',0,1,186,1,1
+	.word	.L114
+	.byte	1,1,1
+	.word	.L30,.L121,.L62
+	.byte	4
+	.byte	'str1',0,1,186,1,27
+	.word	.L122,.L123
+	.byte	4
+	.byte	'str2',0,1,186,1,45
+	.word	.L122,.L124
+	.byte	4
+	.byte	'len',0,1,186,1,58
+	.word	.L107,.L125
+	.byte	5
+	.word	.L30,.L121
+	.byte	6
+	.byte	'c1',0,1,188,1,8
+	.word	.L119,.L126
+	.byte	6
+	.byte	'c2',0,1,188,1,12
+	.word	.L119,.L127
+	.byte	5
+	.word	.L128,.L31
+	.byte	6
+	.byte	'c1_upc',0,1,194,1,12
+	.word	.L119,.L129
+	.byte	5
+	.word	.L130,.L34
+	.byte	6
+	.byte	'c2_upc',0,1,198,1,14
+	.word	.L119,.L131
+	.byte	0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('lwip_strnicmp')
+	.sect	'.debug_abbrev'
+.L85:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('lwip_strnicmp')
+	.sect	'.debug_line'
+.L86:
+	.word	.L245-.L244
+.L244:
+	.half	3
+	.word	.L247-.L246
+.L246:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/def.c',0,0,0,0,0
+.L247:
+	.byte	5,10,7,0,5,2
+	.word	.L30
+	.byte	3,190,1,1,5,15,9
+	.half	.L188-.L30
+	.byte	1,5,10,9
+	.half	.L248-.L188
+	.byte	3,1,1,5,15,9
+	.half	.L189-.L248
+	.byte	1,5,5,9
+	.half	.L249-.L189
+	.byte	3,1,1,5,24,7,9
+	.half	.L128-.L249
+	.byte	3,1,1,5,22,9
+	.half	.L191-.L128
+	.byte	3,1,1,5,11,9
+	.half	.L250-.L191
+	.byte	1,5,41,7,9
+	.half	.L251-.L250
+	.byte	1,5,38,9
+	.half	.L252-.L251
+	.byte	1,5,26,7,9
+	.half	.L130-.L252
+	.byte	3,3,1,5,9,9
+	.half	.L190-.L130
+	.byte	3,1,1,5,18,7,9
+	.half	.L253-.L190
+	.byte	3,3,1,5,11,9
+	.half	.L254-.L253
+	.byte	1,5,9,9
+	.half	.L34-.L254
+	.byte	3,125,1,5,16,9
+	.half	.L32-.L34
+	.byte	3,7,1,5,9,9
+	.half	.L255-.L32
+	.byte	1,5,8,9
+	.half	.L31-.L255
+	.byte	3,3,1,5,12,9
+	.half	.L256-.L31
+	.byte	3,1,1,5,30,7,9
+	.half	.L257-.L256
+	.byte	1,5,10,7,9
+	.half	.L38-.L257
+	.byte	3,1,1,5,3,9
+	.half	.L258-.L38
+	.byte	1,5,1,9
+	.half	.L35-.L258
+	.byte	3,1,1,7,9
+	.half	.L88-.L35
+	.byte	0,1,1
+.L245:
+	.sdecl	'.debug_ranges',debug,cluster('lwip_strnicmp')
+	.sect	'.debug_ranges'
+.L87:
+	.word	-1,.L30,0,.L88-.L30,0,0
+	.sdecl	'.debug_info',debug,cluster('lwip_stricmp')
+	.sect	'.debug_info'
+.L89:
+	.word	342
+	.half	3
+	.word	.L90
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/def.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L92,.L91
+	.byte	2
+	.word	.L65
+	.byte	3
+	.byte	'lwip_stricmp',0,1,151,1,1
+	.word	.L114
+	.byte	1,1,1
+	.word	.L21,.L132,.L61
+	.byte	4
+	.byte	'str1',0,1,151,1,26
+	.word	.L122,.L133
+	.byte	4
+	.byte	'str2',0,1,151,1,44
+	.word	.L122,.L134
+	.byte	5
+	.word	.L21,.L132
+	.byte	6
+	.byte	'c1',0,1,153,1,8
+	.word	.L119,.L135
+	.byte	6
+	.byte	'c2',0,1,153,1,12
+	.word	.L119,.L136
+	.byte	5
+	.word	.L137,.L22
+	.byte	6
+	.byte	'c1_upc',0,1,159,1,12
+	.word	.L119,.L138
+	.byte	5
+	.word	.L139,.L25
+	.byte	6
+	.byte	'c2_upc',0,1,163,1,14
+	.word	.L119,.L140
+	.byte	0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('lwip_stricmp')
+	.sect	'.debug_abbrev'
+.L90:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('lwip_stricmp')
+	.sect	'.debug_line'
+.L91:
+	.word	.L260-.L259
+.L259:
+	.half	3
+	.word	.L262-.L261
+.L261:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/def.c',0,0,0,0,0
+.L262:
+	.byte	5,10,7,0,5,2
+	.word	.L21
+	.byte	3,155,1,1,5,15,9
+	.half	.L184-.L21
+	.byte	1,5,10,9
+	.half	.L263-.L184
+	.byte	3,1,1,5,15,9
+	.half	.L185-.L263
+	.byte	1,5,5,9
+	.half	.L264-.L185
+	.byte	3,1,1,5,24,7,9
+	.half	.L137-.L264
+	.byte	3,1,1,5,22,9
+	.half	.L187-.L137
+	.byte	3,1,1,5,11,9
+	.half	.L265-.L187
+	.byte	1,5,41,7,9
+	.half	.L266-.L265
+	.byte	1,5,38,9
+	.half	.L267-.L266
+	.byte	1,5,26,7,9
+	.half	.L139-.L267
+	.byte	3,3,1,5,9,9
+	.half	.L186-.L139
+	.byte	3,1,1,5,18,7,9
+	.half	.L268-.L186
+	.byte	3,3,1,5,11,9
+	.half	.L269-.L268
+	.byte	1,5,9,9
+	.half	.L25-.L269
+	.byte	3,125,1,5,16,9
+	.half	.L23-.L25
+	.byte	3,7,1,5,9,9
+	.half	.L270-.L23
+	.byte	1,5,20,9
+	.half	.L22-.L270
+	.byte	3,3,1,5,10,7,9
+	.half	.L271-.L22
+	.byte	3,1,1,5,3,9
+	.half	.L272-.L271
+	.byte	1,5,1,9
+	.half	.L26-.L272
+	.byte	3,1,1,7,9
+	.half	.L93-.L26
+	.byte	0,1,1
+.L260:
+	.sdecl	'.debug_ranges',debug,cluster('lwip_stricmp')
+	.sect	'.debug_ranges'
+.L92:
+	.word	-1,.L21,0,.L93-.L21,0,0
+	.sdecl	'.debug_info',debug,cluster('lwip_strnstr')
+	.sect	'.debug_info'
+.L94:
+	.word	299
+	.half	3
+	.word	.L95
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/def.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L97,.L96
+	.byte	2
+	.word	.L65
+	.byte	3
+	.byte	'lwip_strnstr',0,1,105,1
+	.word	.L111
+	.byte	1,1,1
+	.word	.L58,.L141,.L57
+	.byte	4
+	.byte	'buffer',0,1,105,26
+	.word	.L122,.L142
+	.byte	4
+	.byte	'token',0,1,105,46
+	.word	.L122,.L143
+	.byte	4
+	.byte	'n',0,1,105,60
+	.word	.L107,.L144
+	.byte	5
+	.word	.L58,.L141
+	.byte	6
+	.byte	'p',0,1,107,15
+	.word	.L122,.L145
+	.byte	6
+	.byte	'tokenlen',0,1,108,10
+	.word	.L107,.L146
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('lwip_strnstr')
+	.sect	'.debug_abbrev'
+.L95:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('lwip_strnstr')
+	.sect	'.debug_line'
+.L96:
+	.word	.L274-.L273
+.L273:
+	.half	3
+	.word	.L276-.L275
+.L275:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/def.c',0,0,0,0,0
+.L276:
+	.byte	5,1,7,0,5,2
+	.word	.L58
+	.byte	3,232,0,1,5,28,9
+	.half	.L159-.L58
+	.byte	3,3,1,5,19,9
+	.half	.L155-.L159
+	.byte	1,5,3,9
+	.half	.L160-.L155
+	.byte	3,1,1,5,12,7,9
+	.half	.L277-.L160
+	.byte	3,1,1,5,5,9
+	.half	.L157-.L277
+	.byte	1,5,10,9
+	.half	.L4-.L157
+	.byte	3,2,1,5,54,9
+	.half	.L162-.L4
+	.byte	1,5,10,9
+	.half	.L7-.L162
+	.byte	3,1,1,5,16,9
+	.half	.L278-.L7
+	.byte	1,5,9,9
+	.half	.L279-.L278
+	.byte	1,5,46,7,9
+	.half	.L280-.L279
+	.byte	1,5,56,9
+	.half	.L165-.L280
+	.byte	1,5,14,7,9
+	.half	.L281-.L165
+	.byte	3,1,1,5,7,9
+	.half	.L163-.L281
+	.byte	1,5,57,9
+	.half	.L8-.L163
+	.byte	3,126,1,5,20,9
+	.half	.L6-.L8
+	.byte	1,5,29,9
+	.half	.L282-.L6
+	.byte	1,5,50,9
+	.half	.L283-.L282
+	.byte	1,5,40,9
+	.half	.L284-.L283
+	.byte	1,5,10,9
+	.half	.L11-.L284
+	.byte	3,5,1,5,3,9
+	.half	.L285-.L11
+	.byte	1,5,1,9
+	.half	.L5-.L285
+	.byte	3,1,1,7,9
+	.half	.L98-.L5
+	.byte	0,1,1
+.L274:
+	.sdecl	'.debug_ranges',debug,cluster('lwip_strnstr')
+	.sect	'.debug_ranges'
+.L97:
+	.word	-1,.L58,0,.L98-.L58,0,0
+	.sdecl	'.debug_info',debug,cluster('lwip_strnistr')
+	.sect	'.debug_info'
+.L99:
+	.word	306
+	.half	3
+	.word	.L100
+	.byte	4,1
+	.byte	'../vendor/lwip/src/core/def.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L102,.L101
+	.byte	2
+	.word	.L65
+	.byte	3
+	.byte	'lwip_strnistr',0,1,128,1,1
+	.word	.L111
+	.byte	1,1,1
+	.word	.L60,.L147,.L59
+	.byte	4
+	.byte	'buffer',0,1,128,1,27
+	.word	.L122,.L148
+	.byte	4
+	.byte	'token',0,1,128,1,47
+	.word	.L122,.L149
+	.byte	4
+	.byte	'n',0,1,128,1,61
+	.word	.L107,.L150
+	.byte	5
+	.word	.L60,.L147
+	.byte	6
+	.byte	'p',0,1,130,1,15
+	.word	.L122,.L151
+	.byte	6
+	.byte	'tokenlen',0,1,131,1,10
+	.word	.L107,.L152
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('lwip_strnistr')
+	.sect	'.debug_abbrev'
+.L100:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('lwip_strnistr')
+	.sect	'.debug_line'
+.L101:
+	.word	.L287-.L286
+.L286:
+	.half	3
+	.word	.L289-.L288
+.L288:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/lwip/src/core/def.c',0,0,0,0,0
+.L289:
+	.byte	5,1,7,0,5,2
+	.word	.L60
+	.byte	3,255,0,1,5,28,9
+	.half	.L174-.L60
+	.byte	3,3,1,5,19,9
+	.half	.L170-.L174
+	.byte	1,5,3,9
+	.half	.L175-.L170
+	.byte	3,1,1,5,12,7,9
+	.half	.L290-.L175
+	.byte	3,1,1,5,5,9
+	.half	.L172-.L290
+	.byte	1,5,10,9
+	.half	.L13-.L172
+	.byte	3,2,1,5,54,9
+	.half	.L177-.L13
+	.byte	1,5,33,9
+	.half	.L16-.L177
+	.byte	3,1,1,5,5,9
+	.half	.L180-.L16
+	.byte	1,5,14,7,9
+	.half	.L291-.L180
+	.byte	3,1,1,5,7,9
+	.half	.L178-.L291
+	.byte	1,5,57,9
+	.half	.L17-.L178
+	.byte	3,126,1,5,20,9
+	.half	.L15-.L17
+	.byte	1,5,29,9
+	.half	.L292-.L15
+	.byte	1,5,50,9
+	.half	.L293-.L292
+	.byte	1,5,40,9
+	.half	.L294-.L293
+	.byte	1,5,10,9
+	.half	.L19-.L294
+	.byte	3,5,1,5,3,9
+	.half	.L295-.L19
+	.byte	1,5,1,9
+	.half	.L14-.L295
+	.byte	3,1,1,7,9
+	.half	.L103-.L14
+	.byte	0,1,1
+.L287:
+	.sdecl	'.debug_ranges',debug,cluster('lwip_strnistr')
+	.sect	'.debug_ranges'
+.L102:
+	.word	-1,.L60,0,.L103-.L60,0,0
+	.sdecl	'.debug_loc',debug,cluster('lwip_htonl')
+	.sect	'.debug_loc'
+.L55:
+	.word	-1,.L56,0,.L108-.L56
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L109:
+	.word	-1,.L56,0,.L108-.L56
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('lwip_htons')
+	.sect	'.debug_loc'
+.L53:
+	.word	-1,.L54,0,.L105-.L54
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L106:
+	.word	-1,.L54,0,.L153-.L54
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('lwip_itoa')
+	.sect	'.debug_loc'
+.L113:
+	.word	-1,.L64,0,.L192-.L64
+	.half	1
+	.byte	84
+	.word	0,0
+.L63:
+	.word	-1,.L64,0,.L110-.L64
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L118:
+	.word	-1,.L64,.L196-.L64,.L40-.L64
+	.half	1
+	.byte	82
+	.word	.L197-.L64,.L44-.L64
+	.half	1
+	.byte	82
+	.word	0,0
+.L115:
+	.word	-1,.L64,0,.L44-.L64
+	.half	1
+	.byte	85
+	.word	0,0
+.L116:
+	.word	-1,.L64,.L194-.L64,.L110-.L64
+	.half	1
+	.byte	111
+	.word	.L193-.L64,.L44-.L64
+	.half	1
+	.byte	100
+	.word	0,0
+.L112:
+	.word	-1,.L64,0,.L193-.L64
+	.half	1
+	.byte	100
+	.word	0,0
+.L117:
+	.word	-1,.L64,.L195-.L64,.L44-.L64
+	.half	1
+	.byte	101
+	.word	0,0
+.L120:
+	.word	-1,.L64,.L198-.L64,.L199-.L64
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('lwip_stricmp')
+	.sect	'.debug_loc'
+.L135:
+	.word	-1,.L21,.L184-.L21,.L132-.L21
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L138:
+	.word	-1,.L21,.L187-.L21,.L22-.L21
+	.half	1
+	.byte	81
+	.word	0,0
+.L136:
+	.word	-1,.L21,.L185-.L21,.L186-.L21
+	.half	1
+	.byte	95
+	.word	.L23-.L21,.L22-.L21
+	.half	1
+	.byte	95
+	.word	0,0
+.L140:
+	.word	-1,.L21,.L139-.L21,.L23-.L21
+	.half	1
+	.byte	95
+	.word	0,0
+.L61:
+	.word	-1,.L21,0,.L132-.L21
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L133:
+	.word	-1,.L21,0,.L132-.L21
+	.half	1
+	.byte	100
+	.word	0,0
+.L134:
+	.word	-1,.L21,0,.L132-.L21
+	.half	1
+	.byte	101
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('lwip_strnicmp')
+	.sect	'.debug_loc'
+.L126:
+	.word	-1,.L30,.L188-.L30,.L121-.L30
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L129:
+	.word	-1,.L30,.L191-.L30,.L31-.L30
+	.half	1
+	.byte	81
+	.word	0,0
+.L127:
+	.word	-1,.L30,.L189-.L30,.L190-.L30
+	.half	1
+	.byte	95
+	.word	.L32-.L30,.L31-.L30
+	.half	1
+	.byte	95
+	.word	0,0
+.L131:
+	.word	-1,.L30,.L130-.L30,.L32-.L30
+	.half	1
+	.byte	95
+	.word	0,0
+.L125:
+	.word	-1,.L30,0,.L121-.L30
+	.half	1
+	.byte	84
+	.word	0,0
+.L62:
+	.word	-1,.L30,0,.L121-.L30
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L123:
+	.word	-1,.L30,0,.L121-.L30
+	.half	1
+	.byte	100
+	.word	0,0
+.L124:
+	.word	-1,.L30,0,.L121-.L30
+	.half	1
+	.byte	101
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('lwip_strnistr')
+	.sect	'.debug_loc'
+.L148:
+	.word	-1,.L60,0,.L169-.L60
+	.half	1
+	.byte	100
+	.word	.L171-.L60,.L172-.L60
+	.half	1
+	.byte	108
+	.word	.L176-.L60,.L13-.L60
+	.half	1
+	.byte	95
+	.word	.L172-.L60,.L13-.L60
+	.half	1
+	.byte	98
+	.word	.L13-.L60,.L14-.L60
+	.half	1
+	.byte	108
+	.word	0,0
+.L59:
+	.word	-1,.L60,0,.L147-.L60
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L150:
+	.word	-1,.L60,0,.L170-.L60
+	.half	1
+	.byte	84
+	.word	.L174-.L60,.L147-.L60
+	.half	1
+	.byte	88
+	.word	0,0
+.L151:
+	.word	-1,.L60,.L177-.L60,.L178-.L60
+	.half	1
+	.byte	110
+	.word	.L179-.L60,.L180-.L60
+	.half	1
+	.byte	100
+	.word	.L183-.L60,.L17-.L60
+	.half	1
+	.byte	95
+	.word	.L178-.L60,.L17-.L60
+	.half	1
+	.byte	98
+	.word	.L17-.L60,.L14-.L60
+	.half	1
+	.byte	110
+	.word	0,0
+.L149:
+	.word	-1,.L60,0,.L169-.L60
+	.half	1
+	.byte	101
+	.word	.L173-.L60,.L147-.L60
+	.half	1
+	.byte	109
+	.word	.L169-.L60,.L170-.L60
+	.half	1
+	.byte	100
+	.word	.L181-.L60,.L180-.L60
+	.half	1
+	.byte	101
+	.word	0,0
+.L152:
+	.word	-1,.L60,.L170-.L60,.L16-.L60
+	.half	1
+	.byte	82
+	.word	.L175-.L60,.L147-.L60
+	.half	1
+	.byte	89
+	.word	.L182-.L60,.L180-.L60
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('lwip_strnstr')
+	.sect	'.debug_loc'
+.L142:
+	.word	-1,.L58,0,.L154-.L58
+	.half	1
+	.byte	100
+	.word	.L156-.L58,.L157-.L58
+	.half	1
+	.byte	108
+	.word	.L161-.L58,.L4-.L58
+	.half	1
+	.byte	95
+	.word	.L157-.L58,.L4-.L58
+	.half	1
+	.byte	98
+	.word	.L4-.L58,.L5-.L58
+	.half	1
+	.byte	108
+	.word	0,0
+.L57:
+	.word	-1,.L58,0,.L141-.L58
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L144:
+	.word	-1,.L58,0,.L155-.L58
+	.half	1
+	.byte	84
+	.word	.L159-.L58,.L141-.L58
+	.half	1
+	.byte	88
+	.word	0,0
+.L145:
+	.word	-1,.L58,.L162-.L58,.L163-.L58
+	.half	1
+	.byte	110
+	.word	.L164-.L58,.L165-.L58
+	.half	1
+	.byte	100
+	.word	.L168-.L58,.L8-.L58
+	.half	1
+	.byte	95
+	.word	.L163-.L58,.L8-.L58
+	.half	1
+	.byte	98
+	.word	.L8-.L58,.L5-.L58
+	.half	1
+	.byte	110
+	.word	0,0
+.L143:
+	.word	-1,.L58,0,.L154-.L58
+	.half	1
+	.byte	101
+	.word	.L158-.L58,.L141-.L58
+	.half	1
+	.byte	109
+	.word	.L154-.L58,.L155-.L58
+	.half	1
+	.byte	100
+	.word	.L166-.L58,.L165-.L58
+	.half	1
+	.byte	101
+	.word	0,0
+.L146:
+	.word	-1,.L58,.L155-.L58,.L7-.L58
+	.half	1
+	.byte	82
+	.word	.L160-.L58,.L141-.L58
+	.half	1
+	.byte	89
+	.word	.L167-.L58,.L165-.L58
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L296:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('lwip_htons')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L296,.L54,.L105-.L54
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('lwip_htonl')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L296,.L56,.L108-.L56
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('lwip_strnstr')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L296,.L58,.L141-.L58
+	.sdecl	'.debug_frame',debug,cluster('lwip_strnistr')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L296,.L60,.L147-.L60
+	.sdecl	'.debug_frame',debug,cluster('lwip_stricmp')
+	.sect	'.debug_frame'
+	.word	20
+	.word	.L296,.L21,.L132-.L21
+	.byte	8,18,8,19,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('lwip_strnicmp')
+	.sect	'.debug_frame'
+	.word	20
+	.word	.L296,.L30,.L121-.L30
+	.byte	8,18,8,19,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('lwip_itoa')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L296,.L64,.L110-.L64
+	; Module end

@@ -35,86 +35,86 @@
       }
     },
     {
-      "name": "tricore",
+      "name": "tricore-gcc",
       "hidden": true,
-      "toolchainFile": "${sourceDir}/cmake/tricore-gcc.toolchain"
+      "toolchainFile": "${sourceDir}/cmake/toolchains/tricore-gcc.toolchain"
     },
     {
-      "name": "tricore-debug",
+      "name": "tricore-gcc-debug",
       "inherits": [
         "base",
-        "tricore",
+        "tricore-gcc",
         "debug"
       ]
     },
     {
-      "name": "tricore-release",
+      "name": "tricore-gcc-release",
       "inherits": [
         "base",
-        "tricore",
+        "tricore-gcc",
         "release"
       ]
     },
     {
-      "name": "tricore-profile",
+      "name": "tricore-gcc-profile",
       "inherits": [
         "base",
-        "tricore",
+        "tricore-gcc",
         "profile"
       ]
     }
   ],
   "buildPresets": [
     {
-      "name": "tricore-debug",
-      "configurePreset": "tricore-debug"
+      "name": "tricore-gcc-debug",
+      "configurePreset": "tricore-gcc-debug"
     },
     {
-      "name": "tricore-release",
-      "configurePreset": "tricore-release"
+      "name": "tricore-gcc-release",
+      "configurePreset": "tricore-gcc-release"
     },
     {
-      "name": "tricore-profile",
-      "configurePreset": "tricore-profile"
+      "name": "tricore-gcc-profile",
+      "configurePreset": "tricore-gcc-profile"
     }
   ],
   "workflowPresets": [
     {
-      "name": "tricore-debug",
+      "name": "tricore-gcc-debug",
       "steps": [
         {
           "type": "configure",
-          "name": "tricore-debug"
+          "name": "tricore-gcc-debug"
         },
         {
           "type": "build",
-          "name": "tricore-debug"
+          "name": "tricore-gcc-debug"
         }
       ]
     },
     {
-      "name": "tricore-profile",
+      "name": "tricore-gcc-profile",
       "steps": [
         {
           "type": "configure",
-          "name": "tricore-profile"
+          "name": "tricore-gcc-profile"
         },
         {
           "type": "build",
-          "name": "tricore-profile"
+          "name": "tricore-gcc-profile"
         }
       ]
     },
     {
-      "name": "tricore-release",
+      "name": "tricore-gcc-release",
       "steps": [
         {
           "type": "configure",
-          "name": "tricore-release"
+          "name": "tricore-gcc-release"
         },
         {
           "type": "build",
-          "name": "tricore-release"
+          "name": "tricore-gcc-release"
         }
       ]
     }

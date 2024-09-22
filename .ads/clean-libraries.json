@@ -4,7 +4,7 @@
 	"commands" : [
 		{
 			"type": "DELETE", 
-			"path": "/Libraries", 
+			"path": "/vendor/infineon/Libraries",
 			"recipe": ".ads/clean.json"
 		},
 		{

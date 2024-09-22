@@ -1,4 +1,4 @@
-<img src="Images/IFX_LOGO_600.gif" align="right" width="150" />  
+<img src="docs/images/IFX_LOGO_600.gif" align="right" width="150" />  
 
 # iLLD_TC377TX_ADS_LWIP-HTTP-Server
 **This code example demonstrates the TC377 peripheral capabilities by implementing a CAN and LIN node together with an HTTP server using the LWIP 2.2.0 stack. The server reads the die temperature and it can manipulate LEDs.**
@@ -25,7 +25,7 @@ This code example has been developed for the KIT_A2G_TC377_SEC_GTW board.
 
 Connect the RJ45 Ethernet cable to the ETH1 connector. Connect the KIT_A2G_GWEXT_FR_LIN and KIT_A2G_GWEXT_CAN boards for a better pin reachability. The LIN Master node is implemented on LIN2, and the CAN node is implemented on CAN0. 
 
-<img src="./Images/Board.png" height="400" />
+<img src="docs/images/Board.png" height="400" />
 
 ## Implementation  
 
@@ -67,11 +67,11 @@ Subnet mask: 255.255.255.0
 
 - In this website, the die temperature can be observed.
 
-<img src="./Images/Temperature.png" height="400" />
+<img src="docs/images/Temperature.png" height="400" />
 
 - By pressing the CGI demo button, another website will open giving the user the possibility to manipulate the RGB LED.
 
-<img src="./Images/Buttons.png" height="400" />
+<img src="docs/images/Buttons.png" height="400" />
 
 ## Compiling and programming
 Before testing this code example:  

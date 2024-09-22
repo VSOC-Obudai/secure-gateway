@@ -1,0 +1,98 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc16424a --dep-file=.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -D__CPU__=tc37x -DCONFIG_BOARD_SERIALIO_ENABLE -DCONFIG_BOARD_LED_ENABLE -DCONFIG_BOARD_ETH_ENABLE -DCONFIG_ETH_MAC_DWMAC_QOS -IC:\\\\workspace\\\\secure-gateway\\\\vendor -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\can -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\eth -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\eth\\\\mac -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\eth\\\\phy -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\led -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\lin -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply\\\\TLF3xx8x -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply\\\\analog_measure -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\power_supply\\\\power_good_s -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\board\\\\serialio -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Configurations -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37AED -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37AED\\\\_Reg -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Ssw\\\\TC37AED -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Infra\\\\Ssw\\\\TC37AED\\\\Tricore -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric\\\\If -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Asclin -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Asclin\\\\Lin -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Can -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Can\\\\Can -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Can\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dma -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dma\\\\Dma -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dma\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dts -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dts\\\\Dts -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Dts\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Evadc -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Evadc\\\\Adc -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Evadc\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Geth -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Geth\\\\Eth -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Geth\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Gtm -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Mtu -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Pms -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Pms\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Port -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Port\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Qspi -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Qspi\\\\SpiMaster -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Qspi\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Scu -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Scu\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Src -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Src\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Stm -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Stm\\\\Std -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\Stm\\\\Timer -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\_Impl -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\\\_PinMap -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\port -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\port\\\\include -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\port\\\\include\\\\arch -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\apps -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\apps\\\\http -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix\\\\arpa -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix\\\\net -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\posix\\\\sys -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\compat\\\\stdc -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip\\\\apps -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip\\\\priv -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\lwip\\\\prot -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\netif -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\netif\\\\ppp -IC:\\\\workspace\\\\secure-gateway\\\\vendor\\\\lwip\\\\src\\\\include\\\\netif\\\\ppp\\\\polarssl -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o vendor/infineon/Libraries/Infra/Platform/Tricore/Compilers/CompilerGnuc.src ../vendor/infineon/Libraries/Infra/Platform/Tricore/Compilers/CompilerGnuc.c"
+	.compiler_name		"ctc"
+	;source	'../vendor/infineon/Libraries/Infra/Platform/Tricore/Compilers/CompilerGnuc.c'
+
+	
+$TC162
+	
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L3:
+	.word	573
+	.half	3
+	.word	.L4
+	.byte	4
+.L2:
+	.byte	1
+	.byte	'../vendor/infineon/Libraries/Infra/Platform/Tricore/Compilers/CompilerGnuc.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\workspace\\secure-gateway\\Debug\\',0,12,1
+	.word	.L5
+	.byte	2
+	.byte	'short int',0,2,5,3
+	.byte	'__wchar_t',0,1,1,1
+	.word	207
+	.byte	2
+	.byte	'unsigned int',0,4,7,3
+	.byte	'__size_t',0,1,1,1
+	.word	238
+	.byte	2
+	.byte	'int',0,4,5,3
+	.byte	'__ptrdiff_t',0,1,1,1
+	.word	271
+	.byte	4,1,5
+	.word	298
+	.byte	3
+	.byte	'__codeptr',0,1,1,1
+	.word	300
+	.byte	2
+	.byte	'unsigned char',0,1,8,3
+	.byte	'uint8',0,2,108,29
+	.word	323
+	.byte	2
+	.byte	'unsigned short int',0,2,7,3
+	.byte	'uint16',0,2,112,29
+	.word	354
+	.byte	2
+	.byte	'unsigned long int',0,4,7,3
+	.byte	'uint32',0,2,116,29
+	.word	391
+	.byte	3
+	.byte	'sint16',0,2,129,1,29
+	.word	207
+	.byte	2
+	.byte	'long int',0,4,5,3
+	.byte	'sint32',0,2,134,1,29
+	.word	443
+	.byte	2
+	.byte	'long long int',0,8,5,3
+	.byte	'sint64',0,2,141,1,29
+	.word	471
+	.byte	2
+	.byte	'float',0,4,4,3
+	.byte	'float32',0,2,170,1,29
+	.word	504
+	.byte	6
+	.byte	'void',0,5
+	.word	530
+	.byte	3
+	.byte	'pvoid',0,3,54,28
+	.word	536
+	.byte	3
+	.byte	'Ifx_TickTime',0,3,76,28
+	.word	471
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L4:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,22,0,3,8,58,15,59,15,57,15
+	.byte	73,19,0,0,4,21,0,54,15,0,0,5,15,0,73,19,0,0,6,59,0,3,8,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L5:
+	.word	.L7-.L6
+.L6:
+	.half	3
+	.word	.L9-.L8
+.L8:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../vendor/infineon/Libraries/Infra/Platform/Tricore/Compilers/CompilerGnuc.c',0,0,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\Cpu\\Std\\Platform_Types.h',0
+	.byte	0,0,0
+	.byte	'C:\\\\workspace\\\\secure-gateway\\\\vendor\\\\infineon\\\\Libraries\\\\iLLD\\\\TC37AED\\\\Tricore\\Cpu\\Std\\Ifx_Types.h',0
+	.byte	0,0,0,0
+.L9:
+.L7:
+	; Module end
