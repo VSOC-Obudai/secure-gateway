@@ -127,6 +127,8 @@
 									<listOptionValue builtIn="false" value="CONFIG_ETH_MAC_DWMAC_QOS"/>
 								</option>
 								<option id="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.create.434440460" name="Output stage" superClass="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.create" value="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.create.assembly" valueType="enumerated"/>
+								<option id="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.debugging.1134351513" name="Generate symbolic debug information:" superClass="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.debugging" value="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.debugging.full" valueType="enumerated"/>
+								<option id="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.fpmodel.103928989" name="Floating-point model: (--fp-model=)" superClass="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.fpmodel" value="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.fpmodel.strict" valueType="enumerated"/>
 								<inputType id="com.infineon.aurix.buildsystem.managed.tool.c.compiler.tasking.input.cpp.287913458" name="C++" superClass="com.infineon.aurix.buildsystem.managed.tool.c.compiler.tasking.input.cpp"/>
 								<inputType id="com.infineon.aurix.buildsystem.managed.tool.c.compiler.tasking.input.1202568445" name="C" superClass="com.infineon.aurix.buildsystem.managed.tool.c.compiler.tasking.input"/>
 							</tool>
@@ -135,6 +137,7 @@
 							</tool>
 							<tool id="com.infineon.aurix.buildsystem.managed.tool.c.linker.tasking.467666727" name="TASKING Linker" superClass="com.infineon.aurix.buildsystem.managed.tool.c.linker.tasking">
 								<option id="com.infineon.aurix.buildsystem.managed.tool.c.linker.tasking.linkerScript.1325855047" name="Linker script (--lsl-file=&quot;${value}&quot;)" superClass="com.infineon.aurix.buildsystem.managed.tool.c.linker.tasking.linkerScript" value="${workspace_loc:/${ProjName}/Lcf_Tasking_Tricore_Tc.lsl}" valueType="string"/>
+								<option id="com.infineon.aurix.buildsystem.managed.c.linker.tasking.fpmodel.1211366603" name="Floating-point model: (--fp-model=)" superClass="com.infineon.aurix.buildsystem.managed.c.linker.tasking.fpmodel" value="com.infineon.aurix.buildsystem.managed.c.linker.tasking.fpmodel.strict" valueType="enumerated"/>
 								<outputType id="com.infineon.aurix.buildsystem.managed.c.linker.tasking.output.172740849" outputPrefix="" superClass="com.infineon.aurix.buildsystem.managed.c.linker.tasking.output"/>
 							</tool>
 							<tool id="com.infineon.aurix.buildsystem.managed.tool.printsize.tasking.1141365982" name="Print Size" superClass="com.infineon.aurix.buildsystem.managed.tool.printsize.tasking"/>
@@ -442,6 +445,7 @@
 								<option id="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.create.1044089703" name="Output stage" superClass="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.create" value="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.create.assembly" valueType="enumerated"/>
 								<option id="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.optimization.level.debug.1821982289" name="Optimization level: (-Ox)" superClass="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.optimization.level.debug" value="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.optimization.level.3" valueType="enumerated"/>
 								<option id="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.fpmodel.1152183703" name="Floating-point model: (--fp-model=)" superClass="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.fpmodel" value="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.fpmodel.strict" valueType="enumerated"/>
+								<option id="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.debugging.1809033535" name="Generate symbolic debug information:" superClass="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.debugging" value="com.infineon.aurix.buildsystem.managed.c.compiler.tasking.debugging.none" valueType="enumerated"/>
 								<inputType id="com.infineon.aurix.buildsystem.managed.tool.c.compiler.tasking.input.cpp.825445413" name="C++" superClass="com.infineon.aurix.buildsystem.managed.tool.c.compiler.tasking.input.cpp"/>
 								<inputType id="com.infineon.aurix.buildsystem.managed.tool.c.compiler.tasking.input.1773292892" name="C" superClass="com.infineon.aurix.buildsystem.managed.tool.c.compiler.tasking.input"/>
 							</tool>
@@ -489,6 +493,8 @@
 		<configuration configurationName="Debug">
 			<resource resourceType="PROJECT" workspacePath="/secure-gateway"/>
 		</configuration>
+		<configuration configurationName="Profile"/>
+		<configuration configurationName="Release"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="scannerConfiguration">
