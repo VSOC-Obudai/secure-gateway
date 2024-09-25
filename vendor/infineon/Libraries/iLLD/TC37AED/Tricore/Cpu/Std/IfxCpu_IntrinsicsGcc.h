@@ -105,9 +105,9 @@ IFX_INLINE void Ifx__jumpToFunction(const void *fun)
 	Ifx__non_return_call(fun);
 }
 
-IFX_INLINE void Ifx__jumpToFunctionWithLink(const void *fun)
+IFX_INLINE void Ifx__jumpToFunctionWithLink(void (*fun)(void))
 {
-	Ifx__jump_and_link((void (*)(void))fun);
+	Ifx__jump_and_link(fun);
 }
 
 IFX_INLINE void Ifx__jumpBackToLink(void)

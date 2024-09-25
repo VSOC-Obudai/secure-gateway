@@ -37,6 +37,7 @@
 #include "board.h"
 
 #include "Dts/Dts/IfxDts_Dts.h"
+#include "can/can.h"
 #include "ethernetif.h"
 #include "lwip/api.h"
 #include "lwip/apps/httpd.h"
@@ -127,6 +128,7 @@ static const char* ssi_tags[] = {
 };
 
 static float cpu_temp;
+
 /*********************************************************************************************************************/
 /*----------------------------------------------Function Implementations---------------------------------------------*/
 /*********************************************************************************************************************/
@@ -398,13 +400,6 @@ void core1_main(void)
   IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
 
   /* Init serial Interface */
-  SERIALIO_Init(9600);
-  printf("\n\n\n\n\n");
-  printf("\n*******************************\n");
-  printf("* Secure Gateway Example Project  *\n");
-  printf("* Date: %10s           *\n", __DATE__);
-  printf("*******************************\n");
-
   LED_Init(&LED_1);
   LED_On(&LED_1);
   LED_Init(&LED_RGB_R);
@@ -460,13 +455,11 @@ void core1_main(void)
 
   while (1)
   {
-
     /* Go through the application owned descriptors */
     while (!ETH_MAC_IsRxDescriptorOwnedByDma(&ETH_1, 0))
     {
       ethernetif_input(&netif_0, 0);
     }
-
     sys_check_timeouts();
   }
 }

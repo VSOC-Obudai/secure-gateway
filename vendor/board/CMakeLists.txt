@@ -9,23 +9,10 @@ target_compile_definitions(infineon-board
 )
 
 target_sources(infineon-board
-        PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/board.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/can/MCMCAN.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/eth/mac/dwmac_qos.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/eth/phy/88EA1517.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/eth/phy/eth_phy.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/led/led.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/lin/ASCLIN_LIN_Master.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/power_supply/analog_measure/Analog_Measure.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/power_supply/power_good_s/Power_Good_Signals.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/power_supply/Power_Supply.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/power_supply/TLF3xx8x/TLF3xx8x.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/serialio/serialio.c
-
         PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/board.h
-        ${CMAKE_CURRENT_SOURCE_DIR}/can/MCMCAN.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/assert/assert.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/can/can.h
         ${CMAKE_CURRENT_SOURCE_DIR}/eth/mac/dwmac_qos.h
         ${CMAKE_CURRENT_SOURCE_DIR}/eth/mac/eth_mac.h
         ${CMAKE_CURRENT_SOURCE_DIR}/eth/phy/88EA1517.h
@@ -39,11 +26,26 @@ target_sources(infineon-board
         ${CMAKE_CURRENT_SOURCE_DIR}/power_supply/TLF3xx8x/TLF3xx8x.h
         ${CMAKE_CURRENT_SOURCE_DIR}/serialio/serialio.h
 
+        PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/board.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/assert/assert.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/can/can.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/eth/mac/dwmac_qos.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/eth/phy/88EA1517.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/eth/phy/eth_phy.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/led/led.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/lin/ASCLIN_LIN_Master.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/power_supply/analog_measure/Analog_Measure.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/power_supply/power_good_s/Power_Good_Signals.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/power_supply/Power_Supply.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/power_supply/TLF3xx8x/TLF3xx8x.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/serialio/serialio.c
 )
 
 target_include_directories(infineon-board
         PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/assert
         ${CMAKE_CURRENT_SOURCE_DIR}/can
         ${CMAKE_CURRENT_SOURCE_DIR}/eth/mac
         ${CMAKE_CURRENT_SOURCE_DIR}/eth/phy

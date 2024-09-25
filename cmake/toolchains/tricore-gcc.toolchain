@@ -52,7 +52,7 @@ message(STATUS "CMAKE_SIZE:                     ${CMAKE_SIZE}")
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 foreach (language C CXX)
-    set(CMAKE_${language}_FLAGS "-std=gnu99 -pedantic -Wall -Wextra -Wshadow -mtc162 -fno-exceptions -fno-unwind-tables -fverbose-asm -fdata-sections -ffunction-sections")
+    set(CMAKE_${language}_FLAGS "-std=c11 -Wall -Wextra -mtc162 -fno-exceptions -fno-unwind-tables -fverbose-asm -fdata-sections -ffunction-sections")
     set(CMAKE_${language}_FLAGS_DEBUG "-O0 -g3")
     set(CMAKE_${language}_FLAGS_PROFILE "-DNDEBUG -O2 -g -fno-omit-frame-pointer")
     set(CMAKE_${language}_FLAGS_RELEASE "-DNDEBUG -O3")
