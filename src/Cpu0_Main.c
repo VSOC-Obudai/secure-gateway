@@ -98,7 +98,7 @@ void core0_main(void)
 
   IfxDts_Dts_initModule(&dtsConfig);
 
-  SERIALIO_Init(9600);
+  serialio_init();
   printf("\n\n\n\n\n");
   printf("\n*******************************\n");
   printf("* Secure Gateway Example Project  *\n");

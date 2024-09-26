@@ -420,12 +420,14 @@ void BOARD_ETH1_DeInitPpsPins(void)
 ** Serial IO ******************************************
 *******************************************************/
 #if defined(CONFIG_BOARD_SERIALIO_ENABLE)
+#if 0
 SERIALIO_t SERIALIO =
 {
   .asclin = &MODULE_ASCLIN0,
   .tx_pin = &IfxAsclin0_TX_P33_9_OUT,
   .rx_pin = &IfxAsclin0_RXD_P33_10_IN
 };
+#endif
 #endif /* CONFIG_BOARD_SERIALIO_ENABLE */
 
 

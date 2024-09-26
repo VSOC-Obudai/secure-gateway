@@ -67,6 +67,9 @@ foreach (linker_type EXE SHARED MODULE)
     message(STATUS "CMAKE_${linker_type}_LINKER_FLAGS: ${CMAKE_${linker_type}_LINKER_FLAGS}")
 endforeach ()
 
+#set(CMAKE_C_STANDARD_LIBRARIES "-lgcc -lrt -lfp_fpu -lcs_fpu")
+#set(CMAKE_CXX_STANDARD_LIBRARIES "-lgcc -lrt -lfp_fpu -lcs_fpu")
+
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 # Don't look in the sysroot for executables to run during the build

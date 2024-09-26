@@ -10,7 +10,6 @@ target_compile_definitions(infineon-board
 
 target_sources(infineon-board
         PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/board.h
         ${CMAKE_CURRENT_SOURCE_DIR}/assert/assert.h
         ${CMAKE_CURRENT_SOURCE_DIR}/can/can.h
         ${CMAKE_CURRENT_SOURCE_DIR}/eth/mac/dwmac_qos.h
@@ -25,9 +24,9 @@ target_sources(infineon-board
         ${CMAKE_CURRENT_SOURCE_DIR}/power_supply/Power_Supply.h
         ${CMAKE_CURRENT_SOURCE_DIR}/power_supply/TLF3xx8x/TLF3xx8x.h
         ${CMAKE_CURRENT_SOURCE_DIR}/serialio/serialio.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/board.h
 
         PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/board.c
         ${CMAKE_CURRENT_SOURCE_DIR}/assert/assert.c
         ${CMAKE_CURRENT_SOURCE_DIR}/can/can.c
         ${CMAKE_CURRENT_SOURCE_DIR}/eth/mac/dwmac_qos.c
@@ -40,6 +39,7 @@ target_sources(infineon-board
         ${CMAKE_CURRENT_SOURCE_DIR}/power_supply/Power_Supply.c
         ${CMAKE_CURRENT_SOURCE_DIR}/power_supply/TLF3xx8x/TLF3xx8x.c
         ${CMAKE_CURRENT_SOURCE_DIR}/serialio/serialio.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/board.c
 )
 
 target_include_directories(infineon-board

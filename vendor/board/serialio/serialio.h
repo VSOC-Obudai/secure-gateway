@@ -44,34 +44,6 @@
 #ifndef SERIALIO_H
 #define SERIALIO_H
 
-#include <stdio.h>
-#include <inttypes.h>
-
-#include "Asclin/Std/IfxAsclin.h"
-
-#define SERIALIO_STRLEN 1024
-
-#define PRINT_STRING( x )    fprintf(stderr, x)
-#define PRINTF_STRING(...) { do {sprintf(SERIALIO.str, __VA_ARGS__); PRINT_STRING(SERIALIO.str);} while(0);}
-
-typedef struct SERIALIO
-{
-  Ifx_ASCLIN *const asclin;
-  IfxAsclin_Tx_Out *const tx_pin;
-  IfxAsclin_Rx_In *const rx_pin;
-  char str[SERIALIO_STRLEN];
-} SERIALIO_t;
-
-extern SERIALIO_t SERIALIO;
-
-#ifdef __cplusplus
-extern "C" {
-#endif /* __cplusplus */
-
-void SERIALIO_Init(sint32 baudrate);
-
-#ifdef __cplusplus
-}
-#endif /* __cplusplus */
+void serialio_init(void);
 
 #endif /* SERIALIO_H */
