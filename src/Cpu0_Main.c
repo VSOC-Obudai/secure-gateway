@@ -101,7 +101,7 @@ void core0_main(void)
   serialio_init();
   printf("\n\n\n\n\n");
   printf("\n*******************************\n");
-  printf("* Secure Gateway Example Project  *\n");
+  printf("* Infineon AURIX Secure Gateway *\n");
   printf("* Date: %10s           *\n", __DATE__);
   printf("*******************************\n");
 
@@ -124,7 +124,7 @@ void core0_main(void)
   send_ASCLIN_LIN_message();
 
   /* Send test message */
-  transmitCanMessage();
+  //transmitCanMessage();
 
   while (1)
   {

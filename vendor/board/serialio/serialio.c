@@ -8,48 +8,51 @@
 #include <string.h>
 
 /* Communication parameters */
-#define ISR_PRIORITY_ASCLIN_TX 8  /* Priority for interrupt ISR Transmit  */
-#define ISR_PRIORITY_ASCLIN_RX 4  /* Priority for interrupt ISR Receive   */
-#define ISR_PRIORITY_ASCLIN_ER 12 /* Priority for interrupt ISR Errors    */
-#define ASC_TX_BUFFER_SIZE 256    /* Define the TX buffer size in byte    */
-#define ASC_RX_BUFFER_SIZE 256    /* Define the RX buffer size in byte    */
-#define ASC_BAUDRATE 115200       /* Define the UART baud rate            */
+#define ISR_PRIO_UART_RX (3)   /* Priority for interrupt ISR Receive   */
+#define ISR_PRIO_UART_TX (4)   /* Priority for interrupt ISR Transmit  */
+#define ISR_PRIO_UART_ER (5)   /* Priority for interrupt ISR Errors    */
+#define UART_RX_BUFSZ (256)    /* Define the RX buffer size in byte    */
+#define UART_TX_BUFSZ (256)    /* Define the TX buffer size in byte    */
+#define UART_BAUDRATE (115200) /* Define the UART baud rate            */
 
-static IfxAsclin_Asc asclin; /* ASCLIN module object                 */
-uint8_t TC_UartTxBuffer[ASC_TX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
-uint8_t TC_UartRxBuffer[ASC_RX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
+IfxAsclin_Asc uart_handle;
+uint8_t uart_rx_buffer[UART_RX_BUFSZ + sizeof(Ifx_Fifo) + 8];
+uint8_t uart_tx_buffer[UART_TX_BUFSZ + sizeof(Ifx_Fifo) + 8];
 
-IFX_INTERRUPT(asclin0TxISR, 0, ISR_PRIORITY_ASCLIN_TX)
+IFX_INTERRUPT(uart_rx_isr, 0, ISR_PRIO_UART_RX)
 {
-  IfxAsclin_Asc_isrTransmit(&asclin);
-}
-IFX_INTERRUPT(asclin0RxISR, 0, ISR_PRIORITY_ASCLIN_RX)
-{
-  IfxAsclin_Asc_isrReceive(&asclin);
+  IfxAsclin_Asc_isrReceive(&uart_handle);
 }
 
-IFX_INTERRUPT(asclin0ErISR, 0, ISR_PRIORITY_ASCLIN_ER)
+IFX_INTERRUPT(uart_tx_isr, 0, ISR_PRIO_UART_TX)
 {
-  IfxAsclin_Asc_isrError(&asclin);
+  IfxAsclin_Asc_isrTransmit(&uart_handle);
 }
 
-static int uart_putc(char c)
+IFX_INTERRUPT(uart_er_isr, 0, ISR_PRIO_UART_ER)
+{
+  IfxAsclin_Asc_isrError(&uart_handle);
+}
+
+void uart_send(char c)
 {
   Ifx_SizeT count = 1;
-  (void)IfxAsclin_Asc_write(&asclin, &c, &count, TIME_INFINITE);
-  return 0;
+  IfxAsclin_Asc_write(&uart_handle, &c, &count, TIME_INFINITE);
 }
 
-static int uart_getc()
+int uart_recv()
 {
   int c;
-  if (IfxAsclin_Asc_getReadCount(&asclin))
-    c = IfxAsclin_Asc_blockingRead(&asclin);
+  if (IfxAsclin_Asc_getReadCount(&uart_handle))
+  {
+    c = IfxAsclin_Asc_blockingRead(&uart_handle);
+  }
   else
-    c =-1;
+  {
+    c = -1;
+  }
   return c;
 }
-
 
 void serialio_init(void)
 {
@@ -59,7 +62,7 @@ void serialio_init(void)
   IfxAsclin_Asc_initModuleConfig(&ascConf, &MODULE_ASCLIN0); /* Initialize the structure with default values      */
 
   /* Set the desired baud rate */
-  ascConf.baudrate.baudrate = ASC_BAUDRATE;                        /* Set the baud rate in bit/s       */
+  ascConf.baudrate.baudrate = UART_BAUDRATE;                       /* Set the baud rate in bit/s       */
   ascConf.baudrate.oversampling = IfxAsclin_OversamplingFactor_16; /* Set the oversampling factor      */
 
   /* Configure the sampling mode */
@@ -67,15 +70,16 @@ void serialio_init(void)
   ascConf.bitTiming.samplePointPosition = IfxAsclin_SamplePointPosition_8; /* Set the first sample position    */
 
   /* ISR priorities and interrupt target */
-  ascConf.interrupt.txPriority = ISR_PRIORITY_ASCLIN_TX; /* Set the interrupt priority for TX events             */
-  ascConf.interrupt.rxPriority = ISR_PRIORITY_ASCLIN_RX; /* Set the interrupt priority for RX events             */
-  ascConf.interrupt.erPriority = ISR_PRIORITY_ASCLIN_ER; /* Set the interrupt priority for Error events          */
+  ascConf.interrupt.txPriority = ISR_PRIO_UART_TX; /* Set the interrupt priority for TX events             */
+  ascConf.interrupt.rxPriority = ISR_PRIO_UART_RX; /* Set the interrupt priority for RX events             */
+  ascConf.interrupt.erPriority = ISR_PRIO_UART_ER; /* Set the interrupt priority for Error events          */
   ascConf.interrupt.typeOfService = IfxSrc_Tos_cpu0;
 
   /* Pin configuration */
   const IfxAsclin_Asc_Pins pins = {.cts = NULL_PTR, /* CTS pin not used                                     */
                                    .ctsMode = IfxPort_InputMode_pullUp,
-                                   .rx = &IfxAsclin0_RXD_P33_10_IN, /* Select the pin for RX connected to the USB port */
+                                   .rx =
+                                       &IfxAsclin0_RXD_P33_10_IN, /* Select the pin for RX connected to the USB port */
                                    .rxMode = IfxPort_InputMode_pullUp, /* RX pin */
                                    .rts = NULL_PTR, /* RTS pin not used                                     */
                                    .rtsMode = IfxPort_OutputMode_pushPull,
@@ -85,15 +89,14 @@ void serialio_init(void)
   ascConf.pins = &pins;
 
   /* FIFO buffers configuration */
-  ascConf.txBuffer = TC_UartTxBuffer;        /* Set the transmission buffer                          */
-  ascConf.txBufferSize = ASC_TX_BUFFER_SIZE; /* Set the transmission buffer size                     */
-  ascConf.rxBuffer = TC_UartRxBuffer;        /* Set the receiving buffer                             */
-  ascConf.rxBufferSize = ASC_RX_BUFFER_SIZE; /* Set the receiving buffer size                        */
+  ascConf.txBuffer = uart_tx_buffer;    /* Set the transmission buffer                          */
+  ascConf.txBufferSize = UART_TX_BUFSZ; /* Set the transmission buffer size                     */
+  ascConf.rxBuffer = uart_rx_buffer;    /* Set the receiving buffer                             */
+  ascConf.rxBufferSize = UART_RX_BUFSZ; /* Set the receiving buffer size                        */
 
   /* Init ASCLIN module */
-  IfxAsclin_Asc_initModule(&asclin, &ascConf); /* Initialize the module with the given configuration   */
+  IfxAsclin_Asc_initModule(&uart_handle, &ascConf); /* Initialize the module with the given configuration   */
 }
-
 
 /* POSIX read function */
 /* read characters from file descriptor fd into given buffer, at most count bytes */
@@ -101,27 +104,23 @@ void serialio_init(void)
 size_t read(int fd, void* buffer, size_t count)
 {
   size_t index = 0;
-
-  if (fileno(stdin) == fd)
+  unsigned char* ptr = (unsigned char*)buffer;
+  do
   {
-    unsigned char* ptr = (unsigned char*)buffer;
-    do
+    if (1 == uart_recv(ptr))
     {
-      if (1 ==  uart_getc(ptr))
+      ++ptr;
+      ++index;
+    }
+    else
+    {
+      /* wait at least for 1 character */
+      if (index >= 1)
       {
-        ++ptr;
-        ++index;
+        break;
       }
-      else
-      {
-        /* wait at least for 1 character */
-        if (index >= 1)
-        {
-          break;
-        }
-      }
-    } while (index < count);
-  }
+    }
+  } while (index < count);
   return index;
 }
 
@@ -131,29 +130,28 @@ size_t read(int fd, void* buffer, size_t count)
 size_t write(int fd, const void* buffer, size_t count)
 {
   size_t index = 0;
-  if ((fileno(stdout) == fd) || (fileno(stderr) == fd))
+  const unsigned char* ptr = (const unsigned char*)buffer;
+  while (index < count)
   {
-    const unsigned char* ptr = (const unsigned char*)buffer;
-    while (index < count)
-    {
-      uart_putc(*ptr++);
-      ++index;
-    }
+    uart_send(*ptr++);
+    ++index;
   }
   return index;
 }
 
-void _putchar(char ch)
-{
-#if 0
-  while (IfxAsclin_getTxFifoFillLevelFlagStatus(SERIALIO.asclin) != TRUE)
-    ;
-
-  IfxAsclin_clearTxFifoFillLevelFlag(SERIALIO.asclin);
-
-  /* send the character */
-  IfxAsclin_writeTxData(SERIALIO.asclin, character);
+#if defined(__TASKING__)
+void _io_putc(int ch)
+#else
+void _putchar(int ch)
 #endif
-  uart_putc(ch);
+{
+  if (ch == '\n')
+  {
+    uart_send('\n');
+    uart_send('\r');
+  }
+  else
+  {
+    uart_send(ch);
+  }
 }
-

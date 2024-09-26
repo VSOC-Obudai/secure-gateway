@@ -103,7 +103,7 @@ void initMcmcan(void)
    */
   IfxCan_Can_initNodeConfig(&g_mcmcan.canNodeConfig, &g_mcmcan.canModule);
 
-  g_mcmcan.canNodeConfig.busLoopbackEnabled = TRUE;
+  g_mcmcan.canNodeConfig.busLoopbackEnabled = FALSE;
   g_mcmcan.canNodeConfig.nodeId = IfxCan_NodeId_0;
 
   g_mcmcan.canNodeConfig.frame.type = IfxCan_FrameType_transmit;
