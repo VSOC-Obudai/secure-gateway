@@ -3,6 +3,6 @@
 
 #include <stdint.h>
 
-uint8_t can_init(void);
+void __attribute__ ((noinline)) can_init(void);
 
 #endif
