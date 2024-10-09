@@ -1,7 +1,8 @@
 #include "serialio.h"
 
+#include "Asclin/Std/IfxAsclin.h"
+#include "Asclin/Asc/IfxAsclin_Asc.h"
 #include "IfxCpu_Irq.h"
-#include "ifxAsclin_Asc.h"
 
 #include <stdint.h>
 #include <stdio.h>
@@ -19,17 +20,23 @@ IfxAsclin_Asc uart_handle;
 uint8_t uart_rx_buffer[UART_RX_BUFSZ + sizeof(Ifx_Fifo) + 8];
 uint8_t uart_tx_buffer[UART_TX_BUFSZ + sizeof(Ifx_Fifo) + 8];
 
-IFX_INTERRUPT(uart_rx_isr, 0, ISR_PRIO_UART_RX)
+IFX_INTERRUPT(uart_rx_isr, 0, ISR_PRIO_UART_RX);
+
+void uart_rx_isr(void)
 {
   IfxAsclin_Asc_isrReceive(&uart_handle);
 }
 
-IFX_INTERRUPT(uart_tx_isr, 0, ISR_PRIO_UART_TX)
+IFX_INTERRUPT(uart_tx_isr, 0, ISR_PRIO_UART_TX);
+
+void uart_tx_isr(void)
 {
   IfxAsclin_Asc_isrTransmit(&uart_handle);
 }
 
-IFX_INTERRUPT(uart_er_isr, 0, ISR_PRIO_UART_ER)
+IFX_INTERRUPT(uart_er_isr, 0, ISR_PRIO_UART_ER);
+
+void uart_er_isr(void)
 {
   IfxAsclin_Asc_isrError(&uart_handle);
 }

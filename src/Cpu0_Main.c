@@ -8,6 +8,8 @@
 #include "can/can.h"
 #include "serialio/serialio.h"
 
+#include <stdio.h>
+
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
 /*********************************************************************************************************************/
@@ -112,7 +114,7 @@ void core0_main(void)
   Init_Power_Supply_Measurments();
 
   /* initialize CAN module */
-  initMcmcan();
+  can_init();
 
   /* init STM0 */
   STM0_Init();
@@ -122,9 +124,6 @@ void core0_main(void)
 
   /* send LIN header and data via LIN2 */
   send_ASCLIN_LIN_message();
-
-  /* Send test message */
-  //transmitCanMessage();
 
   while (1)
   {

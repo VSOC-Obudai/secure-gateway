@@ -444,7 +444,7 @@ IfxAsclin_Lin_Pins Lin_Master_pins =
 
 #include"IfxCan_Can.h"
 
-#define CAN_STB     IfxPort_P33_11
+#define CAN_STB IfxPort_P01_7
 
 IfxCan_Can_Pins can_0_pins =
 {
@@ -454,7 +454,6 @@ IfxCan_Can_Pins can_0_pins =
     .rxPinMode = IfxPort_InputMode_noPullDevice,
     .padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed2
 };
-
 
 void BOARD_CAN0_InitSTBpin(void)
 {
