@@ -11,6 +11,7 @@
 // #define CAN_MSG_PAYLOAD_SIZE (16) /* CAN FD */
 #define CAN_INVALID_RX_DATA_VALUE (0xA5)
 #define CAN_INVALID_ID_VALUE ((uint32)0xFFFFFFFF)
+#define CAN_BAUDRATE (500000)
 
 typedef struct
 {
@@ -20,7 +21,7 @@ typedef struct
   IfxCan_Can_NodeConfig node_config;
 } can_device_config_t;
 
-static const can_device_config_t can_device_config[CAN_BUS_COUNT] = {
+const can_device_config_t can_device_config[CAN_BUS_COUNT] = {
     {.addr = &MODULE_CAN0,
      .pins = {&IfxCan_TXD00_P02_0_OUT, IfxPort_OutputMode_pushPull, &IfxCan_RXD00A_P02_1_IN,
               IfxPort_InputMode_noPullDevice, IfxPort_PadDriver_cmosAutomotiveSpeed2}},
@@ -71,192 +72,12 @@ typedef struct
   char name[16];
 } can_device_t;
 
-static can_device_t can_device_list[CAN_BUS_COUNT] = {{.name = "can-0.0"}, {.name = "can-0.1"}, {.name = "can-0.2"},
-                                                      {.name = "can-0.3"}, {.name = "can-1.0"}, {.name = "can-1.1"},
-                                                      {.name = "can-1.2"}, {.name = "can-1.3"}, {.name = "can-2.0"},
-                                                      {.name = "can-2.1"}, {.name = "can-2.2"}, {.name = "can-2.3"}};
+can_device_t can_device_list[CAN_BUS_COUNT] = {{.name = "can-0.0"}, {.name = "can-0.1"}, {.name = "can-0.2"},
+                                               {.name = "can-0.3"}, {.name = "can-1.0"}, {.name = "can-1.1"},
+                                               {.name = "can-1.2"}, {.name = "can-1.3"}, {.name = "can-2.0"},
+                                               {.name = "can-2.1"}, {.name = "can-2.2"}, {.name = "can-2.3"}};
 
-IfxCan_Filter mcmcan_std_default_filter = {.number = 0,
-                                           .elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxFifo0,
-                                           .type = IfxCan_FilterType_classic,
-                                           .id1 = 0,
-                                           .id2 = 0,
-                                           .rxBufferOffset = IfxCan_RxBufferId_0};
-
-static void can_init_node(IfxCan_Can_NodeConfig* config, IfxCan_Can* can)
-{
-  static IfxCan_Can_NodeConfig defaultConfig =
-      {.can = NULL_PTR,
-       .nodeId = IfxCan_NodeId_0,
-       .clockSource = IfxCan_ClockSource_both,
-       .frame = {.type = IfxCan_FrameType_transmitAndReceive, .mode = IfxCan_FrameMode_fdLongAndFast},
-       .baudRate = {.baudrate = 500000,
-                    .samplePoint = 8000,
-                    .syncJumpWidth = 2000,
-                    .prescaler = 0,
-                    .timeSegment1 = 3,
-                    .timeSegment2 = 10},
-       .fastBaudRate = {.baudrate = 2000000,
-                        .samplePoint = 8000,
-                        .syncJumpWidth = 2000,
-                        .prescaler = 1,
-                        .timeSegment1 = 3,
-                        .timeSegment2 = 10,
-                        .tranceiverDelayOffset = 28},
-       .txConfig = {.txMode = IfxCan_TxMode_fifo,
-                    .dedicatedTxBuffersNumber = 0,
-                    .txFifoQueueSize = 32,
-                    .txBufferDataFieldSize = IfxCan_DataFieldSize_64,
-                    .txEventFifoSize = 0},
-       .filterConfig = {.messageIdLength = IfxCan_MessageIdLength_both,
-                        .standardListSize = 64,
-                        .extendedListSize = 32,
-                        .rejectRemoteFramesWithStandardId = TRUE,
-                        .rejectRemoteFramesWithExtendedId = TRUE,
-                        .standardFilterForNonMatchingFrames = IfxCan_NonMatchingFrame_reject,
-                        .extendedFilterForNonMatchingFrames = IfxCan_NonMatchingFrame_reject},
-       .rxConfig = {.rxMode = IfxCan_RxMode_fifo0,
-                    .rxBufferDataFieldSize = IfxCan_DataFieldSize_64,
-                    .rxFifo0DataFieldSize = IfxCan_DataFieldSize_64,
-                    .rxFifo1DataFieldSize = IfxCan_DataFieldSize_64,
-                    .rxFifo0OperatingMode = IfxCan_RxFifoMode_overwrite,
-                    .rxFifo1OperatingMode = IfxCan_RxFifoMode_overwrite,
-                    .rxFifo0WatermarkLevel = 0,
-                    .rxFifo1WatermarkLevel = 0,
-                    .rxFifo0Size = 16,
-                    .rxFifo1Size = 0},
-       .messageRAM = {.baseAddress = (uint32)&MODULE_CAN0,
-                      .standardFilterListStartAddress = 0x0,
-                      .extendedFilterListStartAddress = 0x100,
-                      .rxFifo0StartAddress = 0x200,
-                      .rxFifo1StartAddress = 0x0,
-                      .rxBuffersStartAddress = 0x0,
-                      .txEventFifoStartAddress = 0x0,
-                      .txBuffersStartAddress = 0x700},
-       .interruptConfig =
-           {.rxFifo0NewMessageEnabled = TRUE,
-            .rxFifo0WatermarkEnabled = FALSE,
-            .rxFifo0FullEnabled = FALSE,
-            .rxFifo0MessageLostEnabled = FALSE,
-            .rxFifo1NewMessageEnabled = FALSE,
-            .rxFifo1WatermarkEnabled = FALSE,
-            .rxFifo1FullEnabled = FALSE,
-            .rxFifo1MessageLostEnabled = FALSE,
-            .highPriorityMessageEnabled = FALSE,
-            .transmissionCompletedEnabled = FALSE,
-            .transmissionCancellationFinishedEnabled = FALSE,
-            .txFifoEmptyEnabled = FALSE,
-            .txEventFifoNewEntryEnabled = FALSE,
-            .txEventFifoWatermarkEnabled = FALSE,
-            .txEventFifoFullEnabled = FALSE,
-            .txEventFifoEventLostEnabled = FALSE,
-            .timestampWraparoundEnabled = FALSE,
-            .messageRAMAccessFailureEnabled = FALSE,
-            .timeoutOccurredEnabled = FALSE,
-            .messageStoredToDedicatedRxBufferEnabled = FALSE,
-            .errorLoggingOverflowEnabled = FALSE,
-            .errorPassiveEnabled = FALSE,
-            .warningStatusEnabled = FALSE,
-            .busOffStatusEnabled = TRUE,
-            .watchdogEnabled = FALSE,
-            .protocolErrorArbitrationEnabled = FALSE,
-            .protocolErrorDataEnabled = FALSE,
-            .tefifo = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0},
-            .hpe = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0},
-            .wati = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0},
-            .alrt = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0},
-            .moer = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0},
-            .safe = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0},
-            .boff = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0},
-            .loi = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0},
-            .reint = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0},
-            .rxf1f = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0},
-            .rxf0f = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0},
-            .rxf1n = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0},
-            .rxf0n = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0},
-            .reti = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0},
-            .traq = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0},
-            .traco = {.interruptLine = IfxCan_InterruptLine_0, .priority = 0, .typeOfService = IfxSrc_Tos_cpu0}},
-       .pins = NULL_PTR,
-       .busLoopbackEnabled = FALSE,
-       .calculateBitTimingValues = TRUE};
-
-  /* Default Configuration */
-  *config = defaultConfig;
-
-  /* take over module pointer */
-  config->can = can->can;
-}
-
-void can_init(void)
-{
-  IfxCan_Can_Config canConfig;
-  IfxCan_Can_NodeConfig canNodeConfig;
-  for (uint8_t i = 0; i < CAN_BUS_COUNT; i++)
-  {
-    IfxCan_Can_initModuleConfig(&canConfig, can_device_config[i].addr);
-    IfxCan_Can_initModule(&can_device_list[i].handle, &canConfig);
-
-    can_init_node(&canNodeConfig, &can_device_list[i].handle);
-
-    canNodeConfig.nodeId = IfxCan_NodeId_0 + i % 4;
-
-    canNodeConfig.messageRAM.baseAddress = (uint32)can_device_config[i].addr;
-    canNodeConfig.messageRAM.standardFilterListStartAddress = 0x0 + 0x1000 * (i % 4);
-    canNodeConfig.messageRAM.extendedFilterListStartAddress = 0x100 + 0x1000 * (i % 4);
-    canNodeConfig.messageRAM.rxFifo0StartAddress = 0x200 + 0x1000 * (i % 4);
-    canNodeConfig.messageRAM.txBuffersStartAddress = 0x700 + 0x1000 * (i % 4);
-
-    canNodeConfig.filterConfig.messageIdLength = IfxCan_MessageIdLength_both;
-    canNodeConfig.filterConfig.standardListSize = 0;
-    canNodeConfig.filterConfig.extendedListSize = 0;
-    canNodeConfig.filterConfig.standardFilterForNonMatchingFrames = IfxCan_NonMatchingFrame_acceptToRxFifo0;
-    canNodeConfig.filterConfig.extendedFilterForNonMatchingFrames = IfxCan_NonMatchingFrame_acceptToRxFifo0;
-    canNodeConfig.filterConfig.rejectRemoteFramesWithStandardId = TRUE;
-    canNodeConfig.filterConfig.rejectRemoteFramesWithExtendedId = TRUE;
-
-    // canNodeConfig.interruptConfig.traco.priority = 110 + i;
-    // canNodeConfig.interruptConfig.traco.interruptLine = IfxCan_InterruptLine_0 + i % 4;
-    // canNodeConfig.interruptConfig.traco.typeOfService = IfxSrc_Tos_cpu0;
-    // canNodeConfig.interruptConfig.rxf0n.priority = 130 + i;
-    // canNodeConfig.interruptConfig.rxf0n.interruptLine = IfxCan_InterruptLine_4 + i % 4;
-    // canNodeConfig.interruptConfig.rxf0n.typeOfService = IfxSrc_Tos_cpu0;
-    // canNodeConfig.interruptConfig.boff.priority = 150 + i;
-    // canNodeConfig.interruptConfig.boff.interruptLine = IfxCan_InterruptLine_8 + i % 4;
-    // canNodeConfig.interruptConfig.boff.typeOfService = IfxSrc_Tos_cpu0;
-    canNodeConfig.interruptConfig.messageStoredToDedicatedRxBufferEnabled = TRUE;
-    canNodeConfig.interruptConfig.reint.priority = 130 + i;
-    canNodeConfig.interruptConfig.reint.priority = IfxCan_InterruptLine_0 + i % 4;
-    canNodeConfig.interruptConfig.reint.typeOfService = IfxSrc_Tos_cpu0;
-    canNodeConfig.interruptConfig.protocolErrorDataEnabled = TRUE;
-    canNodeConfig.interruptConfig.loi.priority = 160 + i;
-    canNodeConfig.interruptConfig.loi.interruptLine = IfxCan_InterruptLine_0 + 1 + i % 4;
-    canNodeConfig.interruptConfig.loi.typeOfService = IfxSrc_Tos_cpu0;
-
-    canNodeConfig.pins = &can_device_config[i].pins;
-
-    IfxCan_Can_initNode(&can_device_list[i].node, &canNodeConfig);
-
-    can_device_list[i].filter.number = 0;
-    can_device_list[i].filter.elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxBuffer;
-    can_device_list[i].filter.type = IfxCan_FilterType_range;
-    can_device_list[i].filter.id1 = 0x00000000;
-    can_device_list[i].filter.id2 = 0xFFFFFFFF;
-    can_device_list[i].filter.rxBufferOffset = IfxCan_RxBufferId_0;
-    IfxCan_Can_setStandardFilter(&can_device_list[i].node, &can_device_list[i].filter);
-
-    IfxCan_Can_initMessage(&can_device_list[i].rx_msg);
-    memset((void*)can_device_list[i].rx_data, CAN_INVALID_ID_VALUE, CAN_MSG_PAYLOAD_SIZE * sizeof(uint32));
-
-    printf("%s initialized\n", can_device_list[i].name);
-  }
-
-  // can_accept_all_messages();
-
-  // printf("All CAN node is initialized successfully!\n");
-}
-
-static void _print_can_message(const char* prefix, uint32 msg_id, uint32 length, uint8* msg)
+void _can_print_message(const char* prefix, uint32 msg_id, uint32 length, uint8* msg)
 {
   printf("[%s] | id: 0x%lX | length: %ud | data:", prefix, msg_id, length);
   for (int i = 0; i < length; ++i)
@@ -266,7 +87,8 @@ static void _print_can_message(const char* prefix, uint32 msg_id, uint32 length,
   printf("\n");
 }
 
-static void _print_can_error(can_device_t* device)
+#if 0
+void _can_print_error(can_device_t* device)
 {
   switch (device->last_error)
   {
@@ -297,10 +119,9 @@ static void _print_can_error(can_device_t* device)
 #define DEFINE_CAN_RX_ISR(name, vectab, priority, can_dev)                                                             \
   IFX_INTERRUPT(name, vectab, priority)                                                                                \
   {                                                                                                                    \
-    printf("!!%s!!\n", #name);                                                                                         \
     IfxCan_Node_clearInterruptFlag(can_dev.node.node, IfxCan_Interrupt_rxFifo0NewMessage);                             \
     IfxCan_Can_readMessage(&can_dev.node, &can_dev.rx_msg, can_dev.rx_data);                                           \
-    _print_can_message("RX", can_dev.rx_msg.messageId, can_dev.rx_msg.dataLengthCode, &can_dev.rx_data[0]);            \
+    _can_print_message("RX", can_dev.rx_msg.messageId, can_dev.rx_msg.dataLengthCode, &can_dev.rx_data[0]);            \
   }
 
 #define DEFINE_CAN_ER_ISR(name, vectab, priority, device)                                                              \
@@ -311,7 +132,7 @@ static void _print_can_error(can_device_t* device)
     device.last_error = IfxCan_Node_getLastErroCodeStatus(device.node.node);                                           \
     if (IfxCan_LastErrorCodeType_noError != device.last_error)                                                         \
     {                                                                                                                  \
-      _print_can_error(&device);                                                                                       \
+      _can_print_error(&device);                                                                                       \
     }                                                                                                                  \
   }
 
@@ -340,3 +161,59 @@ DEFINE_CAN_ER_ISR(isr_can20_er, 0, 168, can_device_list[8]);
 DEFINE_CAN_ER_ISR(isr_can21_er, 0, 169, can_device_list[9]);
 DEFINE_CAN_ER_ISR(isr_can22_er, 0, 170, can_device_list[10]);
 DEFINE_CAN_ER_ISR(isr_can23_er, 0, 171, can_device_list[11]);
+#endif
+
+void can_init(void)
+{
+  IfxCan_Can_Config canConfig;
+  IfxCan_Can_NodeConfig canNodeConfig;
+
+  for (uint8_t i = 0; i < CAN_BUS_COUNT; ++i)
+  {
+    printf("Initializing CAN node '%s'...\n", can_device_list[i].name);
+
+    IfxCan_Can_initModuleConfig(&canConfig, can_device_config[i].addr);
+    IfxCan_Can_initModule(&can_device_list[i].handle, &canConfig);
+    IfxCan_Can_initNodeConfig(&canNodeConfig, &can_device_list[i].handle);
+
+    canNodeConfig.nodeId = IfxCan_NodeId_0 + i % 4;
+    canNodeConfig.pins = &can_device_config[i].pins;
+    canNodeConfig.baudRate.baudrate = CAN_BAUDRATE;
+    canNodeConfig.filterConfig.messageIdLength = IfxCan_MessageIdLength_standard;
+    canNodeConfig.filterConfig.standardListSize = 1;
+    canNodeConfig.filterConfig.extendedListSize = 1;
+    canNodeConfig.filterConfig.standardFilterForNonMatchingFrames = IfxCan_NonMatchingFrame_reject;
+    canNodeConfig.filterConfig.extendedFilterForNonMatchingFrames = IfxCan_NonMatchingFrame_reject;
+    canNodeConfig.filterConfig.rejectRemoteFramesWithStandardId = 1;
+    canNodeConfig.filterConfig.rejectRemoteFramesWithExtendedId = 1;
+    IfxCan_Can_initNode(&can_device_list[i].node, &canNodeConfig);
+
+    can_device_list[i].filter.number = i;
+    can_device_list[i].filter.elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxBuffer;
+    can_device_list[i].filter.type = IfxCan_FilterType_range;
+    can_device_list[i].filter.id1 = 0x00000000;
+    can_device_list[i].filter.id2 = 0xFFFFFFFF;
+    can_device_list[i].filter.rxBufferOffset = i;
+    IfxCan_Can_setStandardFilter(&can_device_list[i].node, &can_device_list[i].filter);
+
+    IfxCan_Can_initMessage(&can_device_list[i].rx_msg);
+    memset(can_device_list[i].rx_data, CAN_INVALID_ID_VALUE, CAN_MSG_PAYLOAD_SIZE * sizeof(uint32));
+
+    printf("Initialized CAN node '%s' successfully!\n", can_device_list[i].name);
+  }
+}
+
+void can_recv(void)
+{
+  for (uint8_t i = 0; i < CAN_BUS_COUNT; ++i)
+  {
+    if (IfxCan_Can_isNewDataReceived(&can_device_list[i].node, i) > 0)
+    {
+      printf("Waiting for CAN message on '%s'...\n", can_device_list[i].name);
+      IfxCan_Can_initMessage(&can_device_list[i].rx_msg);
+
+      IfxCan_Can_readMessage(&can_device_list[i].node, &can_device_list[i].rx_msg, can_device_list[i].rx_data);
+      _can_print_message("RX", can_device_list[i].rx_msg.messageId, can_device_list[i].rx_msg.dataLengthCode, can_device_list[i].rx_data);
+    }
+  }
+}

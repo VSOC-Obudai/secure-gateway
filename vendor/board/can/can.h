@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 
-void __attribute__ ((noinline)) can_init(void);
+void can_init(void);
+void can_recv(void);
 
 #endif

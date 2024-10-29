@@ -127,5 +127,6 @@ void core0_main(void)
 
   while (1)
   {
+    can_recv();
   }
 }
