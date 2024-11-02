@@ -1,10 +1,34 @@
 add_executable(secure-gateway)
 
-target_sources(secure-gateway PRIVATE Cpu0_Main.c Cpu1_Main.c Cpu2_Main.c)
+target_sources(secure-gateway
+  PRIVATE
+  __getchar.c
+  __putchar.c
 
-target_include_directories(secure-gateway PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+  app.c
+  app.h
+  assert.c
+  assert.h
+  can.c
+  can.h
+  led.c
+  led.h
+  serial.c
+  serial.h
+  stm.c
+  stm.h
 
-target_link_libraries(secure-gateway infineon-std infineon-board infineon-lwip)
+  Cpu0_Main.c
+  Cpu1_Main.c
+  Cpu2_Main.c
+)
+
+target_include_directories(secure-gateway
+  PRIVATE
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+)
+
+target_link_libraries(secure-gateway infineon)
 
 target_link_bin_output(secure-gateway)
 target_link_hex_output(secure-gateway)

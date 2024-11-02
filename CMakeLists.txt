@@ -3,5 +3,5 @@ project(secure-gateway)
 
 include(${CMAKE_CURRENT_LIST_DIR}/cmake/ProjectInit.cmake)
 
-add_subdirectory(vendor)
+add_subdirectory(third-party)
 add_subdirectory(src)
