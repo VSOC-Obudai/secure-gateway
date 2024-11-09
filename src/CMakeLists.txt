@@ -16,6 +16,8 @@ target_sources(secure-gateway
   led.h
   serial.c
   serial.h
+  spinlock.c
+  spinlock.h
   timer.c
   timer.h
   Cpu0_Main.c

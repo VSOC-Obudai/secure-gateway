@@ -1,6 +1,9 @@
+#include "IfxStm.h"
+
 #include <IfxCpu.h>
 #include <IfxScuWdt.h>
 
+#include "SysSe/Bsp/Bsp.h"
 #include "app.h"
 
 IFX_ALIGN(4) IfxCpu_syncEvent cpuSyncEvent = 0;

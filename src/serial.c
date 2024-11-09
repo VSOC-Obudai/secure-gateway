@@ -18,29 +18,28 @@
 #define SERIAL_TX_PIN (IfxAsclin0_TX_P33_9_OUT)
 #define SERIAL_RX_PIN (IfxAsclin0_RXD_P33_10_IN)
 
-#define SERIAL_TX_BUFFER_SIZE (64)
-#define SERIAL_RX_BUFFER_SIZE (64)
+#define SERIAL_BUFFER_SIZE (64)
 
 typedef struct
 {
   IfxAsclin_Asc handle;
-  uint8_t tx_data[SERIAL_TX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
-  uint8_t rx_data[SERIAL_RX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
+  uint8_t tx_data[SERIAL_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
+  uint8_t rx_data[SERIAL_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
 } serial_device_t;
 
 serial_device_t serial_device;
 
-IFX_INTERRUPT(serial_isr_transmit_handler, 0, ISR_PRIORITY_SERIAL_TX)
+IFX_INTERRUPT(serial_isr_transmit_handler, 0, ISR_PRIORITY_SERIAL_WRITE)
 {
   IfxAsclin_Asc_isrTransmit(&serial_device.handle);
 }
 
-IFX_INTERRUPT(serial_isr_receive_handler, 0, ISR_PRIORITY_SERIAL_RX)
+IFX_INTERRUPT(serial_isr_receive_handler, 0, ISR_PRIORITY_SERIAL_READ)
 {
   IfxAsclin_Asc_isrReceive(&serial_device.handle);
 }
 
-IFX_INTERRUPT(serial_isr_error_handler, 0, ISR_PRIORITY_SERIAL_ER)
+IFX_INTERRUPT(serial_isr_error_handler, 0, ISR_PRIORITY_SERIAL_ERROR)
 {
   IfxAsclin_Asc_isrError(&serial_device.handle);
 }
@@ -63,16 +62,16 @@ void __serial_init_device(void)
   config.bitTiming.samplePointPosition = IfxAsclin_SamplePointPosition_8;
 
   /* Interrupts configuration */
-  config.interrupt.txPriority = ISR_PRIORITY_SERIAL_TX;
-  config.interrupt.rxPriority = ISR_PRIORITY_SERIAL_RX;
-  config.interrupt.erPriority = ISR_PRIORITY_SERIAL_ER;
+  config.interrupt.txPriority = ISR_PRIORITY_SERIAL_WRITE;
+  config.interrupt.rxPriority = ISR_PRIORITY_SERIAL_READ;
+  config.interrupt.erPriority = ISR_PRIORITY_SERIAL_ERROR;
   config.interrupt.typeOfService = IfxSrc_Tos_cpu0;
 
   /* FIFO configuration */
   config.txBuffer = serial_device.tx_data;
-  config.txBufferSize = SERIAL_TX_BUFFER_SIZE;
+  config.txBufferSize = SERIAL_BUFFER_SIZE;
   config.rxBuffer = serial_device.rx_data;
-  config.rxBufferSize = SERIAL_RX_BUFFER_SIZE;
+  config.rxBufferSize = SERIAL_BUFFER_SIZE;
 
   /* Pins configuration */
   pins.pinDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
@@ -88,16 +87,16 @@ void __serial_init_device(void)
 
 void __serial_install_interrupts(void)
 {
-  //IfxCpu_Irq_installInterruptHandler(&serial_isr_transmit_handler, ISR_PRIORITY_SERIAL_TX);
-  //IfxCpu_Irq_installInterruptHandler(&serial_isr_receive_handler, ISR_PRIORITY_SERIAL_RX);
-  //IfxCpu_Irq_installInterruptHandler(&serial_isr_error_handler, ISR_PRIORITY_SERIAL_ER);
+  IfxCpu_Irq_installInterruptHandler(&serial_isr_transmit_handler, ISR_PRIORITY_SERIAL_WRITE);
+  IfxCpu_Irq_installInterruptHandler(&serial_isr_receive_handler, ISR_PRIORITY_SERIAL_READ);
+  IfxCpu_Irq_installInterruptHandler(&serial_isr_error_handler, ISR_PRIORITY_SERIAL_ERROR);
   //enableInterrupts();
 }
 
 void serial_init()
 {
   __serial_init_device();
-  //__serial_install_interrupts();
+  __serial_install_interrupts();
 }
 
 int serial_getc()

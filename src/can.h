@@ -1,9 +1,15 @@
 #ifndef CAN_H
 #define CAN_H
 
+/****************************************************************************
+ * Includes
+ ****************************************************************************/
+
 #include <stdint.h>
 
-/* controller area network (CAN) kernel definitions */
+/****************************************************************************
+ * Macros
+ ****************************************************************************/
 
 #define CAN0_PORT (MODULE_CAN0)
 #define CAN00_TX_PIN (IfxCan_TXD00_P02_0_OUT)
@@ -57,8 +63,8 @@
  */
 typedef uint32_t canid_t;
 
-#define CAN_SFF_ID_BITS 11
-#define CAN_EFF_ID_BITS 29
+#define CAN_SFF_ID_BITS		11
+#define CAN_EFF_ID_BITS		29
 
 /*
  * Controller Area Network Error Message Frame Mask structure
@@ -91,7 +97,7 @@ typedef uint32_t can_err_mask_t;
  * @data:     CAN frame payload (up to 8 byte)
  */
 typedef struct {
-  canid_t can_id; /* 32 bit CAN_ID + EFF/RTR/ERR flags */
+  canid_t can_id;  /* 32 bit CAN_ID + EFF/RTR/ERR flags */
   union {
     /* CAN frame payload length in byte (0 .. CAN_MAX_DLEN)
      * was previously named can_dlc so we need to carry that
@@ -99,9 +105,9 @@ typedef struct {
      */
     uint8_t len;
     uint8_t can_dlc; /* deprecated */
-  } __attribute__((packed));
-  uint8_t __pad;    /* padding */
-  uint8_t __res0;   /* reserved / padding */
+  } __attribute__((packed)); /* disable padding added in some ABIs */
+  uint8_t __pad; /* padding */
+  uint8_t __res0; /* reserved / padding */
   uint8_t len8_dlc; /* optional DLC for 8 byte payload length (9 .. 15) */
   uint8_t data[CAN_MAX_DLEN] __attribute__((aligned(8)));
 } can_frame_t;
@@ -144,16 +150,16 @@ typedef struct {
  * @data:   CAN FD frame payload (up to CANFD_MAX_DLEN byte)
  */
 typedef struct {
-  canid_t can_id; /* 32 bit CAN_ID + EFF/RTR/ERR flags */
-  uint8_t len;    /* frame payload length in byte */
-  uint8_t flags;  /* additional flags for CAN FD */
-  uint8_t __res0; /* reserved / padding */
-  uint8_t __res1; /* reserved / padding */
+  canid_t can_id;  /* 32 bit CAN_ID + EFF/RTR/ERR flags */
+  uint8_t len;     /* frame payload length in byte */
+  uint8_t flags;   /* additional flags for CAN FD */
+  uint8_t __res0;  /* reserved / padding */
+  uint8_t __res1;  /* reserved / padding */
   uint8_t data[CANFD_MAX_DLEN] __attribute__((aligned(8)));
 } canfd_frame_t;
 
-#define CAN_MTU (sizeof(struct can_frame))
-#define CANFD_MTU (sizeof(struct canfd_frame))
+#define CAN_MTU		(sizeof(struct can_frame_t))
+#define CANFD_MTU	(sizeof(struct canfd_frame_t))
 
 /*!
  * @brief Initialize CAN bus interface.
@@ -164,7 +170,7 @@ void can_init(void);
  * @brief Send CAN frame over the CAN bus network.
  * @param frame The CAN frame
  */
-void can_send(const can_frame_t *const frame);
+void can_send(can_frame_t *frame);
 
 /*!
  * @brief Receive CAN frame over the CAN bus network.

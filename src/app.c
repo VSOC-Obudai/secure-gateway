@@ -36,13 +36,15 @@ void app_show_logo(void) {
 }
 
 void app_init(void) {
-  can_frame_t dummy = { .can_id = 111, .len = 8, .data = {0xd,0xe,0xa,0xd,0xb,0xe,0xe,0xf} };
   serial_init();
   app_show_logo();
   timer_init();
   can_init();
-  waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 10));
-  can_send(&dummy);
 }
 
-void app_poll(void) {}
+void app_poll(void) {
+  can_frame_t dummy1 = { .can_id = 111, .len = 8, .data = {0xd,0xe,0xa,0xd,0xb,0xe,0xe,0xf} };
+  can_frame_t dummy2 = { .can_id = 201, .len = 8, .data = {0xb,0xa,0xb,0xe,0xc,0xa,0xf,0xe} };
+  can_send(&dummy1);
+  can_send(&dummy2);
+}
