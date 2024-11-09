@@ -3,31 +3,173 @@
 
 #include <stdint.h>
 
-#define ISR_PRIORITY_CAN_TX (4)
-#define ISR_PRIORITY_CAN_RX (5)
+/* controller area network (CAN) kernel definitions */
 
-#define CAN_TX_BUFFER_SIZE (64)
-#define CAN_RX_BUFFER_SIZE (64)
+#define CAN0_PORT (MODULE_CAN0)
+#define CAN00_TX_PIN (IfxCan_TXD00_P02_0_OUT)
+#define CAN00_RX_PIN (IfxCan_RXD00A_P02_1_IN)
+#define CAN01_TX_PIN (IfxCan_TXD01_P01_3_OUT)
+#define CAN01_RX_PIN (IfxCan_RXD01C_P01_4_IN)
+#define CAN02_TX_PIN (IfxCan_TXD02_P02_2_OUT)
+#define CAN02_RX_PIN (IfxCan_RXD02B_P02_3_IN)
+#define CAN03_TX_PIN (IfxCan_TXD03_P00_2_OUT)
+#define CAN03_RX_PIN (IfxCan_RXD03A_P00_3_IN)
 
-#define CAN_BAUDRATE (500000)
+#define CAN1_PORT (MODULE_CAN1)
+#define CAN10_TX_PIN (IfxCan_TXD10_P00_0_OUT)
+#define CAN10_RX_PIN (IfxCan_RXD10A_P00_1_IN)
+#define CAN11_TX_PIN (IfxCan_TXD11_P00_4_OUT)
+#define CAN11_RX_PIN (IfxCan_RXD11B_P00_5_IN)
+#define CAN12_TX_PIN (IfxCan_TXD12_P10_7_OUT)
+#define CAN12_RX_PIN (IfxCan_RXD12B_P10_8_IN)
+#define CAN13_TX_PIN (IfxCan_TXD13_P33_4_OUT)
+#define CAN13_RX_PIN (IfxCan_RXD13B_P33_5_IN)
 
-#if (defined(CAN_EXTENDED_FORMAT) && (CAN_EXTENDED_FORMAT == 1))
-#define CAN_TX_PAYLOAD_SIZE (16)
-#define CAN_RX_PAYLOAD_SIZE (16)
-#else
-#define CAN_TX_PAYLOAD_SIZE (2)
-#define CAN_RX_PAYLOAD_SIZE (2)
-#endif
+#define CAN2_PORT (MODULE_CAN2)
+#define CAN20_TX_PIN (IfxCan_TXD20_P34_1_OUT)
+#define CAN20_RX_PIN (IfxCan_RXD20C_P34_2_IN)
+#define CAN21_TX_PIN (IfxCan_TXD21_P20_3_OUT)
+#define CAN21_RX_PIN (IfxCan_RXD21D_P32_2_IN)
+#define CAN22_TX_PIN (IfxCan_TXD22_P33_12_OUT)
+#define CAN22_RX_PIN (IfxCan_RXD22A_P33_13_IN)
+#define CAN23_TX_PIN (IfxCan_TXD23_P14_9_OUT)
+#define CAN23_RX_PIN (IfxCan_RXD23A_P14_10_IN)
 
-typedef struct
-{
-  uint32_t id;
-  uint8_t size;
-  uint8_t data[8];
+#define CAN_STB_PIN (IfxPort_P33_0)
+
+/* special address description flags for the CAN_ID */
+#define CAN_EFF_FLAG 0x80000000U /* EFF/SFF is set in the MSB */
+#define CAN_RTR_FLAG 0x40000000U /* remote transmission request */
+#define CAN_ERR_FLAG 0x20000000U /* error message frame */
+
+/* valid bits in CAN ID for frame formats */
+#define CAN_SFF_MASK 0x000007FFU /* standard frame format (SFF) */
+#define CAN_EFF_MASK 0x1FFFFFFFU /* extended frame format (EFF) */
+#define CAN_ERR_MASK 0x1FFFFFFFU /* omit EFF, RTR, ERR flags */
+
+/*
+ * Controller Area Network Identifier structure
+ *
+ * bit 0-28	: CAN identifier (11/29 bit)
+ * bit 29	: error message frame flag (0 = data frame, 1 = error message)
+ * bit 30	: remote transmission request flag (1 = rtr frame)
+ * bit 31	: frame format flag (0 = standard 11 bit, 1 = extended 29 bit)
+ */
+typedef uint32_t canid_t;
+
+#define CAN_SFF_ID_BITS 11
+#define CAN_EFF_ID_BITS 29
+
+/*
+ * Controller Area Network Error Message Frame Mask structure
+ *
+ * bit 0-28	: error class mask (see include/uapi/linux/can/error.h)
+ * bit 29-31	: set to zero
+ */
+typedef uint32_t can_err_mask_t;
+
+/* CAN payload length and DLC definitions according to ISO 11898-1 */
+#define CAN_MAX_DLC 8
+#define CAN_MAX_RAW_DLC 15
+#define CAN_MAX_DLEN 8
+
+/* CAN FD payload length and DLC definitions according to ISO 11898-7 */
+#define CANFD_MAX_DLC 15
+#define CANFD_MAX_DLEN 64
+
+/**
+ * struct can_frame - Classical CAN frame structure (aka CAN 2.0B)
+ * @can_id:   CAN ID of the frame and CAN_*_FLAG flags, see canid_t definition
+ * @len:      CAN frame payload length in byte (0 .. 8)
+ * @can_dlc:  deprecated name for CAN frame payload length in byte (0 .. 8)
+ * @__pad:    padding
+ * @__res0:   reserved / padding
+ * @len8_dlc: optional DLC value (9 .. 15) at 8 byte payload length
+ *            len8_dlc contains values from 9 .. 15 when the payload length is
+ *            8 bytes but the DLC value (see ISO 11898-1) is greater then 8.
+ *            CAN_CTRLMODE_CC_LEN8_DLC flag has to be enabled in CAN driver.
+ * @data:     CAN frame payload (up to 8 byte)
+ */
+typedef struct {
+  canid_t can_id; /* 32 bit CAN_ID + EFF/RTR/ERR flags */
+  union {
+    /* CAN frame payload length in byte (0 .. CAN_MAX_DLEN)
+     * was previously named can_dlc so we need to carry that
+     * name for legacy support
+     */
+    uint8_t len;
+    uint8_t can_dlc; /* deprecated */
+  } __attribute__((packed));
+  uint8_t __pad;    /* padding */
+  uint8_t __res0;   /* reserved / padding */
+  uint8_t len8_dlc; /* optional DLC for 8 byte payload length (9 .. 15) */
+  uint8_t data[CAN_MAX_DLEN] __attribute__((aligned(8)));
 } can_frame_t;
 
-extern void can_init(void);
-extern void can_send(const can_frame_t* const frame);
-extern void can_recv(can_frame_t *frame);
+/*
+ * defined bits for canfd_frame.flags
+ *
+ * The use of struct canfd_frame implies the FD Frame (FDF) bit to
+ * be set in the CAN frame bitstream on the wire. The FDF bit switch turns
+ * the CAN controllers bitstream processor into the CAN FD mode which creates
+ * two new options within the CAN FD frame specification:
+ *
+ * Bit Rate Switch - to indicate a second bitrate is/was used for the payload
+ * Error State Indicator - represents the error state of the transmitting node
+ *
+ * As the CANFD_ESI bit is internally generated by the transmitting CAN
+ * controller only the CANFD_BRS bit is relevant for real CAN controllers when
+ * building a CAN FD frame for transmission. Setting the CANFD_ESI bit can make
+ * sense for virtual CAN interfaces to test applications with echoed frames.
+ *
+ * The struct can_frame and struct canfd_frame intentionally share the same
+ * layout to be able to write CAN frame content into a CAN FD frame structure.
+ * When this is done the former differentiation via CAN_MTU / CANFD_MTU gets
+ * lost. CANFD_FDF allows programmers to mark CAN FD frames in the case of
+ * using struct canfd_frame for mixed CAN / CAN FD content (dual use).
+ * N.B. the Kernel APIs do NOT provide mixed CAN / CAN FD content inside of
+ * struct canfd_frame therefore the CANFD_FDF flag is disregarded by Linux.
+ */
+#define CANFD_BRS 0x01 /* bit rate switch (second bitrate for payload data) */
+#define CANFD_ESI 0x02 /* error state indicator of the transmitting node */
+#define CANFD_FDF 0x04 /* mark CAN FD for dual use of struct canfd_frame */
+
+/**
+ * struct canfd_frame - CAN flexible data rate frame structure
+ * @can_id: CAN ID of the frame and CAN_*_FLAG flags, see canid_t definition
+ * @len:    frame payload length in byte (0 .. CANFD_MAX_DLEN)
+ * @flags:  additional flags for CAN FD
+ * @__res0: reserved / padding
+ * @__res1: reserved / padding
+ * @data:   CAN FD frame payload (up to CANFD_MAX_DLEN byte)
+ */
+typedef struct {
+  canid_t can_id; /* 32 bit CAN_ID + EFF/RTR/ERR flags */
+  uint8_t len;    /* frame payload length in byte */
+  uint8_t flags;  /* additional flags for CAN FD */
+  uint8_t __res0; /* reserved / padding */
+  uint8_t __res1; /* reserved / padding */
+  uint8_t data[CANFD_MAX_DLEN] __attribute__((aligned(8)));
+} canfd_frame_t;
+
+#define CAN_MTU (sizeof(struct can_frame))
+#define CANFD_MTU (sizeof(struct canfd_frame))
+
+/*!
+ * @brief Initialize CAN bus interface.
+ */
+void can_init(void);
+
+/*!
+ * @brief Send CAN frame over the CAN bus network.
+ * @param frame The CAN frame
+ */
+void can_send(const can_frame_t *const frame);
+
+/*!
+ * @brief Receive CAN frame over the CAN bus network.
+ * @param frame The CAN frame
+ */
+void can_recv(can_frame_t *frame);
 
 #endif /* CAN_H */

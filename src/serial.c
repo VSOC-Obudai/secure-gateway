@@ -1,15 +1,25 @@
 #include "serial.h"
+#include "isr_config.h"
+
+#include "SysSe/Bsp/Bsp.h"
 
 #include <Asclin/Asc/IfxAsclin_Asc.h>
 #include <Asclin/Std/IfxAsclin.h>
+
 #include <IfxCpu_Irq.h>
 
 #include <stdbool.h>
 #include <stdint.h>
+#include <stdio.h>
+
+#define SERIAL_BAUDRATE (115200)
 
 #define SERIAL_PORT (MODULE_ASCLIN0)
 #define SERIAL_TX_PIN (IfxAsclin0_TX_P33_9_OUT)
 #define SERIAL_RX_PIN (IfxAsclin0_RXD_P33_10_IN)
+
+#define SERIAL_TX_BUFFER_SIZE (64)
+#define SERIAL_RX_BUFFER_SIZE (64)
 
 typedef struct
 {
@@ -20,71 +30,100 @@ typedef struct
 
 serial_device_t serial_device;
 
-IFX_INTERRUPT(isr_serial_tx_handler, 0, ISR_PRIORITY_SERIAL_TX)
+IFX_INTERRUPT(serial_isr_transmit_handler, 0, ISR_PRIORITY_SERIAL_TX)
 {
   IfxAsclin_Asc_isrTransmit(&serial_device.handle);
 }
 
-IFX_INTERRUPT(isr_serial_rx_handler, 0, ISR_PRIORITY_SERIAL_RX)
+IFX_INTERRUPT(serial_isr_receive_handler, 0, ISR_PRIORITY_SERIAL_RX)
 {
   IfxAsclin_Asc_isrReceive(&serial_device.handle);
 }
 
-IFX_INTERRUPT(isr_serial_er_handler, 0, ISR_PRIORITY_SERIAL_ER)
+IFX_INTERRUPT(serial_isr_error_handler, 0, ISR_PRIORITY_SERIAL_ER)
 {
   IfxAsclin_Asc_isrError(&serial_device.handle);
 }
 
-void serial_init()
+void __serial_init_device(void)
 {
-  IfxAsclin_Asc_Config serial_cfg;
+  IfxAsclin_Asc_Config config = {};
+  IfxAsclin_Asc_Pins pins = {};
 
   /* Load default configuration */
-  IfxAsclin_Asc_initModuleConfig(&serial_cfg, &SERIAL_PORT);
+  IfxAsclin_Asc_initModuleConfig(&config, &SERIAL_PORT);
 
   /* Baudrate configuration */
-  serial_cfg.baudrate.prescaler = 1;
-  serial_cfg.baudrate.baudrate = SERIAL_BAUDRATE;
-  serial_cfg.baudrate.oversampling = IfxAsclin_OversamplingFactor_16;
+  config.baudrate.prescaler = 1;
+  config.baudrate.baudrate = SERIAL_BAUDRATE;
+  config.baudrate.oversampling = IfxAsclin_OversamplingFactor_16;
 
   /* Sampling mode configuration */
-  serial_cfg.bitTiming.medianFilter = IfxAsclin_SamplesPerBit_three;
-  serial_cfg.bitTiming.samplePointPosition = IfxAsclin_SamplePointPosition_8;
+  config.bitTiming.medianFilter = IfxAsclin_SamplesPerBit_three;
+  config.bitTiming.samplePointPosition = IfxAsclin_SamplePointPosition_8;
 
   /* Interrupts configuration */
-  serial_cfg.interrupt.txPriority = ISR_PRIORITY_SERIAL_TX;
-  serial_cfg.interrupt.rxPriority = ISR_PRIORITY_SERIAL_RX;
-  serial_cfg.interrupt.erPriority = ISR_PRIORITY_SERIAL_ER;
-  serial_cfg.interrupt.typeOfService = IfxSrc_Tos_cpu0;
+  config.interrupt.txPriority = ISR_PRIORITY_SERIAL_TX;
+  config.interrupt.rxPriority = ISR_PRIORITY_SERIAL_RX;
+  config.interrupt.erPriority = ISR_PRIORITY_SERIAL_ER;
+  config.interrupt.typeOfService = IfxSrc_Tos_cpu0;
 
   /* FIFO configuration */
-  serial_cfg.txBuffer = serial_device.tx_data;
-  serial_cfg.txBufferSize = SERIAL_TX_BUFFER_SIZE;
-  serial_cfg.rxBuffer = serial_device.rx_data;
-  serial_cfg.rxBufferSize = SERIAL_RX_BUFFER_SIZE;
+  config.txBuffer = serial_device.tx_data;
+  config.txBufferSize = SERIAL_TX_BUFFER_SIZE;
+  config.rxBuffer = serial_device.rx_data;
+  config.rxBufferSize = SERIAL_RX_BUFFER_SIZE;
 
   /* Pins configuration */
-  IfxAsclin_Asc_Pins pins = {.cts = NULL,
-                             .ctsMode = IfxPort_InputMode_pullUp,
-                             .rts = NULL,
-                             .rtsMode = IfxPort_OutputMode_pushPull,
-                             .rx = &SERIAL_RX_PIN,
-                             .rxMode = IfxPort_InputMode_pullUp,
-                             .tx = &SERIAL_TX_PIN,
-                             .txMode = IfxPort_OutputMode_pushPull,
-                             .pinDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1};
-  serial_cfg.pins = &pins;
+  pins.pinDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
+  pins.tx = &SERIAL_TX_PIN;
+  pins.txMode = IfxPort_OutputMode_pushPull;
+  pins.rx = &SERIAL_RX_PIN;
+  pins.rxMode = IfxPort_InputMode_pullUp;
+  config.pins = &pins;
 
   /* Initialize Serial I/O module */
-  IfxAsclin_Asc_initModule(&serial_device.handle, &serial_cfg);
+  IfxAsclin_Asc_initModule(&serial_device.handle, &config);
 }
 
-int serial_recv(void)
+void __serial_install_interrupts(void)
 {
-  return IfxAsclin_Asc_blockingRead(&serial_device.handle);
+  //IfxCpu_Irq_installInterruptHandler(&serial_isr_transmit_handler, ISR_PRIORITY_SERIAL_TX);
+  //IfxCpu_Irq_installInterruptHandler(&serial_isr_receive_handler, ISR_PRIORITY_SERIAL_RX);
+  //IfxCpu_Irq_installInterruptHandler(&serial_isr_error_handler, ISR_PRIORITY_SERIAL_ER);
+  //enableInterrupts();
 }
 
-void serial_send(int ch)
+void serial_init()
 {
-  IfxAsclin_Asc_blockingWrite(&serial_device.handle, ch);
+  __serial_init_device();
+  //__serial_install_interrupts();
+}
+
+int serial_getc()
+{
+  int c;
+  if (IfxAsclin_Asc_getReadCount(&serial_device.handle))
+  {
+    c = IfxAsclin_Asc_blockingRead(&serial_device.handle);
+  }
+  else
+  {
+    c = -1;
+  }
+  return c;
+}
+
+int serial_putc(uint8_t c)
+{
+  volatile Ifx_ASCLIN_TXDATA* tx_data = (Ifx_ASCLIN_TXDATA*)&serial_device.handle.asclin->TXDATA.U;
+  tx_data->U = c;
+
+  volatile Ifx_ASCLIN_FLAGS* tx_flag = (Ifx_ASCLIN_FLAGS*)&serial_device.handle.asclin->FLAGS;
+  while(tx_flag->B.TC == FALSE);
+
+  Ifx_ASCLIN_FLAGSCLEAR* tc_flag = (Ifx_ASCLIN_FLAGSCLEAR*)&serial_device.handle.asclin->FLAGSCLEAR;
+  tc_flag->B.TCC = 1;
+
+  return 1;
 }

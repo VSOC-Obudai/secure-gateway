@@ -31,7 +31,7 @@ const led_t led_rgb_b = {
 
 void led_init(const led_t* const led)
 {
-  M_ASSERT(led != NULL);
+  OE_ASSERT(led != NULL);
 
   if (led->type != LED_TYPE_ACTIVE_LOW)
   {
@@ -47,7 +47,7 @@ void led_init(const led_t* const led)
 
 void led_on(const led_t* const led)
 {
-  M_ASSERT(led != NULL);
+  OE_ASSERT(led != NULL);
 
   if (led->type == LED_TYPE_ACTIVE_LOW)
   {
@@ -61,7 +61,7 @@ void led_on(const led_t* const led)
 
 void led_off(const led_t* const led)
 {
-  M_ASSERT(led != NULL);
+  OE_ASSERT(led != NULL);
 
   if (led->type == LED_TYPE_ACTIVE_LOW)
   {
@@ -75,6 +75,6 @@ void led_off(const led_t* const led)
 
 void led_toggle(const led_t* const led)
 {
-  M_ASSERT(led != NULL);
+  OE_ASSERT(led != NULL);
   IfxPort_togglePin(led->pin->port, led->pin->pinIndex);
 }

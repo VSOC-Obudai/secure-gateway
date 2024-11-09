@@ -4,20 +4,20 @@ target_sources(secure-gateway
   PRIVATE
   __getchar.c
   __putchar.c
-
   app.c
   app.h
   assert.c
   assert.h
   can.c
   can.h
+  config.h
+  isr_config.h
   led.c
   led.h
   serial.c
   serial.h
-  stm.c
-  stm.h
-
+  timer.c
+  timer.h
   Cpu0_Main.c
   Cpu1_Main.c
   Cpu2_Main.c

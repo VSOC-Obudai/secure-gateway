@@ -22,9 +22,9 @@ extern const led_t led_rgb_r;
 extern const led_t led_rgb_g;
 extern const led_t led_rgb_b;
 
-extern void led_init(const led_t* const led);
-extern void led_on(const led_t* const led);
-extern void led_off(const led_t* const led);
-extern void led_toggle(const led_t* const led);
+void led_init(const led_t* const led);
+void led_on(const led_t* const led);
+void led_off(const led_t* const led);
+void led_toggle(const led_t* const led);
 
 #endif /* LED_H */

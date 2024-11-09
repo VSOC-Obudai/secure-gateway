@@ -1,16 +1,35 @@
 #include "serial.h"
-
 #include <stdio.h>
+#include <sys/errno.h>
 
-void __putchar(int ch)
+int write(int fd, const void* buffer, size_t size)
 {
-  if (ch == '\n')
+  int snd;
+  uint8_t* ptr;
+  if (fd <= 2)
   {
-    serial_send('\n');
-    serial_send('\r');
+    snd = size;
+    ptr = (uint8_t*)buffer;
+    while (size > 0)
+    {
+      if (*ptr == '\n')
+      {
+        serial_putc('\r');
+      }
+      serial_putc(*ptr++);
+      ++snd;
+      --size;
+    }
   }
   else
   {
-    serial_send(ch);
+    errno = EIO;
+    snd = -1;
   }
+  return snd;
+}
+
+int __putchar(int ch)
+{
+  return write(stdout, &ch, 1);
 }

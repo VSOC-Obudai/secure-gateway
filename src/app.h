@@ -1,7 +1,14 @@
 #ifndef APP_H
 #define APP_H
 
-extern void app_init(void);
-extern void app_run(void);
+/*!
+ * @brief
+ */
+void app_init(void);
+
+/*!
+ * @brief
+ */
+void app_poll(void);
 
 #endif /* APP_H */

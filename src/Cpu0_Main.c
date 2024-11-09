@@ -1,6 +1,5 @@
-#include "IfxCpu.h"
-#include "IfxScuWdt.h"
-#include "Ifx_Types.h"
+#include <IfxCpu.h>
+#include <IfxScuWdt.h>
 
 #include "app.h"
 
@@ -19,11 +18,11 @@ void core0_main(void)
   IfxCpu_emitEvent(&cpuSyncEvent);
   IfxCpu_waitEvent(&cpuSyncEvent, 1);
 
-  /* Start and run program logic */
+  /* Execute program logic */
   app_init();
-  app_run();
 
-  /* Normally program flow should not reach here */
   while (1)
-    ;
+  {
+    app_poll();
+  }
 }
