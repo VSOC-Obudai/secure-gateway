@@ -22,6 +22,10 @@
  * Macros
  ****************************************************************************/
 
+#define DEFAULT_CAN_PORT (CAN2_PORT)
+#define DEFAULT_CAN_TX_PIN (CAN20_TX_PIN)
+#define DEFAULT_CAN_RX_PIN (CAN20_RX_PIN)
+
 #define CAN_BUFFER_SIZE (256)
 
 /*****************************************************************************
@@ -47,11 +51,11 @@ typedef struct {
  ****************************************************************************/
 
 static const IfxCan_Can_Pins default_can_pins = {
-    .padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed2,
-    .txPin = &CAN00_TX_PIN,
+    .padDriver = IfxPort_PadDriver_cmosAutomotiveSpeed4,
+    .txPin = &DEFAULT_CAN_TX_PIN,
     .txPinMode = IfxPort_OutputMode_pushPull,
-    .rxPin = &CAN00_RX_PIN,
-    .rxPinMode = IfxPort_InputMode_pullUp};
+    .rxPin = &DEFAULT_CAN_RX_PIN,
+    .rxPinMode = IfxPort_InputMode_noPullDevice};
 
 /*****************************************************************************
  * Global variables
@@ -142,15 +146,16 @@ static void _can_error_print(void) {
 
 static void _can_init_device(void) {
   IfxCan_Can_Config can_module_config;
-  IfxCan_Can_initModuleConfig(&can_module_config, &CAN0_PORT);
+  IfxCan_Can_initModuleConfig(&can_module_config, &DEFAULT_CAN_PORT);
   IfxCan_Can_initModule(&can_device.base, &can_module_config);
+  printf("-- CAN: base ready\n");
 }
 
 static void _can_init_source(void) {
   IfxCan_Can_NodeConfig can_node_config;
   IfxCan_Can_initNodeConfig(&can_node_config, &can_device.base);
 
-  can_node_config.busLoopbackEnabled = TRUE;
+  //can_node_config.busLoopbackEnabled = TRUE;
 
   can_node_config.nodeId = IfxCan_NodeId_0;
   can_node_config.frame.type = IfxCan_FrameType_transmit;
@@ -170,6 +175,8 @@ static void _can_init_source(void) {
   can_node_config.interruptConfig.traco.typeOfService = IfxSrc_Tos_cpu0;
 
   IfxCan_Can_initNode(&can_device.source, &can_node_config);
+
+  printf("-- CAN: TX ready\n");
 }
 
 static void _can_init_sink(void) {
@@ -177,7 +184,7 @@ static void _can_init_sink(void) {
   IfxCan_Can_initNodeConfig(&can_node_config, &can_device.base);
 
   /* Node */
-  can_node_config.busLoopbackEnabled = TRUE;
+  //can_node_config.busLoopbackEnabled = TRUE;
   can_node_config.nodeId = IfxCan_NodeId_1;
   can_node_config.frame.type = IfxCan_FrameType_receive;
   can_node_config.pins = &default_can_pins;
@@ -222,17 +229,21 @@ static void _can_init_sink(void) {
   can_device.last_error = 0;
 
   IfxCan_Can_initNode(&can_device.sink, &can_node_config);
+
+  printf("-- CAN: RX ready\n");
 }
 
 static void _can_init_pins(void) {
-  IfxPort_setPinModeOutput(CAN00_TX_PIN.pin.port, CAN00_TX_PIN.pin.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
-  IfxPort_setPinLow(CAN00_TX_PIN.pin.port, CAN00_TX_PIN.pin.pinIndex);
+  IfxPort_setPinModeOutput(DEFAULT_CAN_TX_PIN.pin.port, DEFAULT_CAN_TX_PIN.pin.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+  IfxPort_setPinLow(DEFAULT_CAN_TX_PIN.pin.port, DEFAULT_CAN_TX_PIN.pin.pinIndex);
 
-  IfxPort_setPinModeOutput(CAN00_RX_PIN.pin.port, CAN00_RX_PIN.pin.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
-  IfxPort_setPinLow(CAN00_RX_PIN.pin.port, CAN00_RX_PIN.pin.pinIndex);
+  IfxPort_setPinModeOutput(DEFAULT_CAN_RX_PIN.pin.port, DEFAULT_CAN_RX_PIN.pin.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+  IfxPort_setPinLow(DEFAULT_CAN_RX_PIN.pin.port, DEFAULT_CAN_RX_PIN.pin.pinIndex);
 
   IfxPort_setPinModeOutput(CAN_STB_PIN.port, CAN_STB_PIN.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
   IfxPort_setPinLow(CAN_STB_PIN.port, CAN_STB_PIN.pinIndex);
+
+  printf("-- CAN: pins set\n");
 }
 
 static void _can_init_leds(void) {
@@ -248,7 +259,7 @@ static void _can_init_leds(void) {
   led_off(&led_rgb_g);
   led_off(&led_rgb_b);
 
-  printf("-- LEDs initialized\n");
+  printf("-- CAN: LEDs are ready\n");
 }
 
 static void _can_accept_all_messages(void) {
@@ -263,7 +274,7 @@ static void _can_accept_all_messages(void) {
   IfxCan_Can_setStandardFilter(&can_device.sink, &filter);
   IfxCan_Can_setExtendedFilter(&can_device.sink, &filter);
 
-  printf("-- Set: all CAN messages accepted\n");
+  printf("-- CAN: all messages accepted\n");
 }
 
 static void _can_install_interrupts(void) {
@@ -271,6 +282,7 @@ static void _can_install_interrupts(void) {
   IfxCpu_Irq_installInterruptHandler(&can_irq_msg_rcvd, ISR_PRIORITY_CAN_MSG_RCVD);
   IfxCpu_Irq_installInterruptHandler(&can_irq_msg_lost, ISR_PRIORITY_CAN_MSG_LOST);
   IfxCpu_Irq_installInterruptHandler(&can_irq_comm_error, ISR_PRIORITY_CAN_COMM_ERROR);
+  printf("-- CAN: interrupts are set\n");
 }
 
 void can_init() {
@@ -281,6 +293,7 @@ void can_init() {
   _can_init_leds();
   _can_accept_all_messages();
   _can_install_interrupts();
+  printf("-- CAN: device ready\n");
 }
 
 void can_send(can_frame_t *frame) {
