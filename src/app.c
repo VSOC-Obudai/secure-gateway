@@ -43,8 +43,9 @@ void app_init(void) {
 }
 
 void app_poll(void) {
-  //can_frame_t dummy1 = { .can_id = 111, .len = 8, .data = {0xd,0xe,0xa,0xd,0xb,0xe,0xe,0xf} };
-  //can_frame_t dummy2 = { .can_id = 201, .len = 8, .data = {0xb,0xa,0xb,0xe,0xc,0xa,0xf,0xe} };
-  //can_send(&dummy1);
-  //can_send(&dummy2);
+#if defined (LOOPBACK_MODE) && (LOOPBACK_MODE)
+  can_frame_t dummy_frame = { .can_id = 123, .len = 8, .data = { 0xf, 0x0, 0x0, 0xd, 0xb, 0xa, 0xb, 0xe } };
+  can_send(&dummy_frame);
+  waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 3000));
+#endif
 }
