@@ -15,7 +15,6 @@
 #include <IfxPort_PinMap.h>
 #include <SysSe/Bsp/Bsp.h>
 
-#include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
@@ -25,8 +24,8 @@
  ****************************************************************************/
 
 #define DEFAULT_CAN_PORT (CAN2_PORT)
-#define DEFAULT_CAN_TX_PIN (CAN20_TX_PIN)
-#define DEFAULT_CAN_RX_PIN (CAN20_RX_PIN)
+#define DEFAULT_CAN_TX_PIN (CAN21_TX_PIN)
+#define DEFAULT_CAN_RX_PIN (CAN21_RX_PIN)
 
 #define CAN_BUFFER_SIZE (256)
 
@@ -36,16 +35,16 @@
 
 typedef struct {
   IfxCan_Can base;
-  IfxCan_Can_Node source;
-  IfxCan_Can_Node sink;
-  IfxCan_LastErrorCodeType last_error;
+  IfxCan_Can_Node tx;
+  IfxCan_Can_Node rx;
+  IfxCan_LastErrorCodeType er;
   IfxCpu_spinLock lock;
 } can_device_t;
 
 typedef struct {
-  uint32_t msg_sent_count;
-  uint32_t msg_rcvd_count;
-  uint32_t msg_lost_count;
+  uint32_t msg_sent;
+  uint32_t msg_received;
+  uint32_t msg_lost;
 } can_debug_stats_t;
 
 /*****************************************************************************
@@ -78,37 +77,38 @@ static void _can_init_sink(void);
 static void _can_init_pins(void);
 static void _can_accept_messages_in_range(uint32_t from_id, uint32_t to_id);
 static void _can_install_interrupts(void);
+static void _can_wait_until_connect(void);
 
 /*****************************************************************************
  * Hardware interrupts
  ****************************************************************************/
 
 IFX_INTERRUPT(can_irq_msg_sent, 0, ISR_PRIORITY_CAN_MSG_SENT) {
-  can_debug_stats.msg_sent_count = (can_debug_stats.msg_sent_count + 1) % UINT32_MAX;
+  can_debug_stats.msg_sent = (can_debug_stats.msg_sent + 1) % UINT32_MAX;
   led_toggle(&led_0);
-  IfxCan_Node_clearInterruptFlag(can_device.source.node, IfxCan_Interrupt_transmissionCompleted);
+  IfxCan_Node_clearInterruptFlag(can_device.tx.node, IfxCan_Interrupt_transmissionCompleted);
 }
 
 IFX_INTERRUPT(can_irq_msg_rcvd, 0, ISR_PRIORITY_CAN_MSG_RCVD) {
   can_frame_t frame;
   can_recv(&frame);
-  can_debug_stats.msg_rcvd_count = (can_debug_stats.msg_rcvd_count + 1) % UINT32_MAX;
+  can_debug_stats.msg_received = (can_debug_stats.msg_received + 1) % UINT32_MAX;
   led_toggle(&led_1);
-  IfxCan_Node_clearInterruptFlag(can_device.sink.node, IfxCan_Interrupt_rxFifo0NewMessage);
+  IfxCan_Node_clearInterruptFlag(can_device.rx.node, IfxCan_Interrupt_rxFifo0NewMessage);
 }
 
 IFX_INTERRUPT(can_irq_msg_lost, 0, ISR_PRIORITY_CAN_MSG_LOST) {
-  can_debug_stats.msg_lost_count = (can_debug_stats.msg_lost_count + 1) % UINT32_MAX;
+  can_debug_stats.msg_lost = (can_debug_stats.msg_lost + 1) % UINT32_MAX;
   led_toggle(&led_rgb_r);
-  IfxCan_Node_clearInterruptFlag(can_device.sink.node, IfxCan_Interrupt_rxFifo0MessageLost);
+  IfxCan_Node_clearInterruptFlag(can_device.rx.node, IfxCan_Interrupt_rxFifo0MessageLost);
 }
 
 IFX_INTERRUPT(can_irq_comm_error, 0, ISR_PRIORITY_CAN_ERROR) {
-  uint32_t current_error_code = IfxCan_Node_getLastErroCodeStatus(can_device.sink.node);
-  if (can_device.last_error != current_error_code) {
-    can_device.last_error = current_error_code;
-    _can_error_print(can_device.last_error);
-    if (can_device.last_error != IfxCan_LastErrorCodeType_noError) {
+  uint32_t current_error_code = IfxCan_Node_getLastErroCodeStatus(can_device.rx.node);
+  if (can_device.er != current_error_code) {
+    can_device.er = current_error_code;
+    _can_error_print(can_device.er);
+    if (can_device.er != IfxCan_LastErrorCodeType_noError) {
       led_off(&led_rgb_g);
       led_toggle(&led_rgb_r);
     } else {
@@ -116,7 +116,7 @@ IFX_INTERRUPT(can_irq_comm_error, 0, ISR_PRIORITY_CAN_ERROR) {
       led_toggle(&led_rgb_g);
     }
   }
-  IfxCan_Node_clearInterruptFlag(can_device.sink.node, IfxCan_Interrupt_protocolErrorData);
+  IfxCan_Node_clearInterruptFlag(can_device.rx.node, IfxCan_Interrupt_protocolErrorData);
 }
 
 /*****************************************************************************
@@ -145,29 +145,31 @@ static void _can_error_print(uint32_t error_code) {
       "CAN bus error(7): The CAN controller has not detected any bus activity. Check if the bus is inactive, disconnected, or if there is a hardware issue."};
   if (error_code > 0) {
     spinlock_lock(&can_device.lock);
-    printf("!! %s\n", error_strings[(uint32_t)can_device.last_error]);
+    printf("!! %s\n", error_strings[(uint32_t)can_device.er]);
     spinlock_unlock(&can_device.lock);
   }
 }
 
 static void _can_init_device(void) {
   IfxCan_Can_Config can_module_config;
-  printf("-- Initializing CAN device driver...\n");
+  printf(".. Initializing CAN driver...\n");
   IfxCan_Can_initModuleConfig(&can_module_config, &DEFAULT_CAN_PORT);
   IfxCan_Can_initModule(&can_device.base, &can_module_config);
-  printf("-- CAN: device driver ready!\n");
+  printf("-- CAN driver ready!\n");
 }
 
 static void _can_init_source(void) {
   IfxCan_Can_NodeConfig can_node_config;
 
-  printf("-- Initializing CAN source node...\n");
+  printf(".. Initializing CAN TX ..\n");
 
   IfxCan_Can_initNodeConfig(&can_node_config, &can_device.base);
 
   /* Default node settings */
-#if defined (LOOPBACK_MODE) && (LOOPBACK_MODE)
+#ifdef LOOPBACK_MODE
+#if LOOPBACK_MODE
   can_node_config.busLoopbackEnabled = TRUE;
+#endif
 #endif
 
   can_node_config.nodeId = IfxCan_NodeId_1;
@@ -187,21 +189,23 @@ static void _can_init_source(void) {
   can_node_config.interruptConfig.traco.interruptLine = IfxCan_InterruptLine_3;
   can_node_config.interruptConfig.traco.typeOfService = IfxSrc_Tos_cpu0;
 
-  IfxCan_Can_initNode(&can_device.source, &can_node_config);
+  IfxCan_Can_initNode(&can_device.tx, &can_node_config);
 
-  printf("-- CAN source node is ready!\n");
+  printf(".. CAN TX ready!\n");
 }
 
 static void _can_init_sink(void) {
   IfxCan_Can_NodeConfig can_node_config;
 
-  printf("-- Initializing CAN sink node...\n");
+  printf(".. Initializing CAN RX ..\n");
 
   IfxCan_Can_initNodeConfig(&can_node_config, &can_device.base);
 
   /* Default node settings */
-#if defined (LOOPBACK_MODE) && (LOOPBACK_MODE)
+#ifdef LOOPBACK_MODE
+#if LOOPBACK_MODE
   can_node_config.busLoopbackEnabled = TRUE;
+#endif
 #endif
 
   can_node_config.nodeId = IfxCan_NodeId_0;
@@ -238,22 +242,22 @@ static void _can_init_sink(void) {
   can_node_config.interruptConfig.alrt.priority = ISR_PRIORITY_CAN_MSG_LOST;
   can_node_config.interruptConfig.alrt.interruptLine = IfxCan_InterruptLine_1;
   can_node_config.interruptConfig.alrt.typeOfService = IfxSrc_Tos_cpu0;
-  can_debug_stats.msg_rcvd_count = 0;
-  can_debug_stats.msg_sent_count = 0;
-  can_debug_stats.msg_lost_count = 0;
+  can_debug_stats.msg_received = 0;
+  can_debug_stats.msg_sent = 0;
+  can_debug_stats.msg_lost = 0;
   can_node_config.interruptConfig.protocolErrorDataEnabled = TRUE;
   can_node_config.interruptConfig.loi.priority = ISR_PRIORITY_CAN_COMM_ERROR;
   can_node_config.interruptConfig.loi.interruptLine = IfxCan_InterruptLine_0;
   can_node_config.interruptConfig.loi.typeOfService = IfxSrc_Tos_cpu0;
-  can_device.last_error = 0;
+  can_device.er = 0;
 
-  IfxCan_Can_initNode(&can_device.sink, &can_node_config);
+  IfxCan_Can_initNode(&can_device.rx, &can_node_config);
 
-  printf("-- CAN sink node is ready!\n");
+  printf("-- CAN RX ready!\n");
 }
 
 static void _can_init_pins(void) {
-  printf("-- Initializing CAN pins...\n");
+  printf(".. Initializing CAN pins ..\n");
 
   IfxPort_setPinModeOutput(DEFAULT_CAN_TX_PIN.pin.port, DEFAULT_CAN_TX_PIN.pin.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
   IfxPort_setPinLow(DEFAULT_CAN_TX_PIN.pin.port, DEFAULT_CAN_TX_PIN.pin.pinIndex);
@@ -264,11 +268,11 @@ static void _can_init_pins(void) {
   IfxPort_setPinModeOutput(CAN_STB_PIN.port, CAN_STB_PIN.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
   IfxPort_setPinLow(CAN_STB_PIN.port, CAN_STB_PIN.pinIndex);
 
-  printf("-- CAN pins are ready!\n");
+  printf("-- CAN pins ready!\n");
 }
 
 static void _can_init_leds(void) {
-  printf("-- Initializing LEDs for CAN...\n");
+  printf(".. Initializing LEDs ..\n");
 
   led_init(&led_0);
   led_init(&led_1);
@@ -282,12 +286,11 @@ static void _can_init_leds(void) {
   led_off(&led_rgb_g);
   led_off(&led_rgb_b);
 
-  printf("-- LEDs are ready for CAN!\n");
+  printf("-- LEDs ready!\n");
 }
 
 static void _can_accept_messages_in_range(uint32_t from_id, uint32_t to_id) {
   IfxCan_Filter filter;
-  uint32_t current_error_code;
 
   filter.number = 0;
   filter.elementConfiguration = IfxCan_FilterElementConfiguration_storeInRxFifo0;
@@ -296,28 +299,16 @@ static void _can_accept_messages_in_range(uint32_t from_id, uint32_t to_id) {
   filter.id1 = from_id;
   filter.id2 = to_id;
 
-  printf("-- Setting acceptance filters to sink node...\n");
+  printf(".. Setting RX filters ..\n");
 
-  IfxCan_Can_setStandardFilter(&can_device.sink, &filter);
-  IfxCan_Can_setExtendedFilter(&can_device.sink, &filter);
+  IfxCan_Can_setStandardFilter(&can_device.rx, &filter);
+  IfxCan_Can_setExtendedFilter(&can_device.rx, &filter);
 
-  printf(".. Waiting for node synchronization...\n");
-  current_error_code = UINT32_MAX;
-
-  while (!IfxCan_Can_isNodeSynchronized(&can_device.sink)) {
-    can_device.last_error = IfxCan_Node_getLastErroCodeStatus(can_device.sink.node);
-    if (can_device.last_error != current_error_code) {
-      _can_error_print(can_device.last_error);
-      current_error_code = can_device.last_error;
-    }
-    waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, POLL_INTERVAL_MS));
-  }
-
-  printf("-- Acceptance filter is set to sink node!\n");
+  printf("-- RX filters set!\n");
 }
 
 static void _can_install_interrupts(void) {
-  printf("-- Installing hardware interrupts for CAN...\n");
+  printf(".. Installing interrupts for CAN ..\n");
 
   IfxCpu_Irq_installInterruptHandler(&can_irq_msg_sent, ISR_PRIORITY_CAN_MSG_SENT);
   IfxCpu_Irq_installInterruptHandler(&can_irq_msg_rcvd, ISR_PRIORITY_CAN_MSG_RCVD);
@@ -326,11 +317,25 @@ static void _can_install_interrupts(void) {
 
   enableInterrupts();
 
-  printf("-- Hardware interrupts are ready for CAN!\n");
+  printf("-- CAN interrupts ready!\n");
+}
+
+static void _can_wait_until_connect(void) {
+  uint32_t ec = UINT32_MAX;
+  printf(".. Waiting for RX node ..\n");
+  while (!IfxCan_Can_isNodeSynchronized(&can_device.rx)) {
+    can_device.er = IfxCan_Node_getLastErroCodeStatus(can_device.rx.node);
+    if (can_device.er != ec) {
+      _can_error_print(can_device.er);
+      ec = can_device.er;
+    }
+    waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, POLL_INTERVAL_MS));
+  }
+  printf("-- RX node ready\n");
 }
 
 void can_init() {
-  printf("-- Initializing CAN interface...\n");
+  printf(".. Initializing CAN ..\n");
 
   _can_init_leds();
   _can_init_device();
@@ -340,7 +345,9 @@ void can_init() {
   _can_install_interrupts();
   _can_accept_messages_in_range(0x0000, 0xffff);
 
-  printf("-- CAN interface is ready!\n");
+  _can_wait_until_connect();
+
+  printf("-- CAN ready\n");
 }
 
 void can_send(can_frame_t *frame) {
@@ -362,7 +369,7 @@ void can_send(can_frame_t *frame) {
   payload[1] |= frame->data[6] << 16;
   payload[1] |= frame->data[7] << 24;
   do {
-    status = IfxCan_Can_sendMessage(&can_device.source, &header, payload);
+    status = IfxCan_Can_sendMessage(&can_device.tx, &header, payload);
   } while (status == IfxCan_Status_notSentBusy);
   _can_message_print("TX", frame);
 }
@@ -374,7 +381,7 @@ void can_recv(can_frame_t *frame) {
   header.frameMode = IfxCan_FrameMode_standard;
   header.messageIdLength = IfxCan_MessageIdLength_standard;
   header.readFromRxFifo0 = TRUE;
-  IfxCan_Can_readMessage(&can_device.sink, &header, payload);
+  IfxCan_Can_readMessage(&can_device.rx, &header, payload);
   frame->can_id = header.messageId;
   frame->len = IfxCan_Node_getDataLengthInBytes(header.dataLengthCode);
   frame->data[0] = (uint8_t)(payload[0]);
@@ -387,4 +394,3 @@ void can_recv(can_frame_t *frame) {
   frame->data[7] = (uint8_t)(payload[1] >> 24);
   _can_message_print("RX", frame);
 }
-

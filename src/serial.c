@@ -44,7 +44,7 @@ IFX_INTERRUPT(serial_isr_error_handler, 0, ISR_PRIORITY_SERIAL_ERROR)
   IfxAsclin_Asc_isrError(&serial_device.handle);
 }
 
-void __serial_init_device(void)
+static void __serial_init_device(void)
 {
   IfxAsclin_Asc_Config config = {};
   IfxAsclin_Asc_Pins pins = {};
@@ -85,12 +85,11 @@ void __serial_init_device(void)
   IfxAsclin_Asc_initModule(&serial_device.handle, &config);
 }
 
-void __serial_install_interrupts(void)
+static void __serial_install_interrupts(void)
 {
   IfxCpu_Irq_installInterruptHandler(&serial_isr_transmit_handler, ISR_PRIORITY_SERIAL_WRITE);
   IfxCpu_Irq_installInterruptHandler(&serial_isr_receive_handler, ISR_PRIORITY_SERIAL_READ);
   IfxCpu_Irq_installInterruptHandler(&serial_isr_error_handler, ISR_PRIORITY_SERIAL_ERROR);
-  //enableInterrupts();
 }
 
 void serial_init()

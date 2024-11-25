@@ -43,9 +43,11 @@ void app_init(void) {
 }
 
 void app_poll(void) {
-#if defined (LOOPBACK_MODE) && (LOOPBACK_MODE)
+#ifdef LOOPBACK_MODE
+#if LOOPBACK_MODE
   can_frame_t dummy_frame = { .can_id = 123, .len = 8, .data = { 0xf, 0x0, 0x0, 0xd, 0xb, 0xa, 0xb, 0xe } };
   can_send(&dummy_frame);
-  waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 3000));
+  waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 1000));
+#endif
 #endif
 }
