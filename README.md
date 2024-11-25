@@ -1,4 +1,4 @@
-# Aurix Sec GTW HTTP Server Example (Alternative Take)
+# Real-Time vehicle message monitoring
 
 ### Prerequisites
 
@@ -54,3 +54,4 @@ $ AurixFlasher -hex ./aurix-sec-gtw-http-server.hex
 1. Install PuTTY
 2. Check the name of your COM serial line in device manager (usually COM4)
 3. Setup in your PuTTY: Connection type: Serial, Speed: 9600
+
