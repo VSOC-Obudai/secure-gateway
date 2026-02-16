@@ -26,14 +26,25 @@ $ pip3 install cmake ninja
 ```
 ### Compile & Build
 
+You can view available presets like this.
+```
+$ cmake --list-presets
+```
+
 You can execute the whole build pipeline (workflow) like this:
 ```
 $ cmake --workflow --preset tricore-debug
 ```
 
-Or, you can run each stage individually within the pipeline. Normally a CMake stage consist of <configuration>, <build>, <test>, and <packaging>.
+Or, you can run each stage individually. Normally a CMake stage consist of
+1. configure: analyze the project and environment & produce native build files  `cmake -S . -B build`
+2. build: compile & link targets `cmake --build build`
+3. test: execute & verify unit tests `ctest --test-dir build --output-on-failure`
+4. package: deploy outputs `cmake --install build --prefix /opt/my_project`
 
-In this case, test and packaging is not implemented on purpose. CMake doesn't have flash implemented in the workflow, which would have required manual scripting and messing around with the build ecosystem. It was simply not worth it at the time... You can do this later on, if you want.
+In this case, test and packaging was not implemented on purpose.
+
+Why? CMake doesn't have flash implemented in the workflow (it is not a standard procedure), which would have required manual twiggling and scripting. It was not worth it... You can do this later on, if you want.
 
 1. Configuration (generates platform-agnostic build files)
 ```
