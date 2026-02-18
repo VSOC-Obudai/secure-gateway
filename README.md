@@ -1,4 +1,10 @@
-# Real-Time vehicle message monitoring
+# Automotive CAN Bus Security Gateway Firmware
+
+Bare-metal security gateway firmware for the Infineon AURIX TC37x (TriCore) microcontroller, targeting real-time CAN bus monitoring in automotive environments. The project was developed as part of my M.Sc. research into automotive network security and resulted in an IEEE publication at SISY 2024.
+
+The firmware runs across three TriCore CPU cores with synchronized startup via hardware events. Core 0 owns the application loop, while cores 1 and 2 are reserved for future parallel workloads. The CAN subsystem implements interrupt-driven TX/RX pipelines using FIFO queuing, hardware message filtering with configurable ID range acceptance, and ISR-safe spinlock synchronization for cross-core serial output. Four distinct interrupt priorities handle message transmission, reception, loss detection, and protocol error classification independently — each mapped to a dedicated interrupt line and CPU0 service.
+
+Serial I/O is implemented over ASCLIN at 115200 baud with direct register-level TX control for deterministic character output, bypassing the standard FIFO path to ensure log visibility during early initialization. The build system uses CMake with Ninja and a custom tricore-elf-gcc toolchain file, supporting Debug, Profile, and Release presets. Firmware deployment is done via AurixFlasher from the generated Intel HEX output.
 
 ### Prerequisites
 
