@@ -4,29 +4,28 @@
 
 int write(int fd, const void* buffer, size_t size)
 {
-  int snd;
+  int nwritten = size;
   uint8_t* ptr;
   if (fd <= 2)
   {
-    snd = size;
     ptr = (uint8_t*)buffer;
     while (size > 0)
     {
       if (*ptr == '\n')
       {
         serial_putc('\r');
+        ++nwritten;
       }
       serial_putc(*ptr++);
-      ++snd;
       --size;
     }
   }
   else
   {
     errno = EIO;
-    snd = -1;
+    nwritten = -1;
   }
-  return snd;
+  return nwritten;
 }
 
 int __putchar(int ch)

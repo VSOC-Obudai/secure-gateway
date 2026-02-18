@@ -7,6 +7,7 @@
 #include "config.h"
 #include "led.h"
 #include "isr_config.h"
+#include "serial.h"
 #include "spinlock.h"
 
 #include <Can/Can/IfxCan_Can.h>
@@ -103,7 +104,7 @@ IFX_INTERRUPT(can_irq_msg_lost, 0, ISR_PRIORITY_CAN_MSG_LOST) {
   IfxCan_Node_clearInterruptFlag(can_device.rx.node, IfxCan_Interrupt_rxFifo0MessageLost);
 }
 
-IFX_INTERRUPT(can_irq_comm_error, 0, ISR_PRIORITY_CAN_ERROR) {
+IFX_INTERRUPT(can_irq_comm_error, 0, ISR_PRIORITY_CAN_COMM_ERROR) {
   uint32_t current_error_code = IfxCan_Node_getLastErroCodeStatus(can_device.rx.node);
   if (can_device.er != current_error_code) {
     can_device.er = current_error_code;
@@ -123,16 +124,167 @@ IFX_INTERRUPT(can_irq_comm_error, 0, ISR_PRIORITY_CAN_ERROR) {
  * Function declarations
  ****************************************************************************/
 
-static void _can_message_print(const char *const prefix, const can_frame_t *const frame) {
-  spinlock_lock(&can_device.lock);
-  printf("%s | 0x%08lX |", prefix, frame->can_id);
-  for (uint8_t i = 0; i < frame->len; ++i) {
-    printf(" %02X", frame->data[i]);
+/*!
+ * @brief Prints a given literal string to the output.
+ *
+ * Walks the null-terminated string byte by byte.
+ * For each character, if it is '\n' it first emits a '\r' (so the terminal moves to column zero
+ * before the newline), then emits the character itself. This replicates the \n to \r\n translation
+ * that __putchar.c's write() function used to do.
+ * This function is used to print literal strings like "TX", " | ", or "!! ", and the error
+ * descriptions.
+ * @param s The string literal to output.
+ */
+static void _serial_str(const char* s) {
+  while (*s) {
+    if (*s == '\n') serial_putc('\r');
+    serial_putc((uint8_t)*s++);
   }
-  printf("\n");
-  spinlock_unlock(&can_device.lock);
 }
 
+/*!
+ * @brief Prints an 8-bit long hexadecimal integer.
+ * 
+ * Prints one byte as exactly two uppercase hex digits. It splits the byte into two 4-bit nibbles:
+ * - v >> 4 — the high nibble (bits 7–4), used as an index into the lookup table for the first digit
+ * - v & 0xF — the low nibble (bits 3–0), for the second digit
+ * For example, 0xB2 to high nibble 0xB to 'B', low nibble 0x2 to '2', output B2.
+ * Used for each byte of the CAN frame payload (replacing printf(" %02X", ...)).
+ *
+ * @param v An 8-bit long hexadecimal integer.
+ */
+static void _serial_hex8(uint8_t v) {
+  static const char hex[] = "0123456789ABCDEF";
+  serial_putc((uint8_t)hex[v >> 4]);
+  serial_putc((uint8_t)hex[v & 0xF]);
+}
+
+/*!
+ * @brief Prints an 32-bit long hexadecimal integer.
+ * 
+ * Prints a 32-bit value as 0x followed by exactly 8 uppercase hex digits.
+ * The loop runs 8 times with i stepping 28 to 24 to 16 to ... to 0 (four bits per step).
+ * Each iteration right-shifts v by i bits to bring the target nibble into the lowest 4 bits,
+ * then masks with 0xF to isolate it, and uses it as the lookup index.
+ * The most-significant nibble is printed first because i starts at 28.
+ *
+ * For example, 123 (decimal) → 0x0000007B.
+ * Replaces printf("0x%08lX", frame->can_id).
+ *
+ * @param v A 32-bit long hexadecimal integer.
+ */
+static void _serial_hex32(uint32_t v) {
+  static const char hex[] = "0123456789ABCDEF";
+  serial_putc('0'); serial_putc('x');
+  for (int i = 28; i >= 0; i -= 4) {
+    serial_putc((uint8_t)hex[(v >> i) & 0xF]);
+  }
+}
+
+/*!
+* @brief Formats and transmits a single CAN frame to the UART as a fixed-
+*        layout human-readable line, safe for use from both task and ISR
+*        contexts.
+*
+* Output format (one line per call, terminated with CR LF):
+*
+*   <prefix> | 0x<IIIIIIII> | <B0> <B1> ... <Bn-1>\r\n
+*
+* where:
+*   <prefix>         is the caller-supplied direction tag (e.g. "TX" or "RX"),
+*                    emitted verbatim with LF-to-CRLF translation applied.
+*   0x<IIIIIIII>     is @c frame->can_id printed as exactly 8 uppercase hex
+*                    digits with the "0x" prefix, always 10 characters wide.
+*   <B0>..<Bn-1>     are @c frame->len payload bytes from @c frame->data[],
+*                    each printed as exactly 2 uppercase hex digits, each
+*                    preceded by a single space character. No byte is printed
+*                    if @c frame->len is 0.
+*
+* Example — TX frame, CAN ID 0x7B (decimal 123), 8 bytes of payload:
+*
+*   TX | 0x0000007B | 0F 00 00 0D 0B 0A 0B 0E\r\n
+*
+* Thread/ISR safety:
+*   The entire output sequence is bracketed by spinlock_lock() and
+*   spinlock_unlock() on @c can_device.lock. spinlock_lock() saves the
+*   current interrupt-enable state and disables interrupts; spinlock_unlock()
+*   restores (not unconditionally re-enables) that saved state. This prevents
+*   interleaved output from concurrent callers and ensures the function does
+*   not alter the ambient interrupt state when called from ISR context. All
+*   UART output is performed through serial_putc(), which operates directly
+*   on the ASCLIN TXDATA hardware register and carries no FILE* or newlib
+*   internal state.
+*
+* @param prefix  Null-terminated string used as the direction tag at the
+*                start of the output line. Must not be NULL. Typically "TX"
+*                or "RX".
+* @param frame   Pointer to the CAN frame to print. Must not be NULL.
+*                @c frame->can_id is printed in full, including any EFF,
+*                RTR, or ERR flag bits occupying bits 31:29. @c frame->len
+*                must be in the range [0, CAN_MAX_DLEN] (0–8 inclusive);
+*                only the first @c frame->len bytes of @c frame->data[] are
+*                accessed and printed.
+*/
+static void _can_message_print(const char *const prefix, const can_frame_t *const frame) {
+  boolean ie = spinlock_lock(&can_device.lock);
+  _serial_str(prefix);
+  _serial_str(" | ");
+  _serial_hex32(frame->can_id);
+  _serial_str(" |");
+  for (uint8_t i = 0; i < frame->len; ++i) {
+    serial_putc(' ');
+    _serial_hex8(frame->data[i]);
+  }
+  serial_putc('\r'); serial_putc('\n');
+  spinlock_unlock(&can_device.lock, ie);
+}
+
+/*!
+* @brief Transmits a human-readable diagnostic string for a CAN protocol
+*        error to the UART, safe for use from both task and ISR contexts.
+*
+* If @p error_code is 0 the function returns immediately without producing
+* any UART output (code 0 means no error). For any non-zero value the
+* function emits a "!! " prefix, then the diagnostic string corresponding
+* to the current error, then CR LF (\r\n), for a total of one output line.
+*
+* Output format:
+*
+*   !! <diagnostic-string>\r\n
+*
+* The diagnostic string is selected by indexing the internal @c error_strings
+* table with @c (uint32_t)can_device.er, NOT with @p error_code directly.
+* The cast to @c uint32_t converts the @c IfxCan_LastErrorCodeType enum to
+* an array index. In normal usage the caller assigns @c can_device.er and
+* then passes that same value as @p error_code, so the two are identical at
+* the point of the call. Nevertheless, the authoritative source for the
+* string selection is @c can_device.er; @p error_code serves only as the
+* zero/non-zero output guard.
+*
+* Valid @c can_device.er values and their corresponding strings:
+*   0 — No error (output suppressed by the @p error_code guard)
+*   1 — Bit stuffing error
+*   2 — Form error
+*   3 — ACK error
+*   4 — Bit error (expected recessive, read dominant)
+*   5 — Bit error (expected dominant, read recessive)
+*   6 — CRC error
+*   7 — CAN bus error (no activity detected)
+*
+* Passing a value of @c can_device.er outside [0, 7] produces undefined
+* behaviour due to out-of-bounds array access.
+*
+* Thread/ISR safety:
+*   Identical to _can_message_print(): the output sequence is guarded by
+*   spinlock_lock() / spinlock_unlock() on @c can_device.lock with
+*   interrupt-state save and restore, and all output is routed through
+*   serial_putc() with no FILE* or newlib internal state involved.
+*
+* @param error_code  The error code to evaluate. Used only as a zero /
+*                    non-zero guard to suppress output when no error is
+*                    present. Must be in the range [0, 7] and must equal
+*                    @c can_device.er at the time of the call.
+*/
 static void _can_error_print(uint32_t error_code) {
   static const char *error_strings[] = {
       "No errors (0): CAN device operates normally",
@@ -144,9 +296,11 @@ static void _can_error_print(uint32_t error_code) {
       "CRC error(6): The received CAN data failed the Cyclic Redundancy Check, indicating possible data corruption due to noise. Examine the network for interference.",
       "CAN bus error(7): The CAN controller has not detected any bus activity. Check if the bus is inactive, disconnected, or if there is a hardware issue."};
   if (error_code > 0) {
-    spinlock_lock(&can_device.lock);
-    printf("!! %s\n", error_strings[(uint32_t)can_device.er]);
-    spinlock_unlock(&can_device.lock);
+    boolean ie = spinlock_lock(&can_device.lock);
+    _serial_str("!! ");
+    _serial_str(error_strings[(uint32_t)can_device.er]);
+    serial_putc('\r'); serial_putc('\n');
+    spinlock_unlock(&can_device.lock, ie);
   }
 }
 
@@ -262,8 +416,7 @@ static void _can_init_pins(void) {
   IfxPort_setPinModeOutput(DEFAULT_CAN_TX_PIN.pin.port, DEFAULT_CAN_TX_PIN.pin.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
   IfxPort_setPinLow(DEFAULT_CAN_TX_PIN.pin.port, DEFAULT_CAN_TX_PIN.pin.pinIndex);
 
-  IfxPort_setPinModeOutput(DEFAULT_CAN_RX_PIN.pin.port, DEFAULT_CAN_RX_PIN.pin.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
-  IfxPort_setPinLow(DEFAULT_CAN_RX_PIN.pin.port, DEFAULT_CAN_RX_PIN.pin.pinIndex);
+  IfxPort_setPinModeInput(DEFAULT_CAN_RX_PIN.pin.port, DEFAULT_CAN_RX_PIN.pin.pinIndex, IfxPort_InputMode_pullUp);
 
   IfxPort_setPinModeOutput(CAN_STB_PIN.port, CAN_STB_PIN.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
   IfxPort_setPinLow(CAN_STB_PIN.port, CAN_STB_PIN.pinIndex);

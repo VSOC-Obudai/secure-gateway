@@ -114,14 +114,14 @@ int serial_getc()
 
 int serial_putc(uint8_t c)
 {
+  Ifx_ASCLIN_FLAGSCLEAR* tc_flag = (Ifx_ASCLIN_FLAGSCLEAR*)&serial_device.handle.asclin->FLAGSCLEAR;
+  tc_flag->B.TCC = 1;
+
   volatile Ifx_ASCLIN_TXDATA* tx_data = (Ifx_ASCLIN_TXDATA*)&serial_device.handle.asclin->TXDATA.U;
   tx_data->U = c;
 
   volatile Ifx_ASCLIN_FLAGS* tx_flag = (Ifx_ASCLIN_FLAGS*)&serial_device.handle.asclin->FLAGS;
   while(tx_flag->B.TC == FALSE);
-
-  Ifx_ASCLIN_FLAGSCLEAR* tc_flag = (Ifx_ASCLIN_FLAGSCLEAR*)&serial_device.handle.asclin->FLAGSCLEAR;
-  tc_flag->B.TCC = 1;
 
   return 1;
 }

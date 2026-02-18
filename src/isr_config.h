@@ -9,5 +9,6 @@
 #define ISR_PRIORITY_CAN_MSG_LOST   (4)
 #define ISR_PRIORITY_CAN_MSG_RCVD   (5)
 #define ISR_PRIORITY_CAN_MSG_SENT   (6)
+#define ISR_PRIORITY_STM0_TICK      (7)
 
 #endif /* ISR_CONFIG_H */

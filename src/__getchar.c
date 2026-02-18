@@ -5,12 +5,11 @@
 
 int read(int fd, const void* buffer, size_t size)
 {
-  int rcvd;
+  int nread = 0;
   uint8_t* ptr;
   if (fd <= 2)
   {
     ptr = (uint8_t*)buffer;
-    rcvd = 0;
     while (size > 0)
     {
       *ptr = serial_getc();
@@ -18,16 +17,16 @@ int read(int fd, const void* buffer, size_t size)
       {
         *ptr = '\n';
       }
-      ++rcvd;
+      ++nread;
       --size;
     }
   }
   else
   {
-    rcvd = -1;
+    nread = -1;
     errno = EIO;
   }
-  return rcvd;
+  return nread;
 }
 
 int __getchar()

@@ -2,12 +2,15 @@
 
 #include <stdint.h>
 
-void spinlock_lock(IfxCpu_spinLock *lock) {
-  IfxCpu_disableInterrupts();
+boolean spinlock_lock(IfxCpu_spinLock *lock) {
+  boolean ie = IfxCpu_disableInterrupts();
   IfxCpu_setSpinLock(lock, UINT32_MAX);
+  return ie;
 }
 
-void spinlock_unlock(IfxCpu_spinLock *lock) {
+void spinlock_unlock(IfxCpu_spinLock *lock, boolean saved_ie) {
   IfxCpu_resetSpinLock(lock);
-  IfxCpu_enableInterrupts();
+  if (saved_ie) {
+    IfxCpu_enableInterrupts();
+  }
 }
